@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech Politics — Daily Top 5 · 2026-07-18</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --ink: #1a1a1a; --muted: #6b6b6b;
+    --line: #e6e6e2; --accent: #b4532a; --accent-soft: #f0e2da;
+    --good: #2f7d5b; --bad: #b23b3b; --neutral: #6b6b6b; --bar: #e6e6e2;
+    --shadow: 0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14140f; --panel: #1d1d18; --ink: #ece9e2; --muted: #a09a8e;
+      --line: #2c2c25; --accent: #e0824f; --accent-soft: #322019;
+      --good: #6cc79a; --bad: #e07a7a; --neutral: #a09a8e; --bar: #2c2c25;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14140f; --panel: #1d1d18; --ink: #ece9e2; --muted: #a09a8e;
+    --line: #2c2c25; --accent: #e0824f; --accent-soft: #322019;
+    --good: #6cc79a; --bad: #e07a7a; --neutral: #a09a8e; --bar: #2c2c25;
+  }
+  :root[data-theme="light"] {
+    --bg: #f7f7f5; --panel: #ffffff; --ink: #1a1a1a; --muted: #6b6b6b;
+    --line: #e6e6e2; --accent: #b4532a; --accent-soft: #f0e2da;
+    --good: #2f7d5b; --bad: #b23b3b; --neutral: #6b6b6b; --bar: #e6e6e2;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 40px 20px 72px; }
+  header { margin-bottom: 28px; }
+  .kicker { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  h1 { font-size: 30px; line-height: 1.15; margin: 6px 0 4px; letter-spacing: -.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 20px 22px; margin: 16px 0; box-shadow: var(--shadow);
+  }
+  .top { display: flex; gap: 14px; align-items: flex-start; }
+  .rank {
+    flex: 0 0 auto; width: 34px; height: 34px; border-radius: 9px;
+    background: var(--accent); color: #fff; font-weight: 800; font-size: 16px;
+    display: grid; place-items: center;
+  }
+  .card h2 { font-size: 19px; line-height: 1.3; margin: 0 0 6px; }
+  .card h2 a { color: var(--ink); text-decoration: none; }
+  .card h2 a:hover { color: var(--accent); }
+  .meta { font-size: 13px; color: var(--muted); display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+  .tier { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    padding: 2px 7px; border-radius: 6px; background: var(--accent-soft); color: var(--accent); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 0; }
+  .chip { font-size: 12px; color: var(--muted); border: 1px solid var(--line); border-radius: 20px; padding: 2px 10px; }
+  .hook {
+    margin: 14px 0 4px; padding: 11px 14px; border-left: 3px solid var(--accent);
+    background: var(--accent-soft); border-radius: 0 8px 8px 0; font-weight: 600; font-size: 15px;
+  }
+  .why { margin: 10px 0 0; color: var(--ink); font-size: 15px; }
+  .why b { color: var(--muted); font-weight: 600; }
+  .thesis { margin-top: 12px; font-size: 14px; padding: 10px 12px; border: 1px dashed var(--line); border-radius: 9px; }
+  .rel { font-weight: 700; }
+  .rel.supports { color: var(--good); }
+  .rel.contradicts { color: var(--bad); }
+  .rel.extends, .rel.neutral { color: var(--neutral); }
+  .scores { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 16px; }
+  .metric { font-size: 12px; color: var(--muted); }
+  .metric .lab { display: flex; justify-content: space-between; margin-bottom: 4px; }
+  .track { height: 6px; background: var(--bar); border-radius: 4px; overflow: hidden; }
+  .fill { height: 100%; background: var(--accent); border-radius: 4px; }
+  .footline { display: flex; justify-content: space-between; align-items: center; margin-top: 14px;
+    padding-top: 12px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+  .everywhere { color: var(--bad); font-weight: 600; }
+  .fresh { color: var(--good); font-weight: 600; }
+  .empty { text-align: center; color: var(--muted); padding: 60px 0; }
+  footer { margin-top: 36px; text-align: center; color: var(--muted); font-size: 12px; }
+  a { color: var(--accent); }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Tech Politics Brief</div>
+    <h1>Daily Top 5</h1>
+    <div class="sub">2026-07-18 · generated 2026-07-18 20:29 UTC · editor: heuristic</div>
+  </header>
+
+  <article class="card">
+    <div class="top">
+      <div class="rank">1</div>
+      <div style="min-width:0">
+        <h2><a href="https://www.eetimes.com/tsmc-boosts-2026-expansion-budget-adds-100b-to-u-s-investment/" target="_blank" rel="noopener">TSMC Boosts 2026 Expansion Budget, Adds $100B to U.S. Investment</a></h2>
+        <div class="meta">
+          <span class="tier">secondary</span>
+          <span>EE Times</span>
+<span>· Jul 17, 2026</span>        </div>
+      </div>
+    </div>
+
+    <div class="chips">
+<span class="chip">semiconductor industry</span>    </div>
+
+<div class="hook">🎞 TSMC Boosts 2026 Expansion Budget, Adds $100B to U.S. Investment — why it matters for semiconductor industry.</div><p class="why"><b>Why it matters —</b> Secondary source on semiconductor industry; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>
+    <div class="thesis">
+      Thesis: <span class="rel neutral">relates to</span>
+      “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”
+<div style="margin-top:4px;color:var(--muted)">Keyword overlap (2); stance not assessed offline.</div>    </div>
+
+    <div class="scores">
+      <div class="metric">
+        <div class="lab"><span>Relevance</span><span>5.0/5</span></div>
+        <div class="track"><div class="fill" style="width: 100.0%"></div></div>
+      </div>
+      <div class="metric">
+        <div class="lab"><span>Novelty</span><span>5.0/5</span></div>
+        <div class="track"><div class="fill" style="width: 100.0%"></div></div>
+      </div>
+      <div class="metric">
+        <div class="lab"><span>Carousel</span><span>4.0/5</span></div>
+        <div class="track"><div class="fill" style="width: 80.0%"></div></div>
+      </div>
+    </div>
+
+    <div class="footline">
+      <span>Composite 95/100 · heuristic</span>
+        <span class="fresh">● Fresh · 1 source</span>
+    </div>
+  </article>
+  <article class="card">
+    <div class="top">
+      <div class="rank">2</div>
+      <div style="min-width:0">
+        <h2><a href="https://news.google.com/rss/articles/CBMidkFVX3lxTE9xSGdzTW8tbUZNalNIQVh3Q1lueUQ2Rzd6YVVvdXZxb2VPRVpTZGtoZm9wdHlMTHN6YmlQWkhtMFpKUEdNN1B0LWtzU1ZraTYybkhGMy1rRnRKY1JWOXY5NDdCbVZQV3k3ajhiTUltWjJQVkdoeWc?oc=5" target="_blank" rel="noopener">Japan to Provide Up to ¥160 Billion in Subsidies to Tower Semiconductor for Optical Communication Chip Mass Production in Toyama and Niigata - finance.biggo.com</a></h2>
+        <div class="meta">
+          <span class="tier">secondary</span>
+          <span>Google News — Chips & Export Controls</span>
+<span>· Jul 14, 2026</span>        </div>
+      </div>
+    </div>
+
+    <div class="chips">
+<span class="chip">eu chips act</span><span class="chip">semiconductor industry</span><span class="chip">us tech policy</span>    </div>
+
+<div class="hook">🎞 Japan to Provide Up to ¥160 Billion in Subsidies to Tower Semiconductor for Optical Communication Chip Mass Production in Toyama and Niigata - finance.biggo.com — why it matters for eu chips act.</div><p class="why"><b>Why it matters —</b> Secondary source on eu chips act; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>
+    <div class="thesis">
+      Thesis: <span class="rel neutral">relates to</span>
+      “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”
+<div style="margin-top:4px;color:var(--muted)">Keyword overlap (1); stance not assessed offline.</div>    </div>
+
+    <div class="scores">
+      <div class="metric">
+        <div class="lab"><span>Relevance</span><span>4.5/5</span></div>
+        <div class="track"><div class="fill" style="width: 90.0%"></div></div>
+      </div>
+      <div class="metric">
+        <div class="lab"><span>Novelty</span><span>5.0/5</span></div>
+        <div class="track"><div class="fill" style="width: 100.0%"></div></div>
+      </div>
+      <div class="metric">
+        <div class="lab"><span>Carousel</span><span>4.0/5</span></div>
+        <div class="track"><div class="fill" style="width: 80.0%"></div></div>
+      </div>
+    </div>
+
+    <div class="footline">
+      <span>Composite 89/100 · heuristic</span>
+        <span class="fresh">● Fresh · 1 source</span>
+    </div>
+  </article>
+  <article class="card">
+    <div class="top">
+      <div class="rank">3</div>
+      <div style="min-width:0">
+        <h2><a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNOU9WLXpILUVORzVXcGF0LTFMdFJkQ1VFMzZSX1V6a2R5cUMtRzNfc3R1T1Iwa2ZCY1ZUeFNMd3dvVUxPeGdsVHVnVDlXYkRfRzZLTHVUZENuVHdpblA1dmozSDZFSGpIdk9za29GWHNHdEV1RWZ0Q0o5bFZ0cWkzUTJB?oc=5" target="_blank" rel="noopener">Data Sovereignty Doesn’t Mean Data Isolationism - Tech Policy Press</a></h2>
+        <div class="meta">
+          <span class="tier">institute</span>
+          <span>Tech Policy Press</span>
+<span>· Jul 15, 2026</span>        </div>
+      </div>
+    </div>
+
+    <div class="chips">
+<span class="chip">us tech policy</span><span class="chip">eu ai regulation</span><span class="chip">digital sovereignty</span>    </div>
+
+<div class="hook">🎞 Data Sovereignty Doesn’t Mean Data Isolationism - Tech Policy Press — why it matters for us tech policy.</div><p class="why"><b>Why it matters —</b> Institute source on us tech policy; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>
+    <div class="thesis">
+      Thesis: <span class="rel neutral">relates to</span>
+      “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”
+<div style="margin-top:4px;color:var(--muted)">Keyword overlap (1); stance not assessed offline.</div>    </div>
+
+    <div class="scores">
+      <div class="metric">
+        <div class="lab"><span>Relevance</span><span>4.5/5</span></div>
+        <div class="track"><div class="fill" style="width: 90.0%"></div></div>
+      </div>
+      <div class="metric">
+        <div class="lab"><span>Novelty</span><span>5.0/5</span></div>
+        <div class="track"><div class="fill" style="width: 100.0%"></div></div>
+      </div>
+      <div class="metric">
+        <div class="lab"><span>Carousel</span><span>2.0/5</span></div>
+        <div class="track"><div class="fill" style="width: 40.0%"></div></div>
+      </div>
+    </div>
+
+    <div class="footline">
+      <span>Composite 79/100 · heuristic</span>
+        <span class="fresh">● Fresh · 1 source</span>
+    </div>
+  </article>
+  <article class="card">
+    <div class="top">
+      <div class="rank">4</div>
+      <div style="min-width:0">
+        <h2><a href="https://www.gov.uk/government/publications/ai-research-resource" target="_blank" rel="noopener">Guidance: AI Research Resource</a></h2>
+        <div class="meta">
+          <span class="tier">primary</span>
+          <span>UK DSIT — News</span>
+<span>· Jul 17, 2026</span>        </div>
+      </div>
+    </div>
+
+    <div class="chips">
+<span class="chip">eu ai regulation</span><span class="chip">digital sovereignty</span><span class="chip">us tech policy</span>    </div>
+
+<div class="hook">🎞 Guidance: AI Research Resource — why it matters for eu ai regulation.</div><p class="why"><b>Why it matters —</b> Primary source on eu ai regulation; 1 independent source; touches your thesis “Semiconductor reshoring in the EU and US is slower and more expensive than announced, and depends on subsidies that outlast political attention spans.”.</p>
+    <div class="thesis">
+      Thesis: <span class="rel neutral">relates to</span>
+      “Semiconductor reshoring in the EU and US is slower and more expensive than announced, and depends on subsidies that outlast political attention spans.”
+<div style="margin-top:4px;color:var(--muted)">Keyword overlap (1); stance not assessed offline.</div>    </div>
+
+    <div class="scores">
+      <div class="metric">
+        <div class="lab"><span>Relevance</span><span>3.3/5</span></div>
+        <div class="track"><div class="fill" style="width: 66.0%"></div></div>
+      </div>
+      <div class="metric">
+        <div class="lab"><span>Novelty</span><span>5.0/5</span></div>
+        <div class="track"><div class="fill" style="width: 100.0%"></div></div>
+      </div>
+      <div class="metric">
+        <div class="lab"><span>Carousel</span><span>2.0/5</span></div>
+        <div class="track"><div class="fill" style="width: 40.0%"></div></div>
+      </div>
+    </div>
+
+    <div class="footline">
+      <span>Composite 66/100 · heuristic</span>
+        <span class="fresh">● Fresh · 1 source</span>
+    </div>
+  </article>
+  <article class="card">
+    <div class="top">
+      <div class="rank">5</div>
+      <div style="min-width:0">
+        <h2><a href="https://semiengineering.com/chip-industry-week-in-review-147/" target="_blank" rel="noopener">Chip Industry Week In Review</a></h2>
+        <div class="meta">
+          <span class="tier">secondary</span>
+          <span>Semiconductor Engineering</span>
+<span>· Jul 17, 2026</span>        </div>
+      </div>
+    </div>
+
+    <div class="chips">
+<span class="chip">semiconductor industry</span><span class="chip">ai industrial policy</span>    </div>
+
+<div class="hook">🎞 Chip Industry Week In Review — why it matters for semiconductor industry.</div><p class="why"><b>Why it matters —</b> Secondary source on semiconductor industry; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>
+    <div class="thesis">
+      Thesis: <span class="rel neutral">relates to</span>
+      “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”
+<div style="margin-top:4px;color:var(--muted)">Keyword overlap (2); stance not assessed offline.</div>    </div>
+
+    <div class="scores">
+      <div class="metric">
+        <div class="lab"><span>Relevance</span><span>5.0/5</span></div>
+        <div class="track"><div class="fill" style="width: 100.0%"></div></div>
+      </div>
+      <div class="metric">
+        <div class="lab"><span>Novelty</span><span>5.0/5</span></div>
+        <div class="track"><div class="fill" style="width: 100.0%"></div></div>
+      </div>
+      <div class="metric">
+        <div class="lab"><span>Carousel</span><span>2.75/5</span></div>
+        <div class="track"><div class="fill" style="width: 55.0%"></div></div>
+      </div>
+    </div>
+
+    <div class="footline">
+      <span>Composite 89/100 · heuristic</span>
+        <span class="fresh">● Fresh · 1 source</span>
+    </div>
+  </article>
+
+  <footer>
+    Surfaced from primary + secondary tech-policy sources · scored for relevance, novelty &amp; carousel-worthiness · matched against your theses.
+  </footer>
+</div>
+</body>
+</html>

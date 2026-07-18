@@ -1,0 +1,32 @@
+# Platform settings. Environment variables referenced here (ANTHROPIC_API_KEY,
+# RESEND_API_KEY) are read at runtime and never stored in the repo.
+
+top_n: 5                    # size of the daily edition
+max_items_per_day: 120     # hard cap on clusters scored by Claude (cost guard)
+recency_days: 7            # ignore items older than this many days
+
+# Composite score = weighted sum of the three 1..5 dimensions (normalized 0..1).
+weights:
+  relevance: 0.45
+  novelty: 0.35
+  carousel: 0.20
+
+# Topics the platform cares about, with keywords that drive heuristic relevance.
+topics:
+  eu-chips-act:        [chips act, chips act 2.0, european chips, ipcei, fab, foundry]
+  eu-ai-regulation:    [ai act, gpai, code of practice, ai office, eu regulation]
+  digital-sovereignty: [sovereignty, data sovereignty, cloud, gaia-x, autonomy]
+  ai-industrial-policy: [industrial policy, subsidy, compute, ai factory, investment]
+  us-tech-policy:      [white house, congress, ftc, commerce department, executive order]
+  semiconductor-industry: [semiconductor, chip, tsmc, asml, nvidia, intel, lithography, wafer]
+
+# Claude models (used only when ANTHROPIC_API_KEY is set).
+models:
+  scorer: claude-haiku-4-5    # per-item relevance / novelty / carousel + thesis
+  editor: claude-sonnet-5     # final top-N selection + hooks
+
+# Email digest via Resend (used only when RESEND_API_KEY is set).
+email:
+  from: "Tech Politics Brief <onboarding@resend.dev>"
+  to: "20lina.braun02@gmail.com"
+  subject_prefix: "Tech Politics — Daily Top 5"

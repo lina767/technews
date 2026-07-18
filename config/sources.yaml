@@ -1,0 +1,144 @@
+# Source registry — 4 tiers for a broad, primary-source-anchored data base.
+#
+# Each source: name, url, type (rss | federal_register_api), tier
+# (primary | institute | secondary | newsletter), topics (tags), and an
+# optional weight override. `tier` drives scoring: primary breaks stories and
+# scores highest for credibility; secondary adds breadth and confirmation but
+# only lowers a story's novelty rather than becoming "the new thing".
+#
+# Feed URLs are best-effort; the collector skips any that are unreachable, so a
+# stale URL degrades gracefully. Swap in alternatives as feeds move.
+
+sources:
+  # ---- Tier 1: primary (official / institutional) --------------------------
+  - name: EU Commission — Digital Strategy
+    url: https://digital-strategy.ec.europa.eu/en/rss.xml
+    type: rss
+    tier: primary
+    topics: [eu-ai-regulation, digital-sovereignty, eu-chips-act]
+
+  - name: European Parliament — Press
+    url: https://www.europarl.europa.eu/rss/doc/press-releases/en.xml
+    type: rss
+    tier: primary
+    topics: [eu-ai-regulation, digital-sovereignty, us-tech-policy]
+
+  - name: US Federal Register — Semiconductors
+    url: ""
+    type: federal_register_api
+    query: semiconductor
+    tier: primary
+    topics: [semiconductor-industry, ai-industrial-policy, us-tech-policy]
+
+  - name: US Federal Register — Artificial Intelligence
+    url: ""
+    type: federal_register_api
+    query: artificial intelligence
+    tier: primary
+    topics: [us-tech-policy, ai-industrial-policy]
+
+  - name: US Federal Register — Export Controls
+    url: ""
+    type: federal_register_api
+    query: export control
+    tier: primary
+    topics: [us-tech-policy, semiconductor-industry]
+
+  - name: The White House — Presidential Actions
+    url: https://www.whitehouse.gov/presidential-actions/feed/
+    type: rss
+    tier: primary
+    topics: [us-tech-policy, ai-industrial-policy]
+
+  - name: UK DSIT — News
+    url: https://www.gov.uk/government/organisations/department-for-science-innovation-and-technology.atom
+    type: rss
+    tier: primary
+    topics: [eu-ai-regulation, digital-sovereignty, us-tech-policy]
+
+  # ---- Tier 2: institutes & think tanks (primary-adjacent analysis) --------
+  - name: Tech Policy Press
+    url: https://news.google.com/rss/search?q=site:techpolicy.press&hl=en-US&gl=US&ceid=US:en
+    type: rss
+    tier: institute
+    topics: [us-tech-policy, eu-ai-regulation, digital-sovereignty]
+
+  - name: Bruegel
+    url: https://www.bruegel.org/rss.xml
+    type: rss
+    tier: institute
+    topics: [eu-chips-act, ai-industrial-policy, digital-sovereignty]
+
+  - name: CSIS
+    url: https://www.csis.org/rss.xml
+    type: rss
+    tier: institute
+    topics: [semiconductor-industry, us-tech-policy, ai-industrial-policy]
+
+  - name: MERICS — China Analysis
+    url: https://merics.org/en/rss
+    type: rss
+    tier: institute
+    topics: [semiconductor-industry, us-tech-policy, ai-industrial-policy]
+
+  # ---- Tier 3: secondary / trade journalism (breadth & fast signals) -------
+  - name: Semiconductor Engineering
+    url: https://semiengineering.com/feed/
+    type: rss
+    tier: secondary
+    topics: [semiconductor-industry, ai-industrial-policy]
+
+  - name: EE Times
+    url: https://www.eetimes.com/feed/
+    type: rss
+    tier: secondary
+    topics: [semiconductor-industry]
+
+  - name: The Register
+    url: https://www.theregister.com/headlines.atom
+    type: rss
+    tier: secondary
+    topics: [semiconductor-industry, us-tech-policy, eu-ai-regulation]
+
+  - name: Ars Technica — Policy
+    url: https://feeds.arstechnica.com/arstechnica/tech-policy
+    type: rss
+    tier: secondary
+    topics: [us-tech-policy, eu-ai-regulation]
+
+  - name: Google News — Chips & Export Controls
+    url: https://news.google.com/rss/search?q=%22Chips+Act%22+OR+%22export+controls%22+OR+semiconductor+subsidy&hl=en-US&gl=US&ceid=US:en
+    type: rss
+    tier: secondary
+    topics: [eu-chips-act, semiconductor-industry, us-tech-policy]
+
+  - name: Google News — EU AI & Sovereignty
+    url: https://news.google.com/rss/search?q=%22EU+AI+Act%22+OR+%22digital+sovereignty%22+OR+%22AI+regulation%22&hl=en-US&gl=US&ceid=US:en
+    type: rss
+    tier: secondary
+    topics: [eu-ai-regulation, digital-sovereignty, ai-industrial-policy]
+
+  - name: Rest of World
+    url: https://restofworld.org/feed/latest/
+    type: rss
+    tier: secondary
+    topics: [semiconductor-industry, digital-sovereignty]
+
+  # ---- Tier 4: newsletters (analysis / context, via RSS) -------------------
+  - name: Stratechery — Ben Thompson
+    url: https://stratechery.com/feed/
+    type: rss
+    tier: newsletter
+    topics: [semiconductor-industry, us-tech-policy]
+
+  - name: Import AI — Jack Clark
+    url: https://jack-clark.net/feed/
+    type: rss
+    tier: newsletter
+    topics: [ai-industrial-policy, us-tech-policy]
+
+  - name: Platformer — Casey Newton
+    url: https://www.platformer.news/rss/
+    type: rss
+    tier: newsletter
+    topics: [us-tech-policy, eu-ai-regulation]
