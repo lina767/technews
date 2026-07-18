@@ -42,6 +42,7 @@ def _item_view(item: EditionItem) -> dict:
             "label": _RELATION_LABEL.get(cand.thesis.relation, "relates to"),
             "claim": cand.thesis.thesis_claim,
             "note": cand.thesis.note,
+            "paper_url": cand.thesis.paper_url,
         }
     return {
         "rank": item.rank,

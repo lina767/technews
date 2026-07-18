@@ -155,6 +155,7 @@
       Thesis: <span class="rel {{ it.thesis.relation }}">{{ it.thesis.label }}</span>
       “{{ it.thesis.claim }}”
       {% if it.thesis.note %}<div style="margin-top:4px;color:var(--muted)">{{ it.thesis.note }}</div>{% endif %}
+      {% if it.thesis.paper_url %}<div style="margin-top:6px"><a href="{{ it.thesis.paper_url }}" target="_blank" rel="noopener" style="font-size:12px">Read the paper →</a></div>{% endif %}
     </div>
     {% endif %}
 
@@ -204,6 +205,5 @@
     Surfaced from primary + secondary tech-policy sources · scored for relevance, novelty &amp; carousel-worthiness · matched against your theses.
   </footer>
 </div>
-<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

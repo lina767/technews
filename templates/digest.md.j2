@@ -14,7 +14,7 @@ No items today — sources may be unreachable, or nothing cleared the recency wi
 - **Scores:** relevance {{ it.scores.relevance }}/5 · novelty {{ it.scores.novelty }}/5 · carousel {{ it.scores.carousel }}/5 · composite {{ it.composite_pct }}/100 ({{ it.scorer }})
 - **Coverage:** {% if it.is_everywhere %}already everywhere — {{ it.sources_count }} sources{% else %}fresh — {{ it.sources_count }} source{{ 's' if it.sources_count != 1 else '' }}{% endif %}
 {% if it.thesis %}
-- **Thesis:** {{ it.thesis.label }} “{{ it.thesis.claim }}”{% if it.thesis.note %} — {{ it.thesis.note }}{% endif %}
+- **Thesis:** {{ it.thesis.label }} “{{ it.thesis.claim }}”{% if it.thesis.note %} — {{ it.thesis.note }}{% endif %}{% if it.thesis.paper_url %} ([paper]({{ it.thesis.paper_url }})){% endif %}
 {% endif %}
 
 {% if it.carousel_hook %}🎞 **Hook:** {{ it.carousel_hook }}{% endif %}

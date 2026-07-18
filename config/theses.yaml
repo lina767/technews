@@ -56,6 +56,7 @@ theses:
       AI-hardware geopolitics toward multipolar competition.
     keywords: [risc-v, open source, cuda, nvidia, gpu, instruction set,
                lock-in, chip design, arm, ecosystem]
+    paper_url: https://zenodo.org/records/17260577
 
   - id: open-standards-blunt-weaponized-interdependence
     claim: >-
@@ -64,6 +65,7 @@ theses:
       decoupling and domestic substitution rather than durably containing rivals.
     keywords: [export control, weaponized interdependence, decoupling, china,
                sanctions, entity list, leverage, restriction, substitution]
+    paper_url: https://zenodo.org/records/17260577
 
   - id: ai-autonomy-accountability-gap
     claim: >-
@@ -73,6 +75,7 @@ theses:
       categorical bans, which are politically and practically unachievable.
     keywords: [autonomous, accountability, liability, human control, oversight,
                autonomous weapons, laws, ai act, high-risk, responsibility, ban]
+    paper_url: https://zenodo.org/records/18500026
 
   - id: ai-lacks-moral-agency
     claim: >-
@@ -82,3 +85,4 @@ theses:
       institutions behind the systems, not the models themselves.
     keywords: [moral agency, ai ethics, responsibility, personhood, ai rights,
                agent, anthropomorphism, alignment, accountability, governance]
+    paper_url: https://zenodo.org/records/18115788

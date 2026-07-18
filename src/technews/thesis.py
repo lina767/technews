@@ -64,6 +64,7 @@ class HeuristicMatcher:
             thesis_claim=_short(best["claim"]),
             relation="neutral",
             note=f"Keyword overlap ({best_hits}); stance not assessed offline.",
+            paper_url=best.get("paper_url", ""),
         )
 
 
@@ -121,6 +122,7 @@ class ClaudeMatcher:
                 thesis_claim=_short(thesis["claim"]),
                 relation=relation,
                 note=str(data.get("note", "")),
+                paper_url=thesis.get("paper_url", ""),
             )
         except Exception as exc:  # noqa: BLE001
             log.warning("Claude thesis match failed (%s); using heuristic", exc)

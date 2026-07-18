@@ -118,6 +118,7 @@ class ThesisMatch:
     thesis_claim: str
     relation: str  # supports | contradicts | extends | neutral
     note: str = ""
+    paper_url: str = ""
 
 
 @dataclass
