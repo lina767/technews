@@ -2,6 +2,7 @@
 # RESEND_API_KEY) are read at runtime and never stored in the repo.
 
 top_n: 5                    # size of the daily edition
+more_items: 20              # extra stories listed (collapsed) below the Top 5
 max_items_per_day: 120     # hard cap on clusters scored by Claude (cost guard)
 recency_days: 7            # ignore items older than this many days
 

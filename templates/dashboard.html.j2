@@ -64,6 +64,11 @@
   }
   .why { margin: 10px 0 0; color: var(--ink); font-size: 15px; }
   .why b { color: var(--muted); font-weight: 600; }
+  .takeaways { margin: 12px 0 0; padding: 0; list-style: none; }
+  .takeaways li {
+    position: relative; padding-left: 18px; margin: 6px 0; font-size: 14px; color: var(--ink);
+  }
+  .takeaways li::before { content: "＋"; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 12px; }
   .thesis { margin-top: 12px; font-size: 14px; padding: 10px 12px; border: 1px dashed var(--line); border-radius: 9px; }
   .rel { font-weight: 700; }
   .rel.supports { color: var(--good); }
@@ -81,6 +86,27 @@
   .empty { text-align: center; color: var(--muted); padding: 60px 0; }
   footer { margin-top: 36px; text-align: center; color: var(--muted); font-size: 12px; }
   a { color: var(--accent); }
+  .more {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    margin: 24px 0 0; box-shadow: var(--shadow); overflow: hidden;
+  }
+  .more summary {
+    cursor: pointer; padding: 16px 22px; font-weight: 700; font-size: 15px;
+    list-style: none; display: flex; align-items: center; justify-content: space-between;
+  }
+  .more summary::-webkit-details-marker { display: none; }
+  .more summary::after {
+    content: "▾"; color: var(--accent); transition: transform .15s ease; margin-left: 10px;
+  }
+  .more[open] summary::after { transform: rotate(180deg); }
+  .more-list { list-style: none; margin: 0; padding: 0 22px 18px; }
+  .more-list li {
+    padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px;
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px;
+  }
+  .more-list a { color: var(--ink); text-decoration: none; font-weight: 600; }
+  .more-list a:hover { color: var(--accent); }
+  .more-meta { font-size: 12px; color: var(--muted); }
 </style>
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
@@ -118,6 +144,11 @@
 
     {% if it.carousel_hook %}<div class="hook">🎞 {{ it.carousel_hook }}</div>{% endif %}
     {% if it.why_it_matters %}<p class="why"><b>Why it matters —</b> {{ it.why_it_matters }}</p>{% endif %}
+    {% if it.key_takeaways %}
+    <ul class="takeaways">
+      {% for t in it.key_takeaways %}<li>{{ t }}</li>{% endfor %}
+    </ul>
+    {% endif %}
 
     {% if it.thesis %}
     <div class="thesis">
@@ -153,6 +184,20 @@
   {% endfor %}
   {% else %}
   <div class="empty">No items today — sources may be unreachable, or nothing cleared the recency window.</div>
+  {% endif %}
+
+  {% if more %}
+  <details class="more">
+    <summary>More news today ({{ more|length }})</summary>
+    <ul class="more-list">
+      {% for m in more %}
+      <li>
+        <a href="{{ m.url }}" target="_blank" rel="noopener">{{ m.title }}</a>
+        <span class="more-meta">{{ m.source_name }} · {{ m.source_tier }}{% if m.published %} · {{ m.published }}{% endif %} · {{ m.composite_pct }}/100</span>
+      </li>
+      {% endfor %}
+    </ul>
+  </details>
   {% endif %}
 
   <footer>

@@ -21,4 +21,21 @@ No items today — sources may be unreachable, or nothing cleared the recency wi
 
 {% if it.why_it_matters %}**Why it matters —** {{ it.why_it_matters }}{% endif %}
 
+{% if it.key_takeaways %}
+**Key takeaways:**
+{% for t in it.key_takeaways %}
+- {{ t }}
 {% endfor %}
+{% endif %}
+
+{% endfor %}
+{% if more %}
+<details>
+<summary><strong>More news today ({{ more|length }})</strong></summary>
+
+{% for m in more %}
+- [{{ m.title }}]({{ m.url }}) — {{ m.source_name }} ({{ m.source_tier }}){% if m.published %} · {{ m.published }}{% endif %} · {{ m.composite_pct }}/100
+{% endfor %}
+
+</details>
+{% endif %}

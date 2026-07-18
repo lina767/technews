@@ -135,6 +135,7 @@ class EditionItem:
     candidate: Candidate
     why_it_matters: str = ""
     carousel_hook: str = ""
+    key_takeaways: list[str] = field(default_factory=list)
 
     @property
     def item(self) -> Item:
@@ -145,5 +146,6 @@ class EditionItem:
 class Edition:
     date: str  # YYYY-MM-DD
     items: list[EditionItem]
+    more: list[Candidate] = field(default_factory=list)
     generated_at: datetime = field(default_factory=_now)
     editor: str = "heuristic"  # which editor produced the selection

@@ -10,7 +10,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from .models import Edition, EditionItem
+from .models import Candidate, Edition, EditionItem
 
 _TEMPLATES_DIR = Path(__file__).resolve().parents[2] / "templates"
 
@@ -66,9 +66,24 @@ def _item_view(item: EditionItem) -> dict:
         "is_everywhere": len(sources) >= 3,
         "why_it_matters": item.why_it_matters,
         "carousel_hook": item.carousel_hook,
+        "key_takeaways": item.key_takeaways,
         "thesis": thesis,
         "rationale": cand.score.rationale,
         "scorer": cand.score.scorer,
+    }
+
+
+def _more_item_view(cand: Candidate) -> dict:
+    rep = cand.cluster.representative
+    return {
+        "title": rep.title,
+        "url": rep.url,
+        "source_name": rep.source_name,
+        "source_tier": rep.source_tier,
+        "published": rep.published.strftime("%b %d, %Y") if rep.published else "",
+        "topics": [t.replace("-", " ") for t in cand.cluster.topics],
+        "composite_pct": round(cand.score.composite * 100),
+        "sources_count": len(cand.cluster.source_domains),
     }
 
 
@@ -78,6 +93,7 @@ def edition_view(edition: Edition) -> dict:
         "generated_at": edition.generated_at.strftime("%Y-%m-%d %H:%M UTC"),
         "editor": edition.editor,
         "items": [_item_view(i) for i in edition.items],
+        "more": [_more_item_view(c) for c in edition.more],
     }
 
 

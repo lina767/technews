@@ -64,6 +64,11 @@
   }
   .why { margin: 10px 0 0; color: var(--ink); font-size: 15px; }
   .why b { color: var(--muted); font-weight: 600; }
+  .takeaways { margin: 12px 0 0; padding: 0; list-style: none; }
+  .takeaways li {
+    position: relative; padding-left: 18px; margin: 6px 0; font-size: 14px; color: var(--ink);
+  }
+  .takeaways li::before { content: "＋"; position: absolute; left: 0; color: var(--accent); font-weight: 700; font-size: 12px; }
   .thesis { margin-top: 12px; font-size: 14px; padding: 10px 12px; border: 1px dashed var(--line); border-radius: 9px; }
   .rel { font-weight: 700; }
   .rel.supports { color: var(--good); }
@@ -81,6 +86,27 @@
   .empty { text-align: center; color: var(--muted); padding: 60px 0; }
   footer { margin-top: 36px; text-align: center; color: var(--muted); font-size: 12px; }
   a { color: var(--accent); }
+  .more {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    margin: 24px 0 0; box-shadow: var(--shadow); overflow: hidden;
+  }
+  .more summary {
+    cursor: pointer; padding: 16px 22px; font-weight: 700; font-size: 15px;
+    list-style: none; display: flex; align-items: center; justify-content: space-between;
+  }
+  .more summary::-webkit-details-marker { display: none; }
+  .more summary::after {
+    content: "▾"; color: var(--accent); transition: transform .15s ease; margin-left: 10px;
+  }
+  .more[open] summary::after { transform: rotate(180deg); }
+  .more-list { list-style: none; margin: 0; padding: 0 22px 18px; }
+  .more-list li {
+    padding: 10px 0; border-top: 1px solid var(--line); font-size: 14px;
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 10px;
+  }
+  .more-list a { color: var(--ink); text-decoration: none; font-weight: 600; }
+  .more-list a:hover { color: var(--accent); }
+  .more-meta { font-size: 12px; color: var(--muted); }
 </style>
 </head>
 <body>
@@ -88,7 +114,7 @@
   <header>
     <div class="kicker">Tech Politics Brief</div>
     <h1>Daily Top 5</h1>
-    <div class="sub">2026-07-18 · generated 2026-07-18 21:43 UTC · editor: heuristic</div>
+    <div class="sub">2026-07-18 · generated 2026-07-18 22:30 UTC · editor: heuristic</div>
   </header>
 
   <article class="card">
@@ -106,7 +132,9 @@
     <div class="chips">
 <span class="chip">semiconductor industry</span>    </div>
 
-<div class="hook">🎞 TSMC Boosts 2026 Expansion Budget, Adds $100B to U.S. Investment — why it matters for semiconductor industry.</div><p class="why"><b>Why it matters —</b> Secondary source on semiconductor industry; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>
+<div class="hook">🎞 TSMC Boosts 2026 Expansion Budget, Adds $100B to U.S. Investment — why it matters for semiconductor industry.</div><p class="why"><b>Why it matters —</b> Secondary source on semiconductor industry; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>    <ul class="takeaways">
+<li>Key figures: $100, $64 billion, $100 billion</li><li>Fresh — first surfaced by a secondary source</li><li>Topic: semiconductor industry</li>    </ul>
+
     <div class="thesis">
       Thesis: <span class="rel neutral">relates to</span>
       “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”
@@ -118,7 +146,7 @@
         <div class="track"><div class="fill" style="width: 100.0%"></div></div>
       </div>
       <div class="metric">
-        <div class="lab"><span>Novelty</span><span>5.0/5</span></div>
+        <div class="lab"><span>Novelty</span><span>4.98/5</span></div>
         <div class="track"><div class="fill" style="width: 100.0%"></div></div>
       </div>
       <div class="metric">
@@ -147,7 +175,9 @@
     <div class="chips">
 <span class="chip">eu chips act</span><span class="chip">semiconductor industry</span><span class="chip">us tech policy</span>    </div>
 
-<div class="hook">🎞 Japan to Provide Up to ¥160 Billion in Subsidies to Tower Semiconductor for Optical Communication Chip Mass Production in Toyama and Niigata - finance.biggo.com — why it matters for eu chips act.</div><p class="why"><b>Why it matters —</b> Secondary source on eu chips act; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>
+<div class="hook">🎞 Japan to Provide Up to ¥160 Billion in Subsidies to Tower Semiconductor for Optical Communication Chip Mass Production in Toyama and Niigata - finance.biggo.com — why it matters for eu chips act.</div><p class="why"><b>Why it matters —</b> Secondary source on eu chips act; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>    <ul class="takeaways">
+<li>Fresh — first surfaced by a secondary source</li><li>Topic: eu chips act</li>    </ul>
+
     <div class="thesis">
       Thesis: <span class="rel neutral">relates to</span>
       “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”
@@ -159,7 +189,7 @@
         <div class="track"><div class="fill" style="width: 90.0%"></div></div>
       </div>
       <div class="metric">
-        <div class="lab"><span>Novelty</span><span>5.0/5</span></div>
+        <div class="lab"><span>Novelty</span><span>4.98/5</span></div>
         <div class="track"><div class="fill" style="width: 100.0%"></div></div>
       </div>
       <div class="metric">
@@ -188,7 +218,9 @@
     <div class="chips">
 <span class="chip">us tech policy</span><span class="chip">eu ai regulation</span><span class="chip">digital sovereignty</span>    </div>
 
-<div class="hook">🎞 Data Sovereignty Doesn’t Mean Data Isolationism - Tech Policy Press — why it matters for us tech policy.</div><p class="why"><b>Why it matters —</b> Institute source on us tech policy; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>
+<div class="hook">🎞 Data Sovereignty Doesn’t Mean Data Isolationism - Tech Policy Press — why it matters for us tech policy.</div><p class="why"><b>Why it matters —</b> Institute source on us tech policy; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>    <ul class="takeaways">
+<li>Fresh — first surfaced by an institute source</li><li>Topic: us tech policy</li>    </ul>
+
     <div class="thesis">
       Thesis: <span class="rel neutral">relates to</span>
       “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”
@@ -200,7 +232,7 @@
         <div class="track"><div class="fill" style="width: 90.0%"></div></div>
       </div>
       <div class="metric">
-        <div class="lab"><span>Novelty</span><span>5.0/5</span></div>
+        <div class="lab"><span>Novelty</span><span>4.98/5</span></div>
         <div class="track"><div class="fill" style="width: 100.0%"></div></div>
       </div>
       <div class="metric">
@@ -229,7 +261,9 @@
     <div class="chips">
 <span class="chip">eu ai regulation</span><span class="chip">digital sovereignty</span><span class="chip">us tech policy</span>    </div>
 
-<div class="hook">🎞 Guidance: AI Research Resource — why it matters for eu ai regulation.</div><p class="why"><b>Why it matters —</b> Primary source on eu ai regulation; 1 independent source; touches your thesis “Semiconductor reshoring in the EU and US is slower and more expensive than announced, and depends on subsidies that outlast political attention spans.”.</p>
+<div class="hook">🎞 Guidance: AI Research Resource — why it matters for eu ai regulation.</div><p class="why"><b>Why it matters —</b> Primary source on eu ai regulation; 1 independent source; touches your thesis “Semiconductor reshoring in the EU and US is slower and more expensive than announced, and depends on subsidies that outlast political attention spans.”.</p>    <ul class="takeaways">
+<li>Fresh — first surfaced by a primary source</li><li>Topic: eu ai regulation</li>    </ul>
+
     <div class="thesis">
       Thesis: <span class="rel neutral">relates to</span>
       “Semiconductor reshoring in the EU and US is slower and more expensive than announced, and depends on subsidies that outlast political attention spans.”
@@ -241,7 +275,7 @@
         <div class="track"><div class="fill" style="width: 66.0%"></div></div>
       </div>
       <div class="metric">
-        <div class="lab"><span>Novelty</span><span>5.0/5</span></div>
+        <div class="lab"><span>Novelty</span><span>4.98/5</span></div>
         <div class="track"><div class="fill" style="width: 100.0%"></div></div>
       </div>
       <div class="metric">
@@ -270,7 +304,9 @@
     <div class="chips">
 <span class="chip">semiconductor industry</span><span class="chip">ai industrial policy</span>    </div>
 
-<div class="hook">🎞 Chip Industry Week In Review — why it matters for semiconductor industry.</div><p class="why"><b>Why it matters —</b> Secondary source on semiconductor industry; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>
+<div class="hook">🎞 Chip Industry Week In Review — why it matters for semiconductor industry.</div><p class="why"><b>Why it matters —</b> Secondary source on semiconductor industry; 1 independent source; touches your thesis “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”.</p>    <ul class="takeaways">
+<li>Fresh — first surfaced by a secondary source</li><li>Topic: semiconductor industry</li>    </ul>
+
     <div class="thesis">
       Thesis: <span class="rel neutral">relates to</span>
       “The EU's digital-sovereignty ambitions consistently outpace the actual industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.”
@@ -282,7 +318,7 @@
         <div class="track"><div class="fill" style="width: 100.0%"></div></div>
       </div>
       <div class="metric">
-        <div class="lab"><span>Novelty</span><span>5.0/5</span></div>
+        <div class="lab"><span>Novelty</span><span>4.98/5</span></div>
         <div class="track"><div class="fill" style="width: 100.0%"></div></div>
       </div>
       <div class="metric">
@@ -297,9 +333,96 @@
     </div>
   </article>
 
+  <details class="more">
+    <summary>More news today (20)</summary>
+    <ul class="more-list">
+      <li>
+        <a href="https://www.theregister.com/paas-and-iaas/2026/07/17/europes-chip-ambitions-wont-break-dependence-on-us-cloud-and-software-says-forrester/5274086" target="_blank" rel="noopener">Europe's chip ambitions won't break dependence on US cloud and software, says Forrester</a>
+        <span class="more-meta">The Register · secondary · Jul 17, 2026 · 87/100</span>
+      </li>
+      <li>
+        <a href="https://www.eetimes.com/asml-raises-outlook-plans-more-euv-capacity/" target="_blank" rel="noopener">ASML Raises Outlook, Plans More EUV Capacity</a>
+        <span class="more-meta">EE Times · secondary · Jul 17, 2026 · 82/100</span>
+      </li>
+      <li>
+        <a href="https://semiengineering.com/can-fine-pitch-hybrid-bonding-go-high-volume/" target="_blank" rel="noopener">Can Fine-Pitch Hybrid Bonding Go High Volume?</a>
+        <span class="more-meta">Semiconductor Engineering · secondary · Jul 16, 2026 · 80/100</span>
+      </li>
+      <li>
+        <a href="https://www.eetimes.com/tyl-semi-de-risks-chiplets-with-new-business-model/" target="_blank" rel="noopener">TYLsemi De-Risks Chiplets With New Business Model</a>
+        <span class="more-meta">EE Times · secondary · Jul 15, 2026 · 79/100</span>
+      </li>
+      <li>
+        <a href="https://www.eetimes.com/after-magdeburg-intel-builds-on-ireland-existing-strength/" target="_blank" rel="noopener">After Magdeburg, Intel Builds on Ireland’s Existing Strength</a>
+        <span class="more-meta">EE Times · secondary · Jul 15, 2026 · 76/100</span>
+      </li>
+      <li>
+        <a href="https://www.federalregister.gov/documents/2026/07/16/2026-14341/modernizing-reactor-licensing-safety-oversight-and-siting-practices" target="_blank" rel="noopener">Modernizing Reactor Licensing, Safety Oversight, and Siting Practices</a>
+        <span class="more-meta">US Federal Register — Export Controls · primary · Jul 16, 2026 · 76/100</span>
+      </li>
+      <li>
+        <a href="https://www.federalregister.gov/documents/2026/07/20/2026-14542/notice-of-action-brazils-acts-policies-and-practices-related-to-digital-trade-and-electronic-payment" target="_blank" rel="noopener">Notice of Action: Brazil's Acts, Policies, and Practices Related to Digital Trade and Electronic Payment Services; Unfair, Preferential Tariffs; Anti-Corruption Enforcement; Intellectual Property Protection; Ethanol Market Access; and Illegal Deforestation</a>
+        <span class="more-meta">US Federal Register — Semiconductors · primary · Jul 20, 2026 · 72/100</span>
+      </li>
+      <li>
+        <a href="https://www.federalregister.gov/documents/2026/07/20/2026-14568/imposition-of-additional-sanctions-on-sudan-under-the-chemical-and-biological-weapons-control-and" target="_blank" rel="noopener">Imposition of Additional Sanctions on Sudan Under the Chemical and Biological Weapons Control and Warfare Elimination Act of 1991</a>
+        <span class="more-meta">US Federal Register — Export Controls · primary · Jul 20, 2026 · 72/100</span>
+      </li>
+      <li>
+        <a href="https://semiengineering.com/blog-review-july-15-3/" target="_blank" rel="noopener">Blog Review: July 15</a>
+        <span class="more-meta">Semiconductor Engineering · secondary · Jul 15, 2026 · 72/100</span>
+      </li>
+      <li>
+        <a href="https://www.eetimes.com/massive-stock-full-chain-service-your-global-semiconductor-partner/" target="_blank" rel="noopener">Massive Stock, Full-Chain Service — Your Global Semiconductor Partner</a>
+        <span class="more-meta">EE Times · secondary · Jul 15, 2026 · 71/100</span>
+      </li>
+      <li>
+        <a href="https://www.federalregister.gov/documents/2026/07/20/2026-14539/public-charge-ground-of-inadmissibility" target="_blank" rel="noopener">Public Charge Ground of Inadmissibility</a>
+        <span class="more-meta">US Federal Register — Export Controls · primary · Jul 20, 2026 · 69/100</span>
+      </li>
+      <li>
+        <a href="https://www.whitehouse.gov/presidential-actions/2026/07/modifying-the-grand-staircase-escalante-national-monument/" target="_blank" rel="noopener">Modifying the Grand Staircase-Escalante National Monument</a>
+        <span class="more-meta">The White House — Presidential Actions · primary · Jul 13, 2026 · 67/100</span>
+      </li>
+      <li>
+        <a href="https://www.whitehouse.gov/presidential-actions/2026/07/death-of-senator-lindsey-graham/" target="_blank" rel="noopener">Death of Senator Lindsey Graham</a>
+        <span class="more-meta">The White House — Presidential Actions · primary · Jul 13, 2026 · 67/100</span>
+      </li>
+      <li>
+        <a href="https://www.gov.uk/government/publications/expression-of-interest-airr-heterogeneous-supercomputer-host-site-selection" target="_blank" rel="noopener">Notice: Expression of Interest: AIRR Heterogeneous Supercomputer Host Site Selection</a>
+        <span class="more-meta">UK DSIT — News · primary · Jul 17, 2026 · 66/100</span>
+      </li>
+      <li>
+        <a href="https://semiengineering.com/accelerating-sustainability-with-smart-manufacturing/" target="_blank" rel="noopener">Accelerating Sustainability With Smart Manufacturing</a>
+        <span class="more-meta">Semiconductor Engineering · secondary · Jul 16, 2026 · 65/100</span>
+      </li>
+      <li>
+        <a href="https://www.federalregister.gov/documents/2026/07/15/2026-14208/reforming-and-modernizing-the-nrcs-radiation-protection-framework" target="_blank" rel="noopener">Reforming and Modernizing the NRC's Radiation Protection Framework</a>
+        <span class="more-meta">US Federal Register — Artificial Intelligence · primary · Jul 15, 2026 · 65/100</span>
+      </li>
+      <li>
+        <a href="https://www.federalregister.gov/documents/2026/07/14/2026-14146/request-for-information-training-and-care-delivery-models-for-safe-administration-of-potential" target="_blank" rel="noopener">Request for Information, Training and Care Delivery Models for Safe Administration of Potential FDA-Approved Psychedelic Therapies in Ambulatory Clinical Settings</a>
+        <span class="more-meta">US Federal Register — Artificial Intelligence · primary · Jul 14, 2026 · 65/100</span>
+      </li>
+      <li>
+        <a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPZE96SWdSMW1Rb0JURmRYTWh0RVFqTi01Y1BoeWxBWU9PbmRiTmMwS3JIVXJWUG1TUzZvSHI0MXBmMzVGZnVfS2cySzdHODZCVUo2azNTYmNqMld5YkxzLVpkSUpqbG16TkVNSXNUOThyT0NjY3JtWWNrMlVhZXJPeFd1YXVZcWl2MEE?oc=5" target="_blank" rel="noopener">Mythos and the Coming End of European Digital Sovereignty - Tech Policy Press</a>
+        <span class="more-meta">Tech Policy Press · institute · Jul 14, 2026 · 62/100</span>
+      </li>
+      <li>
+        <a href="https://news.google.com/rss/articles/CBMiXEFVX3lxTE1KeVBHYlFhblZibmp5dkp2NThmc1M5cDc2MXVBeTNScGdFbEJabE1tdHN1ajRadjZMdC1lWGNlMHJPdzZGQ0ZmLURWemZWM0lNb3QzYk4tcHktdTgt?oc=5" target="_blank" rel="noopener">The AI sovereignty problem, from Brussels to Bengaluru - Tech Policy Press</a>
+        <span class="more-meta">Tech Policy Press · institute · Jul 12, 2026 · 62/100</span>
+      </li>
+      <li>
+        <a href="https://www.eetimes.com/why-tl3228-is-the-go-to-standard-chip-powering-true-8k-wireless-gaming-peripherals/" target="_blank" rel="noopener">Why TL3228 Is the Go-To Standard Chip Powering True 8K Wireless Gaming Peripherals</a>
+        <span class="more-meta">EE Times · secondary · Jul 15, 2026 · 62/100</span>
+      </li>
+    </ul>
+  </details>
+
   <footer>
     Surfaced from primary + secondary tech-policy sources · scored for relevance, novelty &amp; carousel-worthiness · matched against your theses.
   </footer>
 </div>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

@@ -28,6 +28,8 @@ _RELATION_VERB = {
     "neutral": "touches",
 }
 
+_NUM_RE = re.compile(r"(\$|€|£)\s?\d[\d,.]*\s?(?:billion|million|trillion)?|\b\d+\s?%|\b\d[\d,.]*\s?(?:billion|million|trillion)\b")
+
 
 def _lead_topic(candidate: Candidate) -> str:
     topics = candidate.cluster.topics
@@ -74,9 +76,36 @@ class HeuristicEditor:
                     candidate=cand,
                     why_it_matters=self._why(cand),
                     carousel_hook=self._hook(cand),
+                    key_takeaways=self._takeaways(cand),
                 )
             )
         return edition
+
+    def _takeaways(self, cand: Candidate) -> list[str]:
+        rep = cand.cluster.representative
+        text = f"{rep.title} {rep.summary}"
+        bullets: list[str] = []
+
+        figures = list(dict.fromkeys(m.group(0) for m in _NUM_RE.finditer(text)))
+        if figures:
+            bullets.append(f"Key figures: {', '.join(figures[:3])}")
+
+        n = len(cand.cluster.source_domains)
+        if n >= 3:
+            bullets.append(f"Already confirmed by {n} independent sources")
+        else:
+            article = "an" if rep.source_tier[:1] in "aeiou" else "a"
+            bullets.append(f"Fresh — first surfaced by {article} {rep.source_tier} source")
+
+        if cand.thesis and cand.thesis.relation != "neutral":
+            verb = _RELATION_VERB.get(cand.thesis.relation, "touches")
+            bullets.append(f"This {verb} your thesis on {_pretty_topic(_lead_topic(cand))}")
+        else:
+            topics = cand.cluster.topics
+            if topics:
+                bullets.append(f"Topic: {_pretty_topic(topics[0])}")
+
+        return bullets[:3]
 
     def _why(self, cand: Candidate) -> str:
         rep = cand.cluster.representative
@@ -100,11 +129,14 @@ who publishes social-media carousels. From the scored candidates, choose exactly
 top {top_n}. Rules:
 - Respect the composite ranking, but ensure topic diversity — avoid multiple picks on \
 the same narrow topic unless one is clearly dominant.
-- For each pick write "why_it_matters" (one crisp sentence on the stakes) and a \
-"carousel_hook" (a punchy opening line for a carousel slide, <=90 chars).
+- For each pick write "why_it_matters" (one crisp sentence on the stakes), a \
+"carousel_hook" (a punchy opening line for a carousel slide, <=90 chars), and \
+"key_takeaways" (2-3 short, concrete bullet points — facts, figures, or stakes a \
+reader should walk away with; each <=100 chars).
 
 Reply with ONLY a JSON array of exactly {top_n} objects, best first:
-[{{"index": n, "why_it_matters": "...", "carousel_hook": "..."}}]. index is 1-based."""
+[{{"index": n, "why_it_matters": "...", "carousel_hook": "...", \
+"key_takeaways": ["...", "..."]}}]. index is 1-based."""
 
 
 class ClaudeEditor:
@@ -125,7 +157,7 @@ class ClaudeEditor:
         try:
             resp = self.client.messages.create(
                 model=self.model,
-                max_tokens=1200,
+                max_tokens=2000,
                 system=[{"type": "text",
                          "text": _SYSTEM_PROMPT.format(top_n=top_n),
                          "cache_control": {"type": "ephemeral"}}],
@@ -137,12 +169,16 @@ class ClaudeEditor:
                 idx = int(pick["index"])
                 if not 1 <= idx <= len(shortlist):
                     continue
+                takeaways = [
+                    str(t).strip() for t in pick.get("key_takeaways", []) if str(t).strip()
+                ]
                 edition.append(
                     EditionItem(
                         rank=rank,
                         candidate=shortlist[idx - 1],
                         why_it_matters=str(pick.get("why_it_matters", "")).strip(),
                         carousel_hook=str(pick.get("carousel_hook", "")).strip(),
+                        key_takeaways=takeaways[:3],
                     )
                 )
             if edition:

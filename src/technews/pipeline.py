@@ -51,6 +51,7 @@ def build_edition(
 ) -> Edition:
     recency_days = int(settings.get("recency_days", 7))
     top_n = int(settings.get("top_n", 5))
+    more_items = int(settings.get("more_items", 20))
     max_items = int(settings.get("max_items_per_day", 120))
     cutoff = datetime.now(timezone.utc) - timedelta(days=recency_days)
 
@@ -77,9 +78,16 @@ def build_edition(
         )
 
     edition_items = editor.select(candidates, top_n)
+    chosen_ids = {item.candidate.cluster.id for item in edition_items}
+    more = sorted(
+        (c for c in candidates if c.cluster.id not in chosen_ids),
+        key=lambda c: c.score.composite,
+        reverse=True,
+    )[:more_items]
     return Edition(
         date=date or datetime.now(timezone.utc).strftime("%Y-%m-%d"),
         items=edition_items,
+        more=more,
         editor=_editor_label(editor),
     )
 
