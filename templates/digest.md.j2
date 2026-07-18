@@ -1,0 +1,24 @@
+# Tech Politics — Daily Top 5 · {{ date }}
+
+_Generated {{ generated_at }} · editor: {{ editor }}_
+
+{% if not items %}
+No items today — sources may be unreachable, or nothing cleared the recency window.
+{% endif %}
+{% for it in items %}
+## {{ it.rank }}. {{ it.title }}
+
+- **Source:** {{ it.source_name }} ({{ it.source_tier }}){% if it.published %} · {{ it.published }}{% endif %}
+- **Link:** {{ it.url }}
+- **Topics:** {{ it.topics | join(', ') if it.topics else '—' }}
+- **Scores:** relevance {{ it.scores.relevance }}/5 · novelty {{ it.scores.novelty }}/5 · carousel {{ it.scores.carousel }}/5 · composite {{ it.composite_pct }}/100 ({{ it.scorer }})
+- **Coverage:** {% if it.is_everywhere %}already everywhere — {{ it.sources_count }} sources{% else %}fresh — {{ it.sources_count }} source{{ 's' if it.sources_count != 1 else '' }}{% endif %}
+{% if it.thesis %}
+- **Thesis:** {{ it.thesis.label }} “{{ it.thesis.claim }}”{% if it.thesis.note %} — {{ it.thesis.note }}{% endif %}
+{% endif %}
+
+{% if it.carousel_hook %}🎞 **Hook:** {{ it.carousel_hook }}{% endif %}
+
+{% if it.why_it_matters %}**Why it matters —** {{ it.why_it_matters }}{% endif %}
+
+{% endfor %}

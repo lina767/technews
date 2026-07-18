@@ -1,0 +1,45 @@
+name: Daily brief
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # 06:00 UTC every day
+  workflow_dispatch: {}     # manual "Run workflow"
+
+permissions:
+  contents: write            # to commit the dated archive back
+
+concurrency:
+  group: daily-brief
+  cancel-in-progress: false
+
+jobs:
+  brief:
+    runs-on: ubuntu-latest
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+      VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: pip install -e .
+
+      - name: Generate today's edition (+ email digest)
+        run: technews run --email
+
+      - name: Commit dated archive
+        run: |
+          git config user.name "technews-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add output/archive output/index.html output/dashboard.html
+          git commit -m "brief: $(date -u +%Y-%m-%d)" || echo "nothing to commit"
+          git push || echo "nothing to push"
+
+      - name: Deploy dashboard to Vercel
+        if: ${{ env.VERCEL_TOKEN != '' }}
+        run: npx --yes vercel@latest deploy ./output --prod --yes --token "$VERCEL_TOKEN"

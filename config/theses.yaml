@@ -1,0 +1,29 @@
+# Your own arguments. Every surfaced item is matched against these — does it
+# support, contradict, extend, or stay neutral to each thesis? Edit freely:
+# add your own claims and the keywords that signal them. `keywords` power the
+# offline heuristic matcher; the Claude matcher reads the full `claim`.
+
+theses:
+  - id: eu-sovereignty-underfunded
+    claim: >-
+      The EU's digital-sovereignty ambitions consistently outpace the actual
+      industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.
+    keywords: [sovereignty, funding, subsidy, chips act, ipcei, investment, billion]
+
+  - id: export-controls-accelerate-decoupling
+    claim: >-
+      US export controls accelerate US–China tech decoupling and domestic
+      substitution in China more than they durably slow China's capabilities.
+    keywords: [export control, bis, decoupling, china, sanctions, restriction, entity list]
+
+  - id: ai-regulation-favors-incumbents
+    claim: >-
+      Comprehensive AI regulation (EU AI Act and successors) entrenches large
+      incumbents by raising compliance costs that startups cannot absorb.
+    keywords: [ai act, compliance, regulation, startup, incumbent, gpai, code of practice]
+
+  - id: chips-reshoring-is-slow-and-costly
+    claim: >-
+      Semiconductor reshoring in the EU and US is slower and more expensive than
+      announced, and depends on subsidies that outlast political attention spans.
+    keywords: [fab, reshoring, tsmc, intel, subsidy, delay, construction, capacity]
