@@ -1,29 +1,84 @@
-# Your own arguments. Every surfaced item is matched against these — does it
-# support, contradict, extend, or stay neutral to each thesis? Edit freely:
-# add your own claims and the keywords that signal them. `keywords` power the
-# offline heuristic matcher; the Claude matcher reads the full `claim`.
+# Your own arguments, drawn from your papers. Every surfaced item is matched
+# against these — does it support, contradict, extend, or stay neutral to each
+# thesis? `keywords` power the offline heuristic matcher; the Claude matcher
+# reads the full `claim`.
+#
+# Sources:
+#  - "Designing for Delivery: How Instrument-Capacity Fit Shapes Semiconductor
+#     Industrial Policy in Taiwan and Germany" (LMU capstone / bachelor thesis)
+#  - "Semiconductor Policy in Taiwan and Germany: Synergy, Context-Moderation,
+#     and the NATO Toolkit" (zenodo 17012392)
+#  - "From Lock-in to Leverage — How RISC-V Diffusion Could Rebalance AI
+#     Hardware Geopolitics" (zenodo 17260577)
+#  - "The Permissibility of Autonomous and Remote-Controlled Weapon Systems
+#     under International Law" (zenodo 18500026) — AI accountability angle
+#  - "Gratitude as Moral Virtue: An Evaluation of Benefactor-Centred Accounts"
+#     (zenodo 18115788) — AI moral-agency angle
 
 theses:
-  - id: eu-sovereignty-underfunded
+  - id: instrument-capacity-fit
     claim: >-
-      The EU's digital-sovereignty ambitions consistently outpace the actual
-      industrial funding it commits, leaving the Chips Act rhetoric ahead of reality.
-    keywords: [sovereignty, funding, subsidy, chips act, ipcei, investment, billion]
+      In semiconductor industrial policy, what determines success is not the
+      volume of subsidies but the fit between policy instruments and a state's
+      administrative capacity — instruments that economize on existing capacity
+      deliver, those that don't stall.
+    keywords: [industrial policy, subsidy, capacity, instrument, chips act,
+               implementation, administrative, policy tool]
 
-  - id: export-controls-accelerate-decoupling
+  - id: delivery-over-announcement
     claim: >-
-      US export controls accelerate US–China tech decoupling and domestic
-      substitution in China more than they durably slow China's capabilities.
-    keywords: [export control, bis, decoupling, china, sanctions, restriction, entity list]
+      Announced semiconductor funding routinely outruns actual disbursement;
+      the real bottleneck is delivery — getting money out the door — not the
+      headline appropriation, so funding volumes are a poor measure of success.
+    keywords: [disbursement, funding, subsidy, delay, backlog, appropriation,
+               spending, billion, allocation, payout]
 
-  - id: ai-regulation-favors-incumbents
+  - id: fragmentation-stalls-delivery
     claim: >-
-      Comprehensive AI regulation (EU AI Act and successors) entrenches large
-      incumbents by raising compliance costs that startups cannot absorb.
-    keywords: [ai act, compliance, regulation, startup, incumbent, gpai, code of practice]
+      Fragmented, multi-level governance (as in Germany and the EU) creates
+      clearance friction that stalls subsidy delivery, whereas concentrated
+      administrations (as in Taiwan) execute their appropriations in full.
+    keywords: [germany, eu, fragmentation, bureaucracy, multi-level, taiwan,
+               tsmc, fab, clearance, coordination]
 
-  - id: chips-reshoring-is-slow-and-costly
+  - id: milestones-beat-authorization-gates
     claim: >-
-      Semiconductor reshoring in the EU and US is slower and more expensive than
-      announced, and depends on subsidies that outlast political attention spans.
-    keywords: [fab, reshoring, tsmc, intel, subsidy, delay, construction, capacity]
+      Milestone-based funding mechanisms (such as the EU Recovery and Resilience
+      Facility) outperform authorization-gate subsidies because they economize
+      on scarce administrative capacity and rescue lagging disbursement.
+    keywords: [milestone, recovery and resilience, rrf, eu funding, mechanism,
+               conditionality, disbursement, ipcei]
+
+  - id: open-isa-rebalances-power
+    claim: >-
+      Open instruction-set architectures like RISC-V reduce lock-in and
+      switching costs, erode proprietary CUDA/GPU dominance, and rebalance
+      AI-hardware geopolitics toward multipolar competition.
+    keywords: [risc-v, open source, cuda, nvidia, gpu, instruction set,
+               lock-in, chip design, arm, ecosystem]
+
+  - id: open-standards-blunt-weaponized-interdependence
+    claim: >-
+      Export controls and proprietary standards are instruments of weaponized
+      interdependence; open architectures blunt that leverage and accelerate
+      decoupling and domestic substitution rather than durably containing rivals.
+    keywords: [export control, weaponized interdependence, decoupling, china,
+               sanctions, entity list, leverage, restriction, substitution]
+
+  - id: ai-autonomy-accountability-gap
+    claim: >-
+      As AI systems act more autonomously they open an accountability gap that
+      human-centric legal doctrines cannot close; the answer is meaningful human
+      control, technical constraints, and strict operator/state liability — not
+      categorical bans, which are politically and practically unachievable.
+    keywords: [autonomous, accountability, liability, human control, oversight,
+               autonomous weapons, laws, ai act, high-risk, responsibility, ban]
+
+  - id: ai-lacks-moral-agency
+    claim: >-
+      Current AI systems lack genuine moral agency, so treating them as moral
+      agents — bearers of rights, virtues, or responsibility — is a category
+      error; AI governance should locate accountability with the humans and
+      institutions behind the systems, not the models themselves.
+    keywords: [moral agency, ai ethics, responsibility, personhood, ai rights,
+               agent, anthropomorphism, alignment, accountability, governance]
