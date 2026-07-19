@@ -236,6 +236,30 @@
   .trend .foot { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
   .trend .src { font-size: 11.5px; color: var(--muted); }
 
+  /* ---------- Thesis Engine ---------- */
+  .sig { background: linear-gradient(180deg, var(--accent-soft), var(--panel)); border-color: color-mix(in srgb, var(--accent) 30%, var(--line)); }
+  .sig .big { font-family: var(--serif); font-size: 19px; line-height: 1.5; }
+  .sig .big em { color: var(--accent); font-style: italic; }
+  .sig .big strong { font-weight: 700; }
+  .thesis-card { padding: 20px 22px; margin-top: 14px; }
+  .th-top { display: flex; gap: 14px; align-items: center; }
+  .th-n { font-family: var(--serif); font-size: 24px; font-weight: 700; color: var(--accent-ink); width: 46px; height: 46px; border-radius: 12px; background: var(--accent-soft); display: grid; place-items: center; flex: 0 0 auto; }
+  .th-name { font-family: var(--serif); font-size: 21px; font-weight: 700; line-height: 1.15; }
+  .th-claim { font-size: 16px; line-height: 1.55; margin: 15px 0 2px; }
+  .th-split { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 15px 0; }
+  @media (max-width: 640px) { .th-split { grid-template-columns: 1fr; } }
+  .th-opt, .th-ref { padding: 12px 14px; border-radius: 11px; font-size: 13px; }
+  .th-opt { background: var(--green-soft); }
+  .th-ref { background: var(--panel-2); border: 1px solid var(--line); }
+  .th-opt p, .th-ref p { margin: 6px 0 0; line-height: 1.55; }
+  .th-opt .klabel { color: var(--green); }
+  .th-angles { margin: 4px 0 6px; }
+  .th-angle { display: flex; gap: 14px; align-items: center; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--line); font-size: 13.5px; line-height: 1.45; }
+  .th-angle:last-child { border-bottom: none; }
+  .th-angle button { flex: 0 0 auto; }
+  .th-src { font-size: 12.5px; color: var(--muted); padding-top: 13px; margin-top: 4px; border-top: 1px solid var(--line); }
+  .th-src a { font-family: var(--mono); font-size: 11.5px; }
+
   .note { font-size: 12px; color: var(--muted); font-style: italic; }
   .spark { display: block; }
   .empty { text-align: center; color: var(--muted); padding: 46px 20px; font-size: 14px; }
@@ -281,6 +305,7 @@
     </div>
     <nav id="nav">
       <a href="#/overview" data-r="overview"><span class="ic">▦</span>Overview</a>
+      <a href="#/theses" data-r="theses"><span class="ic">✎</span>Thesis Engine</a>
       <a href="#/calendar" data-r="calendar"><span class="ic">▤</span>Content Calendar</a>
       <a href="#/hooks" data-r="hooks"><span class="ic">✦</span>Hook Vault</a>
       <a href="#/scheduler" data-r="scheduler"><span class="ic">◷</span>Scheduler</a>
@@ -461,6 +486,106 @@ const SEED = {
       caption: 'The most ambitious document in EU tech policy, in 9 slides. Sources: EuroStack report (Bertelsmann Stiftung, Feb 2025), EP report (471–68), Cloud & AI Development Act (June 3, 2026).',
       hashtags: '#EuroStack #digitalsovereignty #EU #cloud #techpolicy',
       metrics: null
+    },
+    {
+      id: 'p-manifesto', date: '2026-07-26', time: '08:00', platform: 'IG', format: 'Reel',
+      series: 'The Thesis', title: 'The whole point of this account, in 45 seconds', pillar: 'Thesis', status: 'ready', thesis: 'th-open',
+      hook: 'Everyone online is selling you tech fear. I’m here to sell you leverage.',
+      script: 'Talking head, selfie cam, ~50s. Pin this to the profile.\n\n0–3s — HOOK: “Everyone online is selling you tech fear. I’m here to sell you leverage.”\n3–18s — The stance: I’m a political scientist who researches chips, AI, and who controls technology. And I’m an optimist — not the naive kind, the kind that reads the auditor reports anyway.\n18–38s — Four things I’ll argue here: (1) openness beats ownership — Europe’s edge is open standards, not copying NVIDIA. (2) Fit beats firepower — policy works when it matches the state, not when it spends the most. (3) Mind the accountability gap — with autonomous tech the danger is the empty chair, not the machine. (4) Responsibility stays human — AI can’t be blamed, and that’s the good news.\n38–50s — CTA: “Optimistic, sourced, and willing to argue with itself. Follow if that’s your kind of tech account.”',
+      caption: 'My whole thesis in one reel: optimistic sovereignty. Europe’s path isn’t fear or fortress-building — it’s leverage through openness, institutional fit, and keeping humans accountable. Everything here traces back to my own research (links in the Thesis Engine).',
+      hashtags: '#techpolicy #techoptimism #AIresponsibility #digitalsovereignty',
+      metrics: null
+    },
+    {
+      id: 'p-riscv', date: '2026-07-25', time: '08:00', platform: 'IG', format: 'Carousel',
+      series: 'The Thesis', title: 'Make NVIDIA optional: the open-chip case for Europe', pillar: 'Thesis', status: 'ready', thesis: 'th-open',
+      hook: 'Europe keeps trying to build its own NVIDIA. The winning move is to make NVIDIA optional.',
+      script: '9 slides, 4:5. Flagship thesis carousel — based on my RISC-V paper.\n\nSlide 1 — HOOK: “Europe keeps trying to build its own NVIDIA. The winning move is to make NVIDIA optional.”\nSlide 2 — In this carousel: why open chip standards are a sovereignty strategy, not a hobby.\nSlide 3 — The trap: AI runs on NVIDIA GPUs + CUDA. That lock-in is what lets one company — and one government — decide who gets to compute. Economists call it weaponized interdependence.\nSlide 4 — The lever: RISC-V, an OPEN instruction set. Anyone can build a chip on it, license-free. No single owner, no export-control kill switch on the standard itself.\nSlide 5 — Why it rebalances power: open standards cut switching costs. They let Europe — and everyone else — stop being a hostage to one proprietary stack.\nSlide 6 — The optimistic read: Europe’s exit ramp from dependence already exists. Backing open silicon is faster and cheaper than cloning TSMC.\nSlide 7 — The honest read: openness helps rivals too, including China. Leverage from standards is shared, not owned — and only real if Europe backs it consistently.\nSlide 8 — What that means for policy: fund open-hardware ecosystems, not just fabs. Indispensability through openness — own the standard’s momentum, not a walled garden.\nSlide 9 — CTA: “This is from my own research — full paper linked in bio. Save it for the next ‘Europe can’t compete in chips’ take.”',
+      caption: 'My argument, sourced: Europe’s smartest chip play isn’t imitation — it’s open standards. RISC-V could dissolve the lock-in that makes silicon a weapon. Optimistic, but I make the honest counter-case too. Based on my working paper “From Lock-in to Leverage” (zenodo.org/records/17260577).',
+      hashtags: '#RISCV #semiconductors #digitalsovereignty #techpolicy #opensource',
+      metrics: null
+    },
+    {
+      id: 'p-accountability', date: '2026-07-26', time: '17:00', platform: 'IG', format: 'Reel',
+      series: 'Responsible Tech', title: 'The empty-chair problem in autonomous AI', pillar: 'Responsibility', status: 'ready', thesis: 'th-gap',
+      hook: 'The scary part of autonomous AI isn’t the machine. It’s the empty chair where responsibility should sit.',
+      script: 'Talking head, ~60s. Responsible Tech pillar — optimistic but serious.\n\n0–3s — HOOK: “The scary part of autonomous AI isn’t the machine. It’s the empty chair where responsibility should sit.”\n3–20s — The real problem: when a system acts on its own — a drone, a trading bot, a hiring filter — technology races ahead of the question ‘who answers for this?’ That’s the accountability gap.\n20–38s — Why the easy answers fail: banning autonomy outright is politically unrealistic. Adopting it blind is reckless. Both dodge the actual work.\n38–52s — The closeable version: meaningful human control + strict liability. Keep a human genuinely in the loop, and make sure someone is legally answerable. Then autonomy is an asset, not a loophole.\n52–60s — CTA: “Regulation as an enabler, not a brake. From my research on autonomous systems — more in the Thesis Engine. Follow for responsible-tech takes that don’t doom-post.”',
+      caption: 'Optimistic but honest: the danger of autonomous AI is the accountability gap — and it’s closeable by design, with human control plus real liability. Drawn from my paper on autonomous weapon systems under international law (zenodo.org/records/18500026); the logic travels far beyond drones.',
+      hashtags: '#AIresponsibility #AIgovernance #techpolicy #accountability',
+      metrics: null
+    },
+    {
+      id: 'p-fit', date: '2026-07-29', time: '08:00', platform: 'IG', format: 'Carousel',
+      series: 'The Thesis', title: 'Why the same subsidy wins in Taipei and stalls in Berlin', pillar: 'Thesis', status: 'ready', thesis: 'th-fit',
+      hook: 'The Chips Act didn’t fail for lack of money. It failed for lack of fit.',
+      script: '8 slides. Based on my Taiwan–Germany semiconductor-policy paper.\n\nSlide 1 — HOOK: “The Chips Act didn’t fail for lack of money. It failed for lack of fit.”\nSlide 2 — In this carousel: why identical policy tools succeed in Taiwan and stall in Germany.\nSlide 3 — The frame: governments have three levers — information, authority, and money (political scientists call it the NATO toolkit). Everyone reaches for money. Few ask whether their state can actually wield it.\nSlide 4 — Taiwan: corporatist synergy. Tight state–industry coordination means a subsidy lands fast and aligned. The tool fits the hand.\nSlide 5 — Germany: decentralized agility. Federal, deliberative, slower to concentrate force — but flexible. Same subsidy, different physics.\nSlide 6 — The thesis: policy effectiveness depends on matching tools to administrative capacity — not on piling up more instruments. Fit over firepower.\nSlide 7 — Optimistic read: Europe doesn’t need to out-spend anyone; it needs to play to its own institutional strengths. Reflective read: capacity is slow to build and can’t be imported.\nSlide 8 — CTA: “Next time a chip subsidy is announced, ask ‘does the state fit the tool?’ From my own research — paper linked in bio.”',
+      caption: 'Sourced thesis: industrial policy lives or dies on fit with state capacity, not on the size of the cheque. Taiwan’s synergy vs. Germany’s agility, read through Hood’s NATO toolkit. From my paper on semiconductor policy in Taiwan and Germany (zenodo.org/records/17012392).',
+      hashtags: '#ChipsAct #industrialpolicy #semiconductors #EU #techpolicy',
+      metrics: null
+    },
+    {
+      id: 'p-human', date: '2026-07-31', time: '17:00', platform: 'IG', format: 'Reel',
+      series: 'Responsible Tech', title: 'Why AI can’t be blamed — and why that’s good news', pillar: 'Responsibility', status: 'draft', thesis: 'th-human',
+      hook: 'AI can’t be blamed. That’s not a loophole — it’s the whole point.',
+      script: 'Talking head, ~55s. Reflective + optimistic.\n\n0–3s — HOOK: “AI can’t be blamed. That’s not a loophole — it’s the whole point.”\n3–18s — The philosophy, fast: blame and thanks need a moral agent — someone with intentions and goodwill. We thank a nurse; we don’t thank a defibrillator. AI is the defibrillator.\n18–35s — So here’s the move: responsibility never transfers to the system. It stays, fully, with the people who build and deploy it. “The algorithm did it” isn’t an excuse — accountability always has an address.\n35–48s — The reflective flip side: that also means we can’t offload the hard moral calls to AI. The comfort of ‘the system decided’ isn’t available to us — and honestly, it shouldn’t be.\n48–55s — CTA: “Responsible AI starts by refusing to pretend the AI is the responsible one. From my work on moral agency — linked in bio.”',
+      caption: 'A hopeful reframe: because AI has no moral agency, responsibility stays human — which keeps us in the moral loop instead of automating our conscience away. Based on my paper on gratitude and moral agency (zenodo.org/records/18115788).',
+      hashtags: '#AIresponsibility #AIethics #techpolicy #philosophy',
+      metrics: null
+    }
+  ],
+
+  theses: [
+    {
+      id: 'th-open', n: '01', name: 'Openness beats ownership',
+      claim: 'Europe’s real chip leverage isn’t out-building TSMC or cloning NVIDIA — it’s backing open standards. An open instruction set like RISC-V dissolves the proprietary lock-in that turns silicon into a weapon.',
+      optimistic: 'The exit ramp from weaponized interdependence already exists. It’s open-source silicon — and Europe can fund and adopt it now, without waiting a decade for fabs to come online.',
+      reflective: 'Openness cuts both ways: an open ISA lowers the barrier for rivals too. Leverage from standards is shared, not owned — and it only matters if Europe backs it consistently, not just rhetorically.',
+      paper: 'From Lock-in to Leverage: How RISC-V Diffusion Could Rebalance AI Hardware Geopolitics (2025)',
+      doi: '10.5281/zenodo.17260577',
+      angles: [
+        'Explainer carousel: what RISC-V actually is, and why “open instruction set” is a sovereignty story, not a nerd story.',
+        'Thesis reel: “Europe keeps trying to build its own NVIDIA. The winning move is to make NVIDIA optional.”',
+        'Myth-bust: “open source = giving it away” vs. reality — open standards are how smaller players stop being hostages.'
+      ]
+    },
+    {
+      id: 'th-fit', n: '02', name: 'Fit over firepower',
+      claim: 'Industrial policy doesn’t fail from too few subsidies — it fails when the tools don’t match the state’s administrative capacity. The Chips Act’s problem was never mainly the € figure; it was institutional fit.',
+      optimistic: 'Good news for Europe: you don’t need to out-spend the US or China to win. You need to play to your own administrative strengths — Germany’s decentralized agility is an asset, not a defect.',
+      reflective: 'But capacity is slow to build and can’t be copied. You can import Taiwan’s subsidies; you can’t import Taiwan’s corporatist coordination. Honesty about your own state’s limits is where good policy starts.',
+      paper: 'Semiconductor Policy in Taiwan and Germany: Synergy, Context-Moderation, and the NATO Toolkit (2025)',
+      doi: '10.5281/zenodo.17012392',
+      angles: [
+        'Explainer carousel: why the same subsidy wins in Taipei and stalls in Berlin — Hood’s NATO toolkit in plain English.',
+        'Thesis reel: “The Chips Act didn’t fail for lack of money. It failed for lack of fit.”',
+        'Newsjack template: score any new Chips Act 2.0 instrument against state capacity, not headline euros.'
+      ]
+    },
+    {
+      id: 'th-gap', n: '03', name: 'Mind the accountability gap',
+      claim: 'With autonomous systems the real risk isn’t the machine — it’s the gap between what the technology can do and who is answerable when it acts. Neither a blanket ban nor blind adoption closes that gap.',
+      optimistic: 'The gap is closeable by design. Meaningful human control plus strict liability let us keep the benefits of autonomy while keeping it legitimate — regulation as an enabler, not a brake.',
+      reflective: 'Both easy answers are wrong: prohibition is politically unrealistic given real-world utility, and adoption without accountability is reckless. The honest path is the harder middle — and it has to be built, deliberately.',
+      paper: 'The Permissibility of Autonomous and Remote-Controlled Weapon Systems under International Law (2026)',
+      doi: '10.5281/zenodo.18500026',
+      angles: [
+        'Responsibility reel: “The scary part of autonomous AI isn’t the machine — it’s the empty chair where responsibility should sit.”',
+        'Explainer: what “meaningful human control” concretely means, from drones to hiring algorithms.',
+        'Bridge post: how the AI Act’s accountability logic mirrors the debate over autonomous weapons.'
+      ]
+    },
+    {
+      id: 'th-human', n: '04', name: 'Responsibility stays human',
+      claim: 'AI has no moral agency. It can’t be a benefactor, can’t be genuinely blamed or thanked. So responsibility never transfers to the system — it stays, fully, with the humans who build and deploy it.',
+      optimistic: 'That’s empowering, not limiting. It keeps humans in the moral loop and means “the algorithm did it” is never a valid excuse — accountability always has an address.',
+      reflective: 'The flip side: we can’t offload the hard moral calls to AI either. The comfort of “the system decided” isn’t available to us — and shouldn’t be. Responsibility is a feature of being human, not a bug to automate away.',
+      paper: 'Gratitude as Moral Virtue: An Evaluation of Benefactor-Centred Accounts (2025)',
+      doi: '10.5281/zenodo.18115788',
+      angles: [
+        'Responsibility reel: “AI can’t be blamed. That’s not a loophole — it’s the whole point.”',
+        'Reflective carousel: why we thank a nurse but not a defibrillator — moral agency, minus the jargon.',
+        'Hot take (labeled): “responsible AI” starts by refusing to pretend the AI is the responsible one.'
+      ]
     }
   ],
 
@@ -480,7 +605,15 @@ const SEED = {
     { id: 'h13', text: 'France is deleting Teams by 2027.', category: 'Absurdity', status: 'untested', notes: 'Digital sovereignty carousel or standalone short reel.' },
     { id: 'h14', text: 'Europe pays double for electricity — and wants to win the AI race.', category: 'Numbers', status: 'untested', notes: 'Thesis reel Aug 7.' },
     { id: 'h15', text: 'A gigafactory is a power plant with opinions.', category: 'Analogy', status: 'untested', notes: 'InvestAI carousel, slide 5 — could carry its own reel.' },
-    { id: 'h16', text: 'Follow for Part 2 — the part where the money runs out.', category: 'Series retention', status: 'untested', notes: 'Generic mid-tension outro for multi-part explainers.' }
+    { id: 'h16', text: 'Follow for Part 2 — the part where the money runs out.', category: 'Series retention', status: 'untested', notes: 'Generic mid-tension outro for multi-part explainers.' },
+    { id: 'h17', text: 'Europe keeps trying to build its own NVIDIA. The winning move is to make NVIDIA optional.', category: 'Thesis', status: 'untested', notes: 'Flagship RISC-V thesis — my paper, zenodo 17260577.' },
+    { id: 'h18', text: 'Open-source silicon is Europe’s quiet exit from weaponized interdependence.', category: 'Thesis', status: 'untested', notes: 'RISC-V carousel, slide 6.' },
+    { id: 'h19', text: 'The Chips Act didn’t fail for lack of money. It failed for lack of fit.', category: 'Thesis', status: 'untested', notes: 'Taiwan–Germany paper, zenodo 17012392.' },
+    { id: 'h20', text: 'You can copy Taiwan’s subsidies. You can’t copy Taiwan’s state.', category: 'Thesis', status: 'untested', notes: 'Fit-over-firepower angle.' },
+    { id: 'h21', text: 'The scary part of autonomous AI isn’t the machine — it’s the empty chair where responsibility should sit.', category: 'Responsibility', status: 'untested', notes: 'Accountability-gap reel, zenodo 18500026.' },
+    { id: 'h22', text: 'AI can’t be blamed. That’s not a loophole — it’s the whole point.', category: 'Responsibility', status: 'untested', notes: 'Moral-agency reel, zenodo 18115788.' },
+    { id: 'h23', text: '“The algorithm did it” is never going to be a valid excuse. Good.', category: 'Responsibility', status: 'untested', notes: 'Responsibility-stays-human angle.' },
+    { id: 'h24', text: 'Everyone online is selling you tech fear. I’m selling you leverage.', category: 'Thesis', status: 'untested', notes: 'Pinned manifesto reel hook.' }
   ],
 
   competitors: [
@@ -504,7 +637,9 @@ const SEED = {
     { id: 't5', date: '2026-01-14', heat: 2, topic: 'US tech policy', title: 'H200 to China: case-by-case licenses, 25% tariff, Congress revolts', summary: 'BIS codified the Trump reversal Jan 13 (presumption of denial → case-by-case), a 25% advanced-chip tariff followed Jan 14, with ~50% volume cap and third-party testing. AI Overwatch Act would give Congress a license veto. China ordered customs to block H200 imports. VEU exemption for TSMC/Samsung/SK Hynix China fabs expired Dec 31, 2025.', source: 'BIS, Jan 13–14 · Rep. Mast bill', angle: 'The best narrative arc on the beat — both superpowers restricting the same chip. Chip War Weekly #2, timeline graphic.' },
     { id: 't6', date: '2026-05-30', heat: 2, topic: 'Semiconductors', title: 'ASML becomes Europe’s most valuable company ever; MATCH Act looms', summary: 'EUV optimism made ASML Europe’s most valuable company in history. China was ~33% of 2025 sales; the proposed US MATCH Act would bar ASML sales to China entirely. Meanwhile Intel ramps 18A with an ~$8.9B US government stake (~10%).', source: 'Market data · proposed MATCH Act', angle: 'Chip War Weekly #3: Europe’s chokepoint. ‘Indispensability’ thesis gets its poster child.' },
     { id: 't7', date: '2026-02-15', heat: 1, topic: 'Digital sovereignty', title: 'EuroStack momentum: €300B fund proposal, France exits Teams/Zoom by 2027', summary: 'EuroStack (Bertelsmann, Feb 2025, Francesca Bria) proposes a €300B Sovereign Tech Fund by 2035; 80%+ of EU digital tech is imported, US firms hold 85%+ of EU cloud. EP adopted a sovereignty report 471–68. Microsoft told a French hearing it can’t shield EU data from US authorities (CLOUD Act).', source: 'Bertelsmann Stiftung · EP · French Senate', angle: 'The Frankfurt/Seattle hook lives here. Evergreen carousel + Trial Reel A/B — jurisdiction beats vibes.' },
-    { id: 't8', date: '2026-01-20', heat: 1, topic: 'AI industrial policy', title: 'EuroHPC mandate amended: 5 AI gigafactories, €200B InvestAI', summary: 'InvestAI mobilizes up to €200B; up to 5 gigafactories (~100,000 advanced processors each, ~4× current largest EU data centers). EuroHPC’s Jan 2026 mandate amendment makes it the build agency. Structural drags: ~2× US electricity prices; EU champions still rent US compute.', source: 'EuroHPC · AI Continent Action Plan', angle: 'InvestAI carousel Aug 6 + electricity thesis reel Aug 7. Watch for gigafactory site announcements — instant newsjack.' }
+    { id: 't8', date: '2026-01-20', heat: 1, topic: 'AI industrial policy', title: 'EuroHPC mandate amended: 5 AI gigafactories, €200B InvestAI', summary: 'InvestAI mobilizes up to €200B; up to 5 gigafactories (~100,000 advanced processors each, ~4× current largest EU data centers). EuroHPC’s Jan 2026 mandate amendment makes it the build agency. Structural drags: ~2× US electricity prices; EU champions still rent US compute.', source: 'EuroHPC · AI Continent Action Plan', angle: 'InvestAI carousel Aug 6 + electricity thesis reel Aug 7. Watch for gigafactory site announcements — instant newsjack.' },
+    { id: 't9', date: '2026-07-09', heat: 2, topic: 'Semiconductors', title: 'RISC-V momentum builds as lock-in fears push open silicon up the agenda', summary: 'The open instruction-set architecture RISC-V keeps gaining industrial backing as buyers look to cut dependence on proprietary GPU/CUDA stacks and reduce export-control exposure. Increasingly framed as a sovereignty lever, not just a cost play — an open standard has no single owner and no kill switch.', source: 'Industry reporting · your paper (zenodo 17260577)', angle: 'YOUR thesis lane — “Openness beats ownership.” Flagship RISC-V carousel + reel are already queued (Jul 25–26). Optimistic beat: Europe’s exit ramp already exists; honest beat: openness helps rivals too.' },
+    { id: 't10', date: '2026-06-18', heat: 1, topic: 'AI governance', title: 'AI liability & accountability back on the EU agenda', summary: 'As the AI Act’s transparency and GPAI duties near enforcement, the harder question resurfaces: who is answerable when autonomous systems act? Debates over meaningful human control and liability echo the long-running argument over autonomous weapons.', source: 'Policy debate · your paper (zenodo 18500026)', angle: 'YOUR thesis lane — “Mind the accountability gap.” Responsible-Tech reel queued Jul 26. Frame the gap as closeable by design (human control + strict liability), not a reason to fear autonomy.' }
   ]
 };
 
@@ -574,7 +709,7 @@ function fallbackCopy(text, done) {
 /* ============================== Router ============================== */
 
 const PAGES = {
-  overview: renderOverview, calendar: renderCalendar, hooks: renderHooks,
+  overview: renderOverview, theses: renderTheses, calendar: renderCalendar, hooks: renderHooks,
   scheduler: renderScheduler, analytics: renderAnalytics,
   competitors: renderCompetitors, trending: renderTrending
 };
@@ -666,6 +801,11 @@ function renderOverview() {
         '</div>' +
       '</div>' +
       '<div style="display:grid; gap:14px;">' +
+        '<div class="card pad sig">' +
+          '<div class="klabel" style="margin-bottom:8px;">Your signature POV</div>' +
+          '<div style="font-family:var(--serif); font-size:16px; line-height:1.5;">Optimistic sovereignty — leverage through <em style="color:var(--accent)">openness, fit, and human accountability.</em></div>' +
+          '<div class="stat-s" style="margin-top:8px;">' + state.theses.length + ' standing theses from your own research power the content. <a href="#/theses">Open the Thesis Engine →</a></div>' +
+        '</div>' +
         '<div class="card pad">' +
           '<div class="klabel" style="margin-bottom:8px;">North star</div>' +
           '<div style="font-family:var(--serif); font-size:17px; line-height:1.45;">Design every post to be <em style="color:var(--accent)">sent to one specific person.</em></div>' +
@@ -780,6 +920,7 @@ function openEditor(id, prefill) {
   $('#modalCard').innerHTML =
     '<h2>' + (id ? 'Edit post' : 'New post') + '</h2>' +
     '<form class="frm" id="postForm" data-id="' + esc(id || '') + '">' +
+      '<input type="hidden" name="thesis" value="' + esc(p.thesis || '') + '">' +
       '<label><span class="klabel">Title</span><input name="title" required value="' + esc(p.title) + '" placeholder="Chip War Weekly #5 — …"></label>' +
       '<div class="row3">' +
         '<label><span class="klabel">Date</span><input name="date" type="date" required value="' + esc(p.date) + '"></label>' +
@@ -788,11 +929,11 @@ function openEditor(id, prefill) {
       '</div>' +
       '<div class="row3">' +
         '<label><span class="klabel">Format</span><select name="format">' + sel(['Reel','Carousel','Story'], p.format) + '</select></label>' +
-        '<label><span class="klabel">Pillar</span><select name="pillar">' + sel(['Explainer','Newsjack','Thesis','Myth-bust','Behind the policy'], p.pillar) + '</select></label>' +
+        '<label><span class="klabel">Pillar</span><select name="pillar">' + sel(['Explainer','Newsjack','Thesis','Responsibility','Myth-bust','Behind the policy'], p.pillar) + '</select></label>' +
         '<label><span class="klabel">Status</span><select name="status">' + sel(STATUSES, p.status) + '</select></label>' +
       '</div>' +
       '<label><span class="klabel">Series (optional)</span><input name="series" value="' + esc(p.series) + '" placeholder="Chip War Weekly"></label>' +
-      '<label><span class="klabel">Hook — first 3 seconds / slide 1</span><textarea name="hook" required>' + esc(p.hook) + '</textarea></label>' +
+      '<label><span class="klabel">Hook — first 3 seconds / slide 1</span><textarea name="hook" placeholder="Write the scroll-stopping first line (drafts can leave this for later)">' + esc(p.hook) + '</textarea></label>' +
       '<label><span class="klabel">Full script / slide outline</span><textarea name="script" class="tall">' + esc(p.script) + '</textarea></label>' +
       '<label><span class="klabel">Caption</span><textarea name="caption">' + esc(p.caption) + '</textarea></label>' +
       '<label><span class="klabel">Hashtags (3–5, highly relevant)</span><input name="hashtags" value="' + esc(p.hashtags) + '" placeholder="#techpolicy #chipwar"></label>' +
@@ -809,7 +950,7 @@ function submitEditor(form) {
   const fd = new FormData(form);
   const id = form.dataset.id;
   const vals = {};
-  ['title','date','time','platform','format','pillar','status','series','hook','script','caption','hashtags'].forEach(k => vals[k] = String(fd.get(k) || '').trim());
+  ['title','date','time','platform','format','pillar','status','series','hook','script','caption','hashtags','thesis'].forEach(k => vals[k] = String(fd.get(k) || '').trim());
   if (!vals.title || !vals.date) return;
   if (id) {
     const p = byId(id); if (!p) return;
@@ -834,7 +975,7 @@ function renderHooks() {
       '<form class="frm" id="hookForm" style="grid-template-columns: 1fr 170px auto; display:grid; gap:10px; align-items:end;">' +
         '<label><span class="klabel">New hook</span><input name="text" required placeholder="The one number Brussels hopes you never compare…"></label>' +
         '<label><span class="klabel">Category</span><select name="category">' +
-          ['Information gap','Numbers','Myth vs. Reality','Newsjack','Analogy','Absurdity','Series retention'].map(c => '<option>' + c + '</option>').join('') +
+          ['Thesis','Responsibility','Information gap','Numbers','Myth vs. Reality','Newsjack','Analogy','Absurdity','Series retention'].map(c => '<option>' + c + '</option>').join('') +
         '</select></label>' +
         '<button type="submit" class="btn primary">Add</button>' +
       '</form>' +
@@ -1002,6 +1143,56 @@ function draftFromTrend(id) {
   });
 }
 
+/* ============================== Thesis Engine ============================== */
+
+function renderTheses() {
+  return pageHead('Thesis Engine', 'Your arguments, <em>on the record.</em>',
+      'The standing arguments that make this account yours — drawn from your own research, each with an optimistic read and an honest counter-read. Substance is the moat: lead with theses, cite named sources, and every angle here drops straight into the calendar.',
+      '') +
+    '<div class="card pad sig">' +
+      '<div class="klabel" style="margin-bottom:8px;">Signature stance</div>' +
+      '<div class="big"><strong>Optimistic sovereignty.</strong> Europe’s edge isn’t fear or fortress-building — it’s <em>leverage through openness, institutional fit, and keeping humans accountable.</em> Positive by default, reflective on purpose: every thesis below carries its own honest counter-argument.</div>' +
+    '</div>' +
+    state.theses.map(t => {
+      const n = state.posts.filter(p => p.thesis === t.id).length;
+      return '<div class="card thesis-card">' +
+        '<div class="th-top"><span class="th-n">' + esc(t.n) + '</span>' +
+          '<div><div class="th-name">' + esc(t.name) + '</div>' +
+          '<div class="klabel" style="margin-top:3px;">' + (n ? n + ' post' + (n === 1 ? '' : 's') + ' in the pipeline advance this' : 'no posts yet — draft one below') + '</div></div></div>' +
+        '<p class="th-claim">' + esc(t.claim) + '</p>' +
+        '<div class="th-split">' +
+          '<div class="th-opt"><div class="klabel">✦ Optimistic read</div><p>' + esc(t.optimistic) + '</p></div>' +
+          '<div class="th-ref"><div class="klabel">◑ Reflective read</div><p>' + esc(t.reflective) + '</p></div>' +
+        '</div>' +
+        '<div class="th-angles"><div class="klabel" style="margin-bottom:2px;">Content angles</div>' +
+          t.angles.map((a, i) => '<div class="th-angle"><span>' + esc(a) + '</span>' +
+            '<button class="btn sm" data-action="draft-thesis" data-id="' + t.id + '" data-i="' + i + '">Draft it →</button></div>').join('') +
+        '</div>' +
+        '<div class="th-src">Source · <em>' + esc(t.paper) + '</em> · ' +
+          '<a href="https://doi.org/' + esc(t.doi) + '" target="_blank" rel="noopener">' + esc(t.doi) + '</a></div>' +
+      '</div>';
+    }).join('');
+}
+
+function draftFromThesis(id, i) {
+  const t = state.theses.find(x => x.id === id); if (!t) return;
+  const angle = t.angles[Number(i)] || '';
+  const d = new Date(); d.setDate(d.getDate() + 1);
+  const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  const isReel = /reel|hot take/i.test(angle);
+  const responsibility = (id === 'th-gap' || id === 'th-human');
+  openEditor(null, {
+    date: ds, time: isReel ? '17:00' : '08:00', format: isReel ? 'Reel' : 'Carousel',
+    pillar: responsibility ? 'Responsibility' : 'Thesis', status: 'draft',
+    series: responsibility ? 'Responsible Tech' : 'The Thesis', thesis: id,
+    title: t.name + ' — ' + (isReel ? 'reel' : 'carousel'),
+    hook: '',
+    script: 'THESIS: ' + t.claim + '\n\nAngle: ' + angle + '\n\nOptimistic beat: ' + t.optimistic + '\n\nReflective beat: ' + t.reflective + '\n\nSlide 1 — HOOK:\nSlide 2 — …',
+    caption: 'Based on my research: ' + t.paper + ' (' + t.doi + ').',
+    hashtags: responsibility ? '#AIresponsibility #techpolicy #techoptimism' : '#techpolicy #digitalsovereignty #techoptimism'
+  });
+}
+
 /* ============================== Events ============================== */
 
 document.addEventListener('click', e => {
@@ -1040,6 +1231,7 @@ document.addEventListener('click', e => {
     if (confirm('Remove this hook from the vault?')) { state.hooks = state.hooks.filter(x => x.id !== id); save(); render(); }
   }
   else if (a === 'draft-trend') draftFromTrend(id);
+  else if (a === 'draft-thesis') draftFromThesis(id, el.dataset.i);
   else if (a === 'cal-prev') { calM--; if (calM < 0) { calM = 11; calY--; } render(); }
   else if (a === 'cal-next') { calM++; if (calM > 11) { calM = 0; calY++; } render(); }
   else if (a === 'cal-today') { const d = new Date(); calY = d.getFullYear(); calM = d.getMonth(); render(); }
