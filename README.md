@@ -78,6 +78,31 @@ technews run --email
 
 Without the key, `--email` / `notify` render the HTML but don't send.
 
+## Content Studio (`output/platform/`)
+
+A companion single-page app for running the **tech-policy Instagram account**
+end to end — deployed alongside the dashboard at `/platform`:
+
+- **Overview** — queue counts, weekly cadence tracker (3–5 Reels / 2–3
+  carousels), and the north-star sends-per-reach metric.
+- **Content Calendar** — monthly grid; every slot shows date + time, platform,
+  and hook; clicking a slot opens a side panel with the full script and caption.
+- **Hook Vault** — categorized hook library with a Trial-Reel status lifecycle
+  (untested → testing → winner → retired) and one-click copy.
+- **Scheduler** — 14-day publish queue with draft → ready → scheduled → posted
+  statuses.
+- **Analytics** — per-post reach/likes/sends/saves entry with computed
+  sends-per-reach and saves-per-reach against directional benchmarks.
+- **Competitor Tracker** — the mid-2026 competitive map with a "your edge" note
+  per account.
+- **What's Trending** — the current story pipeline with newsjack angles; "Draft
+  it" drops a pre-filled post into the calendar.
+
+Zero-dependency vanilla HTML/CSS/JS, light + dark theme, ships with a seeded
+four-week launch plan (fully sourced scripts and captions); edits persist in
+`localStorage`, and "Reset to seed data" restores the plan. Open
+`output/platform/index.html` directly in a browser — no build step.
+
 ## Deploy (Vercel) + daily automation
 
 The dashboard is a single self-contained HTML file — host it anywhere static.

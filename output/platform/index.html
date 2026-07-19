@@ -1,0 +1,1084 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Sovereignty Brief · Content Studio</title>
+<meta name="description" content="Content operations studio for a tech-policy Instagram account: calendar, hook vault, scheduler, analytics, competitor tracker, and trend radar.">
+<style>
+  :root {
+    --bg: #faf9f5; --panel: #ffffff; --panel-2: #f4f2ec; --ink: #1a1917; --muted: #75726b;
+    --line: #e8e5dd; --line-strong: #d9d5ca; --accent: #c15f3c; --accent-ink: #a34d2e;
+    --accent-soft: #f6e9e1; --green: #3d7a5c; --green-soft: #e6efe8; --amber: #a3730a;
+    --amber-soft: #f7eed8; --blue: #3d6b8f; --blue-soft: #e5edf3;
+    --shadow: 0 1px 2px rgba(26,25,23,.05), 0 10px 30px rgba(26,25,23,.06);
+    --shadow-lg: 0 4px 12px rgba(26,25,23,.08), 0 24px 60px rgba(26,25,23,.14);
+    --serif: "Iowan Old Style", "Palatino Linotype", Charter, Georgia, serif;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #16150f; --panel: #201f17; --panel-2: #262419; --ink: #ece8de; --muted: #a29c8d;
+      --line: #302d21; --line-strong: #423e2e; --accent: #e0855b; --accent-ink: #eb9a74;
+      --accent-soft: #362317; --green: #79b894; --green-soft: #1f2e24; --amber: #d9a94e;
+      --amber-soft: #33290f; --blue: #86aecd; --blue-soft: #1c2833;
+      --shadow: 0 1px 2px rgba(0,0,0,.35), 0 10px 30px rgba(0,0,0,.35);
+      --shadow-lg: 0 4px 12px rgba(0,0,0,.4), 0 24px 60px rgba(0,0,0,.55);
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 15px/1.55 var(--sans); -webkit-font-smoothing: antialiased;
+  }
+  ::selection { background: var(--accent-soft); }
+  button { font: inherit; color: inherit; }
+  a { color: var(--accent); }
+
+  .app { display: flex; min-height: 100vh; }
+
+  /* ---------- Sidebar ---------- */
+  .sidebar {
+    flex: 0 0 236px; border-right: 1px solid var(--line); padding: 26px 18px 20px;
+    display: flex; flex-direction: column; gap: 26px; position: sticky; top: 0; height: 100vh;
+    background: var(--bg);
+  }
+  .brand .word { font-family: var(--serif); font-size: 21px; font-weight: 700; letter-spacing: -.01em; line-height: 1.15; }
+  .brand .word em { font-style: italic; color: var(--accent); }
+  .brand .tag { font-family: var(--mono); font-size: 10px; letter-spacing: .18em; text-transform: uppercase; color: var(--muted); margin-top: 7px; }
+  .who { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--panel); }
+  .who .ava { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), #8f4326); color: #fff; display: grid; place-items: center; font-weight: 700; font-size: 12px; flex: 0 0 auto; }
+  .who .nm { font-size: 13px; font-weight: 650; line-height: 1.2; }
+  .who .hd { font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
+  nav { display: flex; flex-direction: column; gap: 2px; }
+  nav a {
+    display: flex; align-items: center; gap: 10px; padding: 8px 11px; border-radius: 9px;
+    font-family: var(--mono); font-size: 11.5px; letter-spacing: .1em; text-transform: uppercase;
+    color: var(--muted); text-decoration: none; border: 1px solid transparent;
+  }
+  nav a .ic { width: 15px; text-align: center; font-family: var(--sans); font-size: 13px; opacity: .85; }
+  nav a:hover { color: var(--ink); background: var(--panel); }
+  nav a.on { color: var(--accent-ink); background: var(--accent-soft); border-color: color-mix(in srgb, var(--accent) 25%, transparent); font-weight: 600; }
+  .side-foot { margin-top: auto; display: flex; flex-direction: column; gap: 8px; font-size: 12px; color: var(--muted); }
+  .side-foot a { color: var(--muted); text-decoration: none; }
+  .side-foot a:hover { color: var(--accent); }
+  .side-foot .rst { background: none; border: none; padding: 0; text-align: left; cursor: pointer; font-size: 12px; color: var(--muted); }
+  .side-foot .rst:hover { color: var(--accent); }
+
+  /* ---------- Main ---------- */
+  main { flex: 1; min-width: 0; padding: 30px 36px 80px; max-width: 1120px; }
+  .page-head { margin-bottom: 22px; }
+  .crumb { font-family: var(--mono); font-size: 10.5px; letter-spacing: .18em; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; }
+  h1.title { font-family: var(--serif); font-size: 32px; margin: 0 0 6px; letter-spacing: -.01em; line-height: 1.1; }
+  h1.title em { font-style: italic; color: var(--accent); }
+  .lede { color: var(--muted); font-size: 14px; max-width: 62ch; }
+  .headrow { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+  .card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow); }
+  .pad { padding: 18px 20px; }
+  .grid { display: grid; gap: 14px; }
+  .cols-2 { grid-template-columns: 1fr 1fr; }
+  .cols-3 { grid-template-columns: repeat(3, 1fr); }
+  .cols-4 { grid-template-columns: repeat(4, 1fr); }
+  @media (max-width: 1100px) { .cols-4 { grid-template-columns: repeat(2, 1fr); } .cols-3 { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 700px) { .cols-2, .cols-3, .cols-4 { grid-template-columns: 1fr; } }
+
+  .klabel { font-family: var(--mono); font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); }
+  .stat-n { font-family: var(--serif); font-size: 30px; font-weight: 700; margin-top: 6px; line-height: 1; }
+  .stat-n small { font-size: 15px; color: var(--muted); font-weight: 400; font-family: var(--sans); }
+  .stat-s { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+  .btn {
+    display: inline-flex; align-items: center; gap: 7px; padding: 8px 14px; border-radius: 10px;
+    border: 1px solid var(--line-strong); background: var(--panel); cursor: pointer; font-size: 13px;
+    font-weight: 600; text-decoration: none; color: var(--ink); transition: border-color .12s, background .12s;
+  }
+  .btn:hover { border-color: var(--accent); color: var(--accent-ink); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn.primary:hover { filter: brightness(1.06); color: #fff; }
+  .btn.sm { padding: 4px 10px; font-size: 12px; border-radius: 8px; }
+  .btn.ghost { border-color: transparent; background: transparent; color: var(--muted); }
+  .btn.ghost:hover { color: var(--accent-ink); }
+
+  .pill { display: inline-block; font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; padding: 3px 8px; border-radius: 6px; font-weight: 600; }
+  .pill.reel { background: var(--accent-soft); color: var(--accent-ink); }
+  .pill.carousel { background: var(--green-soft); color: var(--green); }
+  .pill.story { background: var(--amber-soft); color: var(--amber); }
+  .pill.neutral { background: var(--panel-2); color: var(--muted); }
+  .pill.blue { background: var(--blue-soft); color: var(--blue); }
+
+  .st { display: inline-flex; align-items: center; gap: 5px; font-family: var(--mono); font-size: 10px; letter-spacing: .08em; text-transform: uppercase; padding: 3px 9px; border-radius: 20px; border: 1px solid var(--line-strong); color: var(--muted); background: transparent; cursor: pointer; }
+  .st .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--line-strong); }
+  .st.draft .dot { background: var(--muted); }
+  .st.ready .dot { background: var(--amber); }
+  .st.scheduled .dot { background: var(--blue); }
+  .st.posted .dot { background: var(--green); }
+  .st.posted { color: var(--green); border-color: color-mix(in srgb, var(--green) 40%, transparent); }
+  .st.scheduled { color: var(--blue); }
+
+  /* ---------- Calendar ---------- */
+  .cal-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+  .cal-nav { display: flex; align-items: center; gap: 8px; }
+  .cal-month { font-family: var(--serif); font-size: 19px; font-weight: 700; min-width: 170px; }
+  .cal-meta { font-family: var(--mono); font-size: 10.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+  .cal { border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--panel); box-shadow: var(--shadow); }
+  .cal-head { display: grid; grid-template-columns: repeat(7, 1fr); background: var(--panel-2); border-bottom: 1px solid var(--line); }
+  .cal-head div { padding: 8px 10px; font-family: var(--mono); font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--muted); text-align: left; }
+  .cal-grid { display: grid; grid-template-columns: repeat(7, 1fr); }
+  .cal-cell { min-height: 104px; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); padding: 7px 8px; position: relative; }
+  .cal-cell:nth-child(7n) { border-right: none; }
+  .cal-cell.out { background: color-mix(in srgb, var(--panel-2) 55%, var(--panel)); }
+  .cal-cell .dnum { font-size: 11.5px; color: var(--muted); font-weight: 600; }
+  .cal-cell.today .dnum { display: inline-grid; place-items: center; min-width: 20px; height: 20px; border-radius: 7px; background: var(--accent); color: #fff; padding: 0 4px; }
+  .slot {
+    margin-top: 5px; padding: 5px 7px; border-radius: 7px; cursor: pointer; border: 1px solid transparent;
+    font-family: var(--mono); font-size: 9.5px; line-height: 1.45; letter-spacing: .02em;
+  }
+  .slot b { display: block; font-size: 10px; letter-spacing: .06em; }
+  .slot.reel { background: var(--accent-soft); color: var(--accent-ink); }
+  .slot.carousel { background: var(--green-soft); color: var(--green); }
+  .slot.story { background: var(--amber-soft); color: var(--amber); }
+  .slot:hover { border-color: currentColor; }
+  .slot .hk { font-family: var(--sans); font-size: 10.5px; color: var(--ink); letter-spacing: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; margin-top: 1px; }
+  .legend { display: flex; gap: 14px; margin-top: 12px; font-size: 11.5px; color: var(--muted); flex-wrap: wrap; }
+  .legend i { display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 5px; }
+
+  /* ---------- Side panel ---------- */
+  .scrim { position: fixed; inset: 0; background: rgba(20,18,14,.4); opacity: 0; pointer-events: none; transition: opacity .18s; z-index: 40; }
+  .scrim.open { opacity: 1; pointer-events: auto; }
+  .panel {
+    position: fixed; top: 0; right: 0; bottom: 0; width: min(480px, 94vw); background: var(--panel);
+    border-left: 1px solid var(--line); box-shadow: var(--shadow-lg); z-index: 50; transform: translateX(103%);
+    transition: transform .22s cubic-bezier(.32,.72,.35,1); display: flex; flex-direction: column;
+  }
+  .panel.open { transform: translateX(0); }
+  .panel-head { padding: 20px 22px 14px; border-bottom: 1px solid var(--line); }
+  .panel-body { padding: 18px 22px 30px; overflow-y: auto; flex: 1; }
+  .panel-x { position: absolute; top: 14px; right: 14px; width: 30px; height: 30px; border-radius: 9px; border: 1px solid var(--line); background: var(--panel); cursor: pointer; color: var(--muted); }
+  .panel-x:hover { color: var(--accent); border-color: var(--accent); }
+  .panel h2 { font-family: var(--serif); font-size: 21px; margin: 10px 0 4px; line-height: 1.25; padding-right: 30px; }
+  .panel .when { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .06em; }
+  .fld { margin-top: 18px; }
+  .fld .klabel { display: flex; justify-content: space-between; align-items: center; margin-bottom: 7px; }
+  .copybtn { font-family: var(--mono); font-size: 9.5px; letter-spacing: .08em; text-transform: uppercase; background: none; border: 1px solid var(--line-strong); border-radius: 6px; padding: 2px 8px; cursor: pointer; color: var(--muted); }
+  .copybtn:hover { color: var(--accent-ink); border-color: var(--accent); }
+  .hookbox { border-left: 3px solid var(--accent); background: var(--accent-soft); padding: 10px 13px; border-radius: 0 9px 9px 0; font-weight: 600; font-size: 14.5px; }
+  .prose { white-space: pre-wrap; font-size: 13.5px; line-height: 1.65; background: var(--panel-2); border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px; }
+  .tags { font-family: var(--mono); font-size: 12px; color: var(--blue); }
+  .panel-actions { display: flex; gap: 8px; margin-top: 22px; flex-wrap: wrap; }
+
+  /* ---------- Modal ---------- */
+  .modal { position: fixed; inset: 0; display: none; place-items: center; z-index: 60; padding: 20px; }
+  .modal.open { display: grid; }
+  .modal .m-card { width: min(640px, 96vw); max-height: 92vh; overflow-y: auto; background: var(--panel); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow-lg); padding: 24px 26px; position: relative; z-index: 61; }
+  .m-card h2 { font-family: var(--serif); margin: 0 0 16px; font-size: 22px; }
+  .frm { display: grid; gap: 13px; }
+  .frm .row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .frm .row3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+  @media (max-width: 560px) { .frm .row, .frm .row3 { grid-template-columns: 1fr; } }
+  .frm label { display: block; }
+  .frm .klabel { margin-bottom: 5px; display: block; }
+  .frm input, .frm select, .frm textarea {
+    width: 100%; padding: 8px 11px; border: 1px solid var(--line-strong); border-radius: 9px;
+    background: var(--bg); color: var(--ink); font: 13.5px/1.5 var(--sans);
+  }
+  .frm textarea { resize: vertical; min-height: 64px; }
+  .frm textarea.tall { min-height: 130px; }
+  .frm input:focus, .frm select:focus, .frm textarea:focus { outline: 2px solid color-mix(in srgb, var(--accent) 45%, transparent); border-color: var(--accent); }
+  .frm-foot { display: flex; justify-content: flex-end; gap: 9px; margin-top: 6px; }
+
+  /* ---------- Lists / tables ---------- */
+  .rowline { display: flex; align-items: center; gap: 12px; padding: 12px 4px; border-bottom: 1px solid var(--line); }
+  .rowline:last-child { border-bottom: none; }
+  .rowline .grow { flex: 1; min-width: 0; }
+  .rowline .t { font-weight: 650; font-size: 14px; line-height: 1.35; }
+  .rowline .s { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .daygroup { margin-bottom: 6px; }
+  .daygroup > .klabel { display: block; padding: 12px 4px 4px; }
+
+  table.tbl { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .tbl th { font-family: var(--mono); font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line-strong); white-space: nowrap; }
+  .tbl td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: middle; }
+  .tbl tr:last-child td { border-bottom: none; }
+  .tbl input.mx { width: 76px; padding: 5px 8px; border: 1px solid var(--line-strong); border-radius: 7px; background: var(--bg); color: var(--ink); font: 12.5px var(--mono); text-align: right; }
+  .rate { font-family: var(--mono); font-size: 12.5px; font-weight: 700; }
+  .rate.good { color: var(--green); } .rate.mid { color: var(--amber); } .rate.low { color: var(--muted); }
+  .tblwrap { overflow-x: auto; }
+
+  .hookline { display: flex; gap: 12px; align-items: flex-start; padding: 13px 4px; border-bottom: 1px solid var(--line); }
+  .hookline:last-child { border-bottom: none; }
+  .hookline .txt { flex: 1; font-family: var(--serif); font-size: 15.5px; line-height: 1.45; }
+  .hookline .meta { display: flex; gap: 8px; align-items: center; margin-top: 6px; flex-wrap: wrap; }
+  .hstat { font-family: var(--mono); font-size: 9.5px; letter-spacing: .1em; text-transform: uppercase; border: 1px solid var(--line-strong); border-radius: 20px; padding: 2px 9px; cursor: pointer; background: none; color: var(--muted); }
+  .hstat.winner { color: var(--green); border-color: color-mix(in srgb, var(--green) 45%, transparent); background: var(--green-soft); }
+  .hstat.testing { color: var(--amber); border-color: color-mix(in srgb, var(--amber) 45%, transparent); background: var(--amber-soft); }
+  .hstat.retired { text-decoration: line-through; opacity: .6; }
+
+  .comp { display: flex; gap: 14px; padding: 15px 4px; border-bottom: 1px solid var(--line); align-items: flex-start; }
+  .comp:last-child { border-bottom: none; }
+  .comp .mono-n { font-family: var(--mono); font-size: 13px; font-weight: 700; white-space: nowrap; min-width: 74px; text-align: right; color: var(--accent-ink); }
+  .comp .nm { font-weight: 700; font-size: 14.5px; }
+  .comp .lane { font-size: 12.5px; color: var(--muted); margin-top: 2px; }
+  .comp .gap { font-size: 13px; margin-top: 7px; padding: 8px 11px; background: var(--panel-2); border-left: 2px solid var(--accent); border-radius: 0 8px 8px 0; }
+  .comp .gap b { color: var(--accent-ink); }
+
+  .trend { padding: 16px 20px; }
+  .trend .d { font-family: var(--mono); font-size: 10.5px; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .heat { display: inline-flex; gap: 2px; }
+  .heat i { width: 5px; height: 11px; border-radius: 2px; background: var(--line-strong); }
+  .heat[data-h="3"] i, .heat[data-h="2"] i:nth-child(-n+2), .heat[data-h="1"] i:first-child { background: var(--accent); }
+  .trend h3 { font-family: var(--serif); font-size: 18px; margin: 8px 0 6px; line-height: 1.3; }
+  .trend p { margin: 0; font-size: 13.5px; color: var(--ink); }
+  .trend .angle { margin-top: 10px; font-size: 13px; padding: 9px 12px; background: var(--accent-soft); border-radius: 9px; }
+  .trend .angle b { color: var(--accent-ink); font-family: var(--mono); font-size: 10px; letter-spacing: .12em; text-transform: uppercase; margin-right: 6px; }
+  .trend .foot { display: flex; justify-content: space-between; align-items: center; margin-top: 12px; }
+  .trend .src { font-size: 11.5px; color: var(--muted); }
+
+  .note { font-size: 12px; color: var(--muted); font-style: italic; }
+  .spark { display: block; }
+  .empty { text-align: center; color: var(--muted); padding: 46px 20px; font-size: 14px; }
+  .empty .big { font-family: var(--serif); font-size: 19px; color: var(--ink); margin-bottom: 6px; }
+
+  #toast {
+    position: fixed; bottom: 26px; left: 50%; transform: translate(-50%, 20px); opacity: 0;
+    background: var(--ink); color: var(--bg); font-size: 13px; font-weight: 600; padding: 9px 18px;
+    border-radius: 22px; pointer-events: none; transition: all .2s; z-index: 90;
+  }
+  #toast.show { opacity: 1; transform: translate(-50%, 0); }
+
+  .weekbar { display: flex; gap: 6px; align-items: center; }
+  .weekbar .seg { height: 8px; flex: 1; border-radius: 4px; background: var(--line); }
+  .weekbar .seg.f { background: var(--accent); }
+  .weekbar .seg.f.g { background: var(--green); }
+
+  @media (max-width: 900px) {
+    .app { flex-direction: column; }
+    .sidebar { position: static; height: auto; flex: none; border-right: none; border-bottom: 1px solid var(--line); padding: 18px 16px 12px; gap: 14px; }
+    nav { flex-direction: row; overflow-x: auto; gap: 4px; padding-bottom: 4px; }
+    nav a { white-space: nowrap; }
+    .who, .side-foot { display: none; }
+    main { padding: 22px 16px 60px; }
+    .cal-cell { min-height: 78px; }
+    .slot .hk { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="word">The Sovereignty <em>Brief.</em></div>
+      <div class="tag">Content Studio</div>
+    </div>
+    <div class="who">
+      <div class="ava">LB</div>
+      <div>
+        <div class="nm">Lina Braun</div>
+        <div class="hd">@sovereigntybrief</div>
+      </div>
+    </div>
+    <nav id="nav">
+      <a href="#/overview" data-r="overview"><span class="ic">▦</span>Overview</a>
+      <a href="#/calendar" data-r="calendar"><span class="ic">▤</span>Content Calendar</a>
+      <a href="#/hooks" data-r="hooks"><span class="ic">✦</span>Hook Vault</a>
+      <a href="#/scheduler" data-r="scheduler"><span class="ic">◷</span>Scheduler</a>
+      <a href="#/analytics" data-r="analytics"><span class="ic">▥</span>Analytics</a>
+      <a href="#/competitors" data-r="competitors"><span class="ic">◎</span>Competitor Tracker</a>
+      <a href="#/trending" data-r="trending"><span class="ic">▲</span>What&#8217;s Trending</a>
+    </nav>
+    <div class="side-foot">
+      <a href="../" title="The daily Top 5 rendered by the technews pipeline">→ Daily Top 5 brief</a>
+      <button class="rst" data-action="reset-data" title="Restore the seeded launch plan">↺ Reset to seed data</button>
+      <div style="font-size:11px; opacity:.75;">EU tech policy, explained<br>without the buzzwords.</div>
+    </div>
+  </aside>
+  <main id="main"></main>
+</div>
+
+<div class="scrim" id="scrim" data-action="close-overlays"></div>
+<aside class="panel" id="panel" aria-label="Post detail"></aside>
+<div class="modal" id="modal"><div class="m-card" id="modalCard"></div></div>
+<div id="toast"></div>
+
+<script>
+'use strict';
+
+/* ============================== Seed data ============================== */
+
+const SEED = {
+  posts: [
+    {
+      id: 'p-tsmc-carousel', date: '2026-07-17', time: '08:00', platform: 'IG', format: 'Carousel',
+      series: '', title: 'TSMC’s $265 billion: the five numbers that matter', pillar: 'Newsjack', status: 'posted',
+      hook: 'TSMC just bet $265 billion on Arizona. Here’s who actually pays for it.',
+      script: 'Slide 1 — HOOK: “TSMC just bet $265 billion on Arizona. Here’s who actually pays for it.”\nSlide 2 — What this covers: the July 16 announcement, in five numbers, no jargon.\nSlide 3 — $100B: the new pledge on top of the existing $165B. At least four more fabs at 2nm and below.\nSlide 4 — $40.2B: TSMC’s Q2 2026 revenue, up ~36% YoY. Record margins. This isn’t a company being forced — it’s a company that can afford to hedge.\nSlide 5 — 100M+: chips Apple will buy from Arizona in 2026 alone. The demand side is already signed.\nSlide 6 — 2027: 3nm production target in Phoenix — ahead of schedule. “America can’t build fabs” is aging badly.\nSlide 7 — 20%: the EU’s 2030 production target. Its own auditors project 11.7%. Put next to $265B, you see the gap Brussels is up against.\nSlide 8 — The takeaway: this is not decoupling — it’s insurance. Taiwan keeps the leading edge; America buys resilience; Europe watches.\nSlide 9 — CTA: “Save this for the next time someone says chips are boring. Follow for the EU’s answer — that carousel is next.”',
+      caption: 'The largest deal in US history, per Phoenix’s mayor — and it happened on an earnings call. Five numbers that explain TSMC’s $265B Arizona bet, and what it means for Europe’s 20% dream. Sources on each slide: TSMC Q2 2026 earnings (July 16), Reuters, ECA Special Report 12/2025.',
+      hashtags: '#semiconductors #TSMC #chipwar #techpolicy #geopolitics',
+      metrics: { reach: 4800, likes: 214, sends: 92, saves: 157 }
+    },
+    {
+      id: 'p-intro-reel', date: '2026-07-15', time: '17:00', platform: 'IG', format: 'Reel',
+      series: '', title: 'Soft launch: why this account exists', pillar: 'Explainer', status: 'posted',
+      hook: 'Chips, AI law, and who controls the internet — explained by a political scientist, minus the buzzwords.',
+      script: 'Talking head, selfie cam, ~45s.\n\n0–3s — HOOK: “The three biggest fights in tech right now aren’t happening in Silicon Valley. They’re happening in Brussels, Washington, and Taipei.”\n3–15s — The problem: chip export rules, the EU AI Act, digital sovereignty — covered either in 40-minute video essays or in jargon nobody outside the bubble speaks.\n15–35s — The promise: I’m a political scientist. I read the actual regulations, the auditor reports, the BIS rules — so you don’t have to. Every claim dated, every source named, on the slide.\n35–45s — CTA: “Follow if you want tech politics explained like a person, not a press release. First deep dive drops Monday.”',
+      caption: 'New here. This account turns chip geopolitics, AI regulation, and EU tech policy into content you can actually use in an argument. Primary sources only. First series starts Monday: Chip War Weekly.',
+      hashtags: '#techpolicy #AIAct #chips #EU',
+      metrics: { reach: 2100, likes: 98, sends: 34, saves: 41 }
+    },
+    {
+      id: 'p-cww1', date: '2026-07-20', time: '07:30', platform: 'IG', format: 'Reel',
+      series: 'Chip War Weekly', title: 'Chip War Weekly #1 — The $265B Arizona bet', pillar: 'Newsjack', status: 'scheduled',
+      hook: 'TSMC just bet $265 billion on Arizona — and the most important chipmaker in America is now Taiwanese.',
+      script: 'Talking head + 3 map/graphic cutaways, ~75s. Captions on.\n\n0–3s — HOOK on screen: “The most important chipmaker in America is Taiwanese.”\n3–12s — Setup: July 16, TSMC’s Q2 earnings call. Buried in it: another $100B for Arizona, bringing the total to $265B. Four more fabs, 2nm and below.\n12–30s — Why it matters: this is the physical layer of the US–China AI race. Whoever fabs the leading edge sets the ceiling for everyone’s AI. Apple’s already buying 100M+ Arizona chips this year.\n30–50s — The catch (open loop): Taiwan keeps R&D and the true leading edge at home. Arizona is insurance, not a transfer. “Silicon shield” still stands — for now.\n50–70s — The Europe angle: the EU’s entire Chips for Europe budget is €3.3B directly managed. TSMC spends that on Arizona roughly every five weeks.\n70–75s — CTA: “That’s Chip War Weekly. Every Monday: one move in the global chip game, explained. Follow so you don’t lose the thread.”',
+      caption: 'Episode 1: the $265B bet. TSMC’s July 16 announcement is the largest corporate investment commitment in US history — and it says as much about Taiwan and Europe as it does about America. Sources: TSMC Q2 2026 earnings call, Reuters (July 16, 2026), ECA Special Report 12/2025.',
+      hashtags: '#chipwar #TSMC #semiconductors #geopolitics #techpolicy',
+      metrics: null
+    },
+    {
+      id: 'p-chipsact-carousel', date: '2026-07-21', time: '08:00', platform: 'IG', format: 'Carousel',
+      series: 'Actually Explained', title: 'The EU Chips Act, actually explained', pillar: 'Explainer', status: 'scheduled',
+      hook: 'The EU promised 20% of the world’s chips by 2030. Its own auditors say: not even close.',
+      script: 'Evergreen flagship. 10 slides, 4:5, house template.\n\nSlide 1 — HOOK: “The EU promised 20% of the world’s chips by 2030. Its own auditors say: not even close.”\nSlide 2 — In this carousel: what the 2023 Chips Act actually did, what went wrong, and what 2.0 changes.\nSlide 3 — The promise (2023): double the EU’s share of global production to 20% by 2030. Response to the 2021 chip shortage — cars, factories, panic.\nSlide 4 — The reality check: European Court of Auditors, April 2025 — “very unlikely to be sufficient.” Commission’s own forecast: ~11.7% by 2030, up from 9.8% in 2022.\nSlide 5 — Why it fell short: the Commission directly manages only ~€4.5B of an estimated €86B total. Fragmented, underfunded. Top global chipmakers budgeted $405B in 2020–2023 alone.\nSlide 6 — What it DID do: catalyzed €80B+ in announced investment. Not nothing — just not 20%.\nSlide 7 — Chips Act 2.0 (proposed June 3, 2026): the pivot. From building fabs to building DEMAND — AI gigafactories, faster permitting, design support.\nSlide 8 — The debate: Bruegel says aim for “indispensability, not self-sufficiency” — own the chokepoints (ASML!), don’t clone TSMC.\nSlide 9 — My read (labeled opinion): 2.0 is more honest than 1.0. Demand-side is where Europe’s leverage actually is.\nSlide 10 — CTA: “Save this for the next time someone says the EU can’t build chips. Next up: the AI Act, actually explained.”',
+      caption: 'Everything you need to argue about the EU Chips Act in 10 slides — the 2030 target, the auditors’ verdict, and what Chips Act 2.0 (June 2026) actually changes. Sources: ECA Special Report 12/2025, European Commission (June 3, 2026), Bruegel 2026.',
+      hashtags: '#ChipsAct #EU #semiconductors #techpolicy #digitalsovereignty',
+      metrics: null
+    },
+    {
+      id: 'p-mythbust-aiact', date: '2026-07-22', time: '17:00', platform: 'IG', format: 'Reel',
+      series: 'Myth vs. Reality', title: 'No, the EU didn’t ‘ban AI’', pillar: 'Myth-bust', status: 'scheduled',
+      hook: 'No, the EU didn’t ban AI. What happens on August 2 is more interesting than that.',
+      script: 'Talking head, fast cuts, ~60s.\n\n0–3s — HOOK: “No, the EU didn’t ban AI.”\n3–15s — The myth: ‘the AI Act killed European AI.’ Reality: most high-risk rules were just DELAYED to December 2027 by the Digital Omnibus (Parliament vote: 423–57, June 16, 2026).\n15–35s — But here’s the catch: August 2, 2026 is still live. Two things activate: transparency rules (Article 50 — AI content must be labeled) and enforcement powers over big model makers. Fines: up to €15M or 3% of global turnover.\n35–50s — Who’s in: ~26 companies signed the GPAI Code of Practice — OpenAI, Google, Anthropic, Microsoft, Mistral. Who’s not: Meta declined. xAI signed only the safety chapter. Remember that split.\n50–60s — CTA: “August 2 is in 11 days. Follow — I’ll explain what actually changes that morning.”',
+      caption: 'The AI Act was delayed AND its first real deadline is 11 days away. Both are true — here’s how. Sources: Digital Omnibus (EP vote 423–57, June 16, 2026; Council, June 29), AI Act Art. 50, GPAI Code of Practice signatory list.',
+      hashtags: '#AIAct #EU #AIregulation #techpolicy',
+      metrics: null
+    },
+    {
+      id: 'p-chips2-carousel', date: '2026-07-23', time: '07:30', platform: 'IG', format: 'Carousel',
+      series: '', title: 'Chips Act 2.0: what actually changed', pillar: 'Explainer', status: 'ready',
+      hook: 'Brussels quietly admitted its chip strategy failed. The fix is smarter than you think.',
+      script: '8 slides.\n\nSlide 1 — HOOK: “Brussels quietly admitted its chip strategy failed. The fix is smarter than you think.”\nSlide 2 — Context in one line: all 27 member states demanded a rewrite (Sept 2025). June 3, 2026: Chips Act 2.0 arrives inside the Tech Sovereignty Package.\nSlide 3 — Shift #1: from supply to demand. Stop subsidizing fabs into existence; create buyers instead — AI factories and gigafactories that need chips.\nSlide 4 — Shift #2: speed. Faster permitting, six-month approval targets pushed by industry. A fab that takes 4 years to permit is a fab built elsewhere.\nSlide 5 — Shift #3: design, not just manufacturing. The Marced advisory group’s critique: Act 1.0 ignored chip design entirely.\nSlide 6 — The money ask: industry wants a €30M–€500M per-company blended finance facility and a €20–30B scale-up fund. The proposal doesn’t fully deliver that.\nSlide 7 — The honest frame: Bruegel’s “indispensability, not self-sufficiency.” Europe already owns a chokepoint — ASML. Play to it.\nSlide 8 — CTA: “Send this to the person who still quotes the 20% target. Deep dive on ASML coming in Chip War Weekly.”',
+      caption: 'Chips Act 2.0, decoded: three real shifts, one missing piece, and why ‘indispensability’ beats ‘self-sufficiency.’ Sources: European Commission proposal (June 3, 2026), semiconductor advisory group report (Marced), Bruegel (Poitiers & Schenk, 2026).',
+      hashtags: '#ChipsAct #EU #semiconductors #techpolicy',
+      metrics: null
+    },
+    {
+      id: 'p-trial-frankfurt', date: '2026-07-24', time: '08:00', platform: 'IG', format: 'Reel',
+      series: '', title: 'Trial Reel — Frankfurt/Seattle hook test', pillar: 'Explainer', status: 'ready',
+      hook: 'Your data lives in Frankfurt. The keys live in Seattle. So who owns it?',
+      script: 'TRIAL REEL — test hook against non-followers, compare vs. “85% of Europe’s cloud runs on three American companies.”\n\nTalking head, ~50s.\n0–3s — HOOK: “Your data lives in Frankfurt. The keys live in Seattle. So who owns it?”\n3–20s — The scene: June 2025, a French Senate hearing. Microsoft, under oath, admits it cannot guarantee EU data never goes to US authorities. That’s the CLOUD Act at work.\n20–40s — What ‘digital sovereignty’ concretely means: not a vibe — jurisdiction. If another country’s law reaches your servers, your rules come second. US firms hold 85%+ of Europe’s cloud market.\n40–50s — CTA: “This is why ‘EuroStack’ exists — full breakdown saved in my Explainers highlight. Follow for the series.”',
+      caption: 'One hearing explained digital sovereignty better than a hundred whitepapers. Sources: French Senate hearing (June 2025), US CLOUD Act, EuroStack report (Bertelsmann Stiftung, Feb 2025).',
+      hashtags: '#digitalsovereignty #cloud #EU #techpolicy',
+      metrics: null
+    },
+    {
+      id: 'p-cww2', date: '2026-07-27', time: '07:30', platform: 'IG', format: 'Reel',
+      series: 'Chip War Weekly', title: 'Chip War Weekly #2 — The H200 flip-flop', pillar: 'Explainer', status: 'ready',
+      hook: 'Banned in April. For sale by January. The H200 saga is US chip policy in one chip.',
+      script: 'Talking head + timeline graphic, ~85s.\n\n0–3s — HOOK: “Banned in April. For sale by January.”\n3–20s — The timeline: April 2025, the H20 gets banned for China. December 2025, Trump reverses course — NVIDIA may sell the H200. January 13, 2026, BIS codifies it: case-by-case licenses, a 25% tariff, a ~50% volume cap, third-party testing.\n20–40s — The backlash: fierce and bipartisan. The AI Overwatch Act would give Congress a veto over chip export licenses. Read that again: Congress wants a veto over one company’s customer list.\n40–60s — The twist: China told its customs to BLOCK H200 imports and warned firms off buying. Both governments are now restricting the same chip — for opposite reasons.\n60–80s — Zoom out: analysts still put the US compute advantage at roughly 21–49× in 2026. The H200 is a bargaining chip, not the crown jewels.\n80–85s — CTA: “Chip War Weekly, every Monday. Part 3: the Dutch machine both superpowers need.”',
+      caption: 'The strangest story in tech policy: a chip both Washington and Beijing tried to stop. Episode 2 of Chip War Weekly. Sources: BIS rule (Jan 13, 2026), 25% tariff order (Jan 14), AI Overwatch Act (Rep. Mast), Reuters.',
+      hashtags: '#chipwar #NVIDIA #exportcontrols #USChina #techpolicy',
+      metrics: null
+    },
+    {
+      id: 'p-aiact-carousel', date: '2026-07-28', time: '08:00', platform: 'IG', format: 'Carousel',
+      series: 'Actually Explained', title: 'The AI Act, actually explained (2026 edition)', pillar: 'Explainer', status: 'ready',
+      hook: 'The AI Act was delayed — except for the part with the €15M fines. Here’s the real timeline.',
+      script: 'Evergreen flagship #2. 10 slides.\n\nSlide 1 — HOOK: “The AI Act was delayed — except for the part with the €15M fines.”\nSlide 2 — In this carousel: the actual 2026 timeline, who’s affected when, and what the omnibus really changed.\nSlide 3 — The delay: Digital Omnibus, final EP vote June 16, 2026 (423–57, 174 abstentions). High-risk obligations move to Dec 2, 2027 (standalone) and Aug 2, 2028 (product-embedded).\nSlide 4 — What did NOT move: Aug 2, 2026. Article 50 transparency (label AI content, tell people they’re talking to a machine) + GPAI enforcement goes live.\nSlide 5 — The teeth: fines up to €15M or 3% of global turnover; the AI Office holds exclusive enforcement over big general-purpose models.\nSlide 6 — New in the omnibus: banning AI ‘nudifier’ tools and CSAM generators — compliance by Dec 2, 2026. Broad support, little coverage.\nSlide 7 — The signatory map: ~26 companies signed the GPAI Code of Practice (OpenAI, Google, Anthropic, Microsoft, Mistral…). Meta declined — “legal uncertainties.” xAI: safety chapter only.\nSlide 8 — Both readings, fairly: critics call the delay a rollback in simplification’s clothing. Law firms call it extra runway, not relaxation. The stated reason: harmonized standards weren’t ready.\nSlide 9 — My read (opinion, labeled): the omnibus is a stress test of the Brussels Effect — if compliance slips globally, the EU’s regulatory gravity weakens.\nSlide 10 — CTA: “Send this to the person who keeps confusing the AI Act with a ban. Aug 2 explainer drops on the day.”',
+      caption: 'The AI Act’s timeline changed twice in 2026. This is the version that’s actually current — dated, sourced, arguable. Sources: Digital Omnibus (June 16 & 29, 2026), AI Act Art. 50, GPAI Code of Practice (July 10, 2025).',
+      hashtags: '#AIAct #EU #AIregulation #GPAI #techpolicy',
+      metrics: null
+    },
+    {
+      id: 'p-fivedates-carousel', date: '2026-07-30', time: '07:30', platform: 'IG', format: 'Carousel',
+      series: '', title: 'Five dates that decide Europe’s tech decade', pillar: 'Explainer', status: 'draft',
+      hook: 'Five dates decide Europe’s tech decade. The first one is Sunday.',
+      script: '7 slides.\n\nSlide 1 — HOOK: “Five dates decide Europe’s tech decade. The first one is Sunday.”\nSlide 2 — Aug 2, 2026: AI transparency + GPAI enforcement live. €15M / 3% fines become real.\nSlide 3 — Dec 2, 2026: deadline for the nudifier/CSAM AI ban.\nSlide 4 — Dec 2, 2027: high-risk AI obligations (the delayed core of the Act).\nSlide 5 — Aug 2, 2028: high-risk rules for AI embedded in products.\nSlide 6 — 2030: the Chips Act’s 20% production target — auditors project 11.7%. The scoreboard date.\nSlide 7 — CTA: “Save this calendar. I’ll cover every one of these dates when it lands.”',
+      caption: 'Screenshot-worthy: the five dates that will define EU tech policy through 2030, on one card. Sources: Digital Omnibus 2026, AI Act, ECA Special Report 12/2025.',
+      hashtags: '#AIAct #ChipsAct #EU #techpolicy',
+      metrics: null
+    },
+    {
+      id: 'p-aug2-newsjack', date: '2026-08-02', time: '09:00', platform: 'IG', format: 'Reel',
+      series: '', title: 'NEWSJACK: The AI Act’s first real deadline is TODAY', pillar: 'Newsjack', status: 'draft',
+      hook: 'As of this morning, AI content in the EU legally has to tell you it’s AI.',
+      script: 'Rapid-response — record morning of Aug 2, publish by 9:00.\n\n0–3s — HOOK: “As of this morning, AI content in the EU legally has to tell you it’s AI.”\n3–25s — What switched on today: Article 50 transparency — chatbots must disclose they’re machines, deepfakes and AI media must be labeled. Plus: the AI Office can now enforce against the big model makers. €15M or 3% of global turnover.\n25–45s — What did NOT switch on: the famous high-risk rules — those come Dec 2027 / Aug 2028. If someone tells you ‘the AI Act is fully in force,’ they’re wrong. If they say ‘it was all delayed,’ also wrong.\n45–60s — The one thing to watch: enforcement. 26 companies signed the Code of Practice; Meta didn’t. Today the question stops being theoretical.\n60s — CTA: “Follow for the first-enforcement watch. I read the filings so you don’t have to.”',
+      caption: 'Deadline day. What actually changed at midnight, what didn’t, and the enforcement question everyone’s dodging. Sources: AI Act Art. 50 (live Aug 2, 2026), Digital Omnibus 2026, GPAI Code of Practice.',
+      hashtags: '#AIAct #August2 #AIregulation #EU #techpolicy',
+      metrics: null
+    },
+    {
+      id: 'p-cww3', date: '2026-08-03', time: '07:30', platform: 'IG', format: 'Reel',
+      series: 'Chip War Weekly', title: 'Chip War Weekly #3 — ASML, Europe’s chokepoint', pillar: 'Explainer', status: 'draft',
+      hook: 'One Dutch company decides who gets to make advanced chips. One.',
+      script: 'Talking head + product/graphic cutaways, ~80s.\n\n0–3s — HOOK: “One Dutch company decides who gets to make advanced chips. One.”\n3–20s — ASML makes the only EUV lithography machines on Earth. No EUV, no leading-edge chips. This year it became Europe’s most valuable company ever.\n20–40s — The squeeze: China was ~33% of ASML’s 2025 sales — and a proposed US law (MATCH Act) would bar those sales entirely. Europe’s crown jewel, caught between its ally and its customer.\n40–60s — The lesson for EU strategy: this is what ‘indispensability’ looks like. Europe doesn’t need to out-build TSMC — it already owns a gate everyone must walk through.\n60–80s — Open loop + CTA: “The question is whether Brussels treats ASML as leverage or lets Washington decide for it. That fight is just starting — follow to keep the thread.”',
+      caption: 'Episode 3: the machine both superpowers need, made in Veldhoven. Sources: ASML 2025 annual report, proposed MATCH Act, Bruegel 2026.',
+      hashtags: '#ASML #chipwar #EUV #semiconductors #EU',
+      metrics: null
+    },
+    {
+      id: 'p-sov-bingo', date: '2026-08-04', time: '08:00', platform: 'IG', format: 'Carousel',
+      series: 'Myth vs. Reality', title: 'Digital sovereignty, minus the buzzwords', pillar: 'Myth-bust', status: 'draft',
+      hook: '‘Digital sovereignty’ is the most-used, least-explained phrase in Brussels. Let’s fix that.',
+      script: '8 slides, myth-vs-reality format.\n\nSlide 1 — HOOK: “‘Digital sovereignty’ is the most-used, least-explained phrase in Brussels. Let’s fix that.”\nSlide 2 — MYTH: it means Europe building its own everything. REALITY: it means controlling jurisdiction — whose law reaches your data and infrastructure.\nSlide 3 — The numbers: 80%+ of Europe’s digital tech is imported; 70% of foundational AI models are American; US firms hold 85%+ of the EU cloud market. (EuroStack report, Feb 2025.)\nSlide 4 — MYTH: it’s anti-American. REALITY: it’s post-dependence. France replacing Teams/Zoom by 2027 isn’t a boycott — it’s procurement policy.\nSlide 5 — The plan on the table: EuroStack — chips to cloud to apps, with a proposed €300B Sovereign Tech Fund by 2035. Parliament backed a sovereignty report 471–68.\nSlide 6 — The hard part: Europe’s AI champions still rent US hardware. Sovereignty talk, dependency stack.\nSlide 7 — My read (opinion): sovereignty that ignores electricity prices and compute is a press release. CADA’s data-center push is the tell to watch.\nSlide 8 — CTA: “Send this to the person who says ‘digital sovereignty’ in every meeting.”',
+      caption: 'What ‘digital sovereignty’ concretely means — with the three numbers that define it. Sources: EuroStack (Bertelsmann Stiftung, Feb 13, 2025), EP sovereignty report (471–68), Cloud & AI Development Act.',
+      hashtags: '#digitalsovereignty #EuroStack #EU #cloud #techpolicy',
+      metrics: null
+    },
+    {
+      id: 'p-investai', date: '2026-08-06', time: '08:00', platform: 'IG', format: 'Carousel',
+      series: '', title: 'InvestAI’s €200B: where the money actually goes', pillar: 'Explainer', status: 'draft',
+      hook: 'Europe found €200B for AI. Here’s where it actually goes — and the bill nobody mentions.',
+      script: '8 slides.\n\nSlide 1 — HOOK: “Europe found €200B for AI. Here’s where it actually goes.”\nSlide 2 — InvestAI: mobilizing up to €200B, headline item: up to 5 AI gigafactories — each ~100,000 advanced processors, ~4× today’s biggest EU data centers.\nSlide 3 — Who builds them: EuroHPC — mandate amended January 2026. The supercomputing agency becomes an AI-factory agency.\nSlide 4 — The catch #1: those ~100k processors per site are mostly American chips. Sovereignty funds, NVIDIA shopping list.\nSlide 5 — The catch #2: electricity. European industry pays roughly DOUBLE US rates. A gigafactory is a power plant with opinions.\nSlide 6 — The model to watch: ‘ASML–Mistral’ vertical integration — pair Europe’s hardware chokepoint with its best model lab.\nSlide 7 — My read: gigafactories are necessary, not sufficient. Without cheap power and domestic accelerators, it’s rented sovereignty.\nSlide 8 — CTA: “Save this — gigafactory site announcements are coming, and you’ll want the context.”',
+      caption: 'The EU’s AI industrial policy in 8 slides: InvestAI, gigafactories, and the two structural problems under the headline number. Sources: AI Continent Action Plan, EuroHPC mandate (Jan 2026).',
+      hashtags: '#InvestAI #AIgigafactory #EU #industrialpolicy #techpolicy',
+      metrics: null
+    },
+    {
+      id: 'p-electricity', date: '2026-08-07', time: '17:00', platform: 'IG', format: 'Reel',
+      series: '', title: 'Europe pays double for electricity — and wants to win AI', pillar: 'Thesis', status: 'draft',
+      hook: 'Europe pays double what America pays for electricity. And it wants to win the AI race.',
+      script: 'Talking head, one chart cutaway, ~55s. THESIS content — label as opinion.\n\n0–3s — HOOK: “Europe pays double for electricity. And wants to win AI.”\n3–20s — The math: AI is on track to consume ~60% of leading-edge compute output in 2026. Compute is chips + power. Europe is short on both.\n20–40s — The thesis (labeled): every AI strategy document that doesn’t start with energy prices is fiction. Gigafactories at double the power cost are subsidy sinks.\n40–55s — The counterargument, fairly: EU grids are decarbonizing faster; if clean power scales, the gap narrows. But ‘if’ is doing heavy lifting.\n55s — CTA: “Agree or disagree in the comments — I read all of them. Sources in caption.”',
+      caption: 'Opinion, clearly labeled: Europe’s AI ambitions have an energy bill nobody wants to itemize. Sources: EU vs. US industrial electricity rate comparisons (2026), AI Continent Action Plan.',
+      hashtags: '#AI #energy #EU #industrialpolicy #hottake',
+      metrics: null
+    },
+    {
+      id: 'p-cww4', date: '2026-08-10', time: '07:30', platform: 'IG', format: 'Reel',
+      series: 'Chip War Weekly', title: 'Chip War Weekly #4 — America’s 21× compute lead', pillar: 'Explainer', status: 'draft',
+      hook: 'Even selling chips to China, America’s AI compute lead is 21×. Minimum.',
+      script: 'Talking head + bar-chart graphic, ~70s.\n\n0–3s — HOOK: “Even selling chips to China, America’s lead is 21×. Minimum.”\n3–25s — The estimate: analysts put the US AI-compute advantage at roughly 21–49× in 2026 — even with H200 exports flowing. Explain what compute advantage means in practice: training frontier models.\n25–45s — Why the gap persists: Blackwell stays banned for China-headquartered firms (BIS clarified June 2026), the VEU exemption for fabs in China expired Dec 31, 2025, and Chinese customs is blocking H200s anyway.\n45–65s — The nuance: compute lead ≠ permanent win. Efficiency gains and smuggling erode edges. But policy currently compounds the gap, not closes it.\n65–70s — CTA: “Chip War Weekly, every Monday. Save the series.”',
+      caption: 'Episode 4: the number that reframes every ‘China is winning AI’ headline. Sources: 2026 compute-advantage analyses, BIS clarification (June 2026), VEU expiry (Dec 31, 2025).',
+      hashtags: '#chipwar #compute #USChina #AI #exportcontrols',
+      metrics: null
+    },
+    {
+      id: 'p-eurostack', date: '2026-08-11', time: '08:00', platform: 'IG', format: 'Carousel',
+      series: '', title: 'EuroStack: the €300B plan to rebuild Europe’s internet', pillar: 'Explainer', status: 'draft',
+      hook: 'There’s a €300B plan to rebuild Europe’s entire tech stack. Almost nobody outside Brussels has read it.',
+      script: '9 slides.\n\nSlide 1 — HOOK: “There’s a €300B plan to rebuild Europe’s entire tech stack. Almost nobody outside Brussels has read it.”\nSlide 2 — What EuroStack is: a Bertelsmann Stiftung blueprint (Feb 13, 2025, led by Francesca Bria) — a full European stack from chips to cloud to apps.\nSlide 3 — The dependency it answers: 80%+ of digital tech imported; 70% of foundational models American.\nSlide 4 — The price tag: a €300B Sovereign Tech Fund by 2035. Sounds huge — compare: TSMC alone committed $265B to Arizona.\nSlide 5 — The toolkit: Buy-European procurement, open-source-first, interoperability mandates.\nSlide 6 — Signs it’s moving: EP sovereignty report adopted 471–68; CADA wants to triple EU data-center capacity in 5–7 years; France swapping out Teams/Zoom by 2027.\nSlide 7 — The critique, fairly: industrial policy by wishlist. Who operates all this? Where’s the demand?\nSlide 8 — My read: EuroStack matters as a menu, not a prophecy — watch which items procurement actually orders.\nSlide 9 — CTA: “Save this. When ‘sovereign cloud’ hits the news, you’ll have the map.”',
+      caption: 'The most ambitious document in EU tech policy, in 9 slides. Sources: EuroStack report (Bertelsmann Stiftung, Feb 2025), EP report (471–68), Cloud & AI Development Act (June 3, 2026).',
+      hashtags: '#EuroStack #digitalsovereignty #EU #cloud #techpolicy',
+      metrics: null
+    }
+  ],
+
+  hooks: [
+    { id: 'h1', text: 'TSMC just bet $265 billion on Arizona. Here’s who actually pays for it.', category: 'Newsjack', status: 'winner', notes: 'Soft-launch carousel: 1.9% sends/reach — best performer so far.' },
+    { id: 'h2', text: 'No, the EU didn’t ban AI. What happens on August 2 is more interesting than that.', category: 'Myth vs. Reality', status: 'testing', notes: 'Running in the Jul 22 reel.' },
+    { id: 'h3', text: 'Your data lives in Frankfurt. The keys live in Seattle. So who owns it?', category: 'Information gap', status: 'testing', notes: 'Trial Reel Jul 24 — A-variant.' },
+    { id: 'h4', text: '85% of Europe’s cloud runs on three American companies.', category: 'Numbers', status: 'testing', notes: 'Trial Reel Jul 24 — B-variant vs. Frankfurt/Seattle.' },
+    { id: 'h5', text: 'Banned in April. For sale by January. The H200 story is US chip policy in one chip.', category: 'Information gap', status: 'untested', notes: 'Chip War Weekly #2.' },
+    { id: 'h6', text: 'The EU promised 20% of the world’s chips. Its own auditors say 11.7%.', category: 'Numbers', status: 'untested', notes: 'Flagship Chips Act carousel.' },
+    { id: 'h7', text: 'One Dutch company decides who gets to make advanced chips. One.', category: 'Information gap', status: 'untested', notes: 'ASML episode.' },
+    { id: 'h8', text: 'The AI Act was delayed — except for the part with the €15M fines.', category: 'Information gap', status: 'untested', notes: 'AI Act flagship carousel.' },
+    { id: 'h9', text: 'The one EU chip mistake nobody in Brussels admits.', category: 'Information gap', status: 'untested', notes: 'Candidate for a thesis reel on demand-side vs supply-side.' },
+    { id: 'h10', text: 'Congress wants a veto over one company’s customer list.', category: 'Absurdity', status: 'untested', notes: 'AI Overwatch Act angle — pairs with CWW #2.' },
+    { id: 'h11', text: 'The EU’s chip budget is what TSMC spends in five weeks.', category: 'Numbers', status: 'untested', notes: '€3.3B directly managed vs. $265B — verify framing before use.' },
+    { id: 'h12', text: 'Meta refused to sign. 26 AI companies did. Here’s what that tells you.', category: 'Information gap', status: 'untested', notes: 'GPAI Code of Practice; strong for Aug 2 window.' },
+    { id: 'h13', text: 'France is deleting Teams by 2027.', category: 'Absurdity', status: 'untested', notes: 'Digital sovereignty carousel or standalone short reel.' },
+    { id: 'h14', text: 'Europe pays double for electricity — and wants to win the AI race.', category: 'Numbers', status: 'untested', notes: 'Thesis reel Aug 7.' },
+    { id: 'h15', text: 'A gigafactory is a power plant with opinions.', category: 'Analogy', status: 'untested', notes: 'InvestAI carousel, slide 5 — could carry its own reel.' },
+    { id: 'h16', text: 'Follow for Part 2 — the part where the money runs out.', category: 'Series retention', status: 'untested', notes: 'Generic mid-tension outro for multi-part explainers.' }
+  ],
+
+  competitors: [
+    { id: 'c1', name: 'Asianometry', handle: 'youtube.com/@Asianometry', platform: 'YouTube', followers: '768K', tier: 'Chip authority', lane: 'Long-form video essays; 30+ videos on TSMC alone. No short-form, no carousels.', gap: 'The entire vertical-video chip-explainer lane is open. Be the person who compresses this world into 75 seconds.' },
+    { id: 'c2', name: 'SemiAnalysis (Dylan Patel)', handle: 'semianalysis.com', platform: 'Substack', followers: '301K', tier: 'Chip authority', lane: '#1 Technology Substack. Insider, market-moving, pitched at investors — ~2.2K on IG.', gap: 'Translate insider signal for a mass audience. They will never make a carousel; you always will.' },
+    { id: 'c3', name: 'Inside Geopolitics', handle: '@insidegeopolitics', platform: 'TikTok / IG', followers: '492K / 269K', tier: 'Geopolitics short-form', lane: 'Fast news explainers with map overlays. Generalist — chips only occasionally.', gap: 'Their breadth is your opening: own the chip/AI-policy beat they only visit.' },
+    { id: 'c4', name: '@geopolitical.guy', handle: '@geopolitical.guy', platform: 'Instagram', followers: '377K', tier: 'Geopolitics short-form', lane: 'Maps and visuals, general geopolitics.', gap: 'Visual style benchmark; zero regulatory depth. Your sourcing rigor is the differentiator.' },
+    { id: 'c5', name: 'Cleo Abram (Huge If True)', handle: '@cleoabram', platform: 'YouTube / IG', followers: '~7M / ~3M', tier: 'Style benchmark', lane: 'Rigorous optimistic tech explainers. Does not touch policy, regulation, or chip geopolitics.', gap: 'Study the craft — hooks, pacing, sourcing on screen. Apply it to the beat she avoids.' },
+    { id: 'c6', name: 'Johnny Harris', handle: '@johnny.harris', platform: 'YouTube', followers: '~7.5M', tier: 'Cautionary tale', lane: 'Cinematic map-heavy narrative; repeatedly criticized for oversimplification and conflicts.', gap: 'The anti-model: reach without rigor invites expert backlash. Date claims, name sources, correct openly.' },
+    { id: 'c7', name: 'Sophia Smith Galer', handle: '@sophiasmithgaler', platform: 'TikTok', followers: '590K', tier: 'Style benchmark', lane: '~90s rigorous journalist-led vertical talking-head.', gap: 'The best solo-journalist template. Your format twin — different beat.' },
+    { id: 'c8', name: 'TLDR News EU', handle: '@tldrnewseu', platform: 'YouTube', followers: '1M+', tier: 'EU explainer', lane: 'Neutral voiceover-and-graphics EU explainers, long-form.', gap: 'Proves EU-policy demand at scale. Nobody has ported it to IG carousels — that’s the lane.' },
+    { id: 'c9', name: 'TechAltar', handle: '@TechAltar', platform: 'YouTube', followers: '~700K', tier: 'EU explainer', lane: 'Closest individual EU-adjacent tech explainer; company-analysis focus, long-form only.', gap: 'Adjacent but not competing: he covers companies, you cover the rules they play by.' },
+    { id: 'c10', name: '@europeancommission', handle: '@europeancommission', platform: 'Instagram', followers: '~1M', tier: 'Institutional', lane: 'Official comms; reach without personality or analysis.', gap: 'Institutions can’t have takes. A named political scientist with sources and opinions can.' }
+  ],
+
+  trends: [
+    { id: 't1', date: '2026-07-16', heat: 3, topic: 'Semiconductors', title: 'TSMC lifts US commitment to $265B — four more fabs in Arizona', summary: 'On the Q2 2026 earnings call TSMC pledged another $100B for Arizona (total $265B, 2nm-and-below fabs). Q2 revenue ~$40.2B, up ~36% YoY. Fab 21 Phase 2 equipment moves in Q3; 3nm in Phoenix targeted for 2027, ahead of schedule. Apple buys 100M+ Arizona chips in 2026.', source: 'TSMC Q2 2026 earnings · Reuters, Jul 16', angle: 'Newsjack window is NOW (24–48h rule). Frame: insurance, not decoupling — and put the EU’s €3.3B next to it for scale.' },
+    { id: 't2', date: '2026-08-02', heat: 3, topic: 'AI regulation', title: 'Aug 2: AI Act transparency + GPAI enforcement go live', summary: 'Article 50 transparency obligations and AI Office enforcement over general-purpose models activate Aug 2, 2026 — fines up to €15M or 3% of global turnover. High-risk rules stay delayed (Dec 2027 / Aug 2028). ~26 Code of Practice signatories; Meta declined; xAI safety chapter only.', source: 'AI Act Art. 50 · Digital Omnibus 2026', angle: 'Pre-schedule the deadline-day reel for the morning of Aug 2. Tease it Jul 22 (myth-bust) and Jul 30 (five dates). Own this date.' },
+    { id: 't3', date: '2026-06-03', heat: 2, topic: 'EU industrial policy', title: 'Chips Act 2.0 + Cloud & AI Development Act proposed', summary: 'The Commission’s Tech Sovereignty Package pivots chip policy from supply-side fabs to demand-side tools (AI factories, faster permitting, design support). CADA targets tripling EU data-center capacity in 5–7 years. Industry group (Marced) wants a €20–30B scale-up fund and six-month approvals.', source: 'European Commission, Jun 3 · Bruegel 2026', angle: 'Evergreen explainer material — the Jul 23 carousel. Thesis hook: ‘Brussels quietly admitted its chip strategy failed.’' },
+    { id: 't4', date: '2026-06-29', heat: 2, topic: 'AI regulation', title: 'Digital Omnibus final: high-risk AI rules delayed to Dec 2027', summary: 'Parliament approved 423–57 (174 abstentions) on Jun 16; Council followed Jun 29. Standalone high-risk obligations move to Dec 2, 2027; product-embedded to Aug 2, 2028. New: nudifier/CSAM-tool prohibition, compliance by Dec 2, 2026. Stated driver: harmonized standards weren’t ready.', source: 'EP & Council, Jun 2026', angle: 'Myth-bust lane: ‘delayed’ ≠ ‘dead.’ Present both readings (rollback vs. runway) fairly, then land your Brussels-Effect thesis.' },
+    { id: 't5', date: '2026-01-14', heat: 2, topic: 'US tech policy', title: 'H200 to China: case-by-case licenses, 25% tariff, Congress revolts', summary: 'BIS codified the Trump reversal Jan 13 (presumption of denial → case-by-case), a 25% advanced-chip tariff followed Jan 14, with ~50% volume cap and third-party testing. AI Overwatch Act would give Congress a license veto. China ordered customs to block H200 imports. VEU exemption for TSMC/Samsung/SK Hynix China fabs expired Dec 31, 2025.', source: 'BIS, Jan 13–14 · Rep. Mast bill', angle: 'The best narrative arc on the beat — both superpowers restricting the same chip. Chip War Weekly #2, timeline graphic.' },
+    { id: 't6', date: '2026-05-30', heat: 2, topic: 'Semiconductors', title: 'ASML becomes Europe’s most valuable company ever; MATCH Act looms', summary: 'EUV optimism made ASML Europe’s most valuable company in history. China was ~33% of 2025 sales; the proposed US MATCH Act would bar ASML sales to China entirely. Meanwhile Intel ramps 18A with an ~$8.9B US government stake (~10%).', source: 'Market data · proposed MATCH Act', angle: 'Chip War Weekly #3: Europe’s chokepoint. ‘Indispensability’ thesis gets its poster child.' },
+    { id: 't7', date: '2026-02-15', heat: 1, topic: 'Digital sovereignty', title: 'EuroStack momentum: €300B fund proposal, France exits Teams/Zoom by 2027', summary: 'EuroStack (Bertelsmann, Feb 2025, Francesca Bria) proposes a €300B Sovereign Tech Fund by 2035; 80%+ of EU digital tech is imported, US firms hold 85%+ of EU cloud. EP adopted a sovereignty report 471–68. Microsoft told a French hearing it can’t shield EU data from US authorities (CLOUD Act).', source: 'Bertelsmann Stiftung · EP · French Senate', angle: 'The Frankfurt/Seattle hook lives here. Evergreen carousel + Trial Reel A/B — jurisdiction beats vibes.' },
+    { id: 't8', date: '2026-01-20', heat: 1, topic: 'AI industrial policy', title: 'EuroHPC mandate amended: 5 AI gigafactories, €200B InvestAI', summary: 'InvestAI mobilizes up to €200B; up to 5 gigafactories (~100,000 advanced processors each, ~4× current largest EU data centers). EuroHPC’s Jan 2026 mandate amendment makes it the build agency. Structural drags: ~2× US electricity prices; EU champions still rent US compute.', source: 'EuroHPC · AI Continent Action Plan', angle: 'InvestAI carousel Aug 6 + electricity thesis reel Aug 7. Watch for gigafactory site announcements — instant newsjack.' }
+  ]
+};
+
+/* ============================== State ============================== */
+
+const LS_KEY = 'sovereignty-studio-v1';
+let state = loadState();
+
+function loadState() {
+  try {
+    const raw = localStorage.getItem(LS_KEY);
+    if (raw) {
+      const s = JSON.parse(raw);
+      if (s && Array.isArray(s.posts)) return s;
+    }
+  } catch (e) { /* corrupted storage falls back to seed */ }
+  return JSON.parse(JSON.stringify(SEED));
+}
+function save() { try { localStorage.setItem(LS_KEY, JSON.stringify(state)); } catch (e) {} }
+function resetData() {
+  if (!confirm('Reset the studio to the seeded launch plan? Your edits will be lost.')) return;
+  localStorage.removeItem(LS_KEY);
+  state = JSON.parse(JSON.stringify(SEED));
+  closeOverlays(); render(); toast('Seed data restored');
+}
+
+/* ============================== Helpers ============================== */
+
+const $ = (sel, el) => (el || document).querySelector(sel);
+const esc = s => String(s == null ? '' : s)
+  .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+  .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+const uid = () => 'p-' + Math.random().toString(36).slice(2, 9);
+const MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const DOW = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+const STATUSES = ['draft', 'ready', 'scheduled', 'posted'];
+const HOOK_STATUSES = ['untested', 'testing', 'winner', 'retired'];
+
+function todayStr() { const d = new Date(); return d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0'); }
+function parseDate(s) { const [y,m,d] = s.split('-').map(Number); return new Date(y, m-1, d); }
+function fmtDate(s) { const d = parseDate(s); return MONTHS[d.getMonth()].slice(0,3) + ' ' + d.getDate() + ', ' + d.getFullYear(); }
+function fmtDow(s) { const d = parseDate(s); return ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][d.getDay()]; }
+function fmtTime(t) { if (!t) return ''; const [h,m] = t.split(':').map(Number); const am = h < 12; const hh = h % 12 || 12; return hh + ':' + String(m).padStart(2,'0') + (am ? 'a' : 'p'); }
+function byId(id) { return state.posts.find(p => p.id === id); }
+function sortPosts(arr) { return arr.slice().sort((a,b) => (a.date + (a.time||'')) < (b.date + (b.time||'')) ? -1 : 1); }
+function pct(n, d) { return d > 0 ? (100 * n / d) : null; }
+function fmtPct(v) { return v == null ? '—' : v.toFixed(1) + '%'; }
+function rateClass(v, good, mid) { return v == null ? 'low' : v >= good ? 'good' : v >= mid ? 'mid' : 'low'; }
+
+function toast(msg) {
+  const t = $('#toast'); t.textContent = msg; t.classList.add('show');
+  clearTimeout(toast._h); toast._h = setTimeout(() => t.classList.remove('show'), 1800);
+}
+function copyText(text, label) {
+  const done = () => toast((label || 'Copied') + ' to clipboard');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(text).then(done, () => fallbackCopy(text, done));
+  } else fallbackCopy(text, done);
+}
+function fallbackCopy(text, done) {
+  const ta = document.createElement('textarea'); ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); done(); } catch (e) { toast('Copy failed'); }
+  document.body.removeChild(ta);
+}
+
+/* ============================== Router ============================== */
+
+const PAGES = {
+  overview: renderOverview, calendar: renderCalendar, hooks: renderHooks,
+  scheduler: renderScheduler, analytics: renderAnalytics,
+  competitors: renderCompetitors, trending: renderTrending
+};
+function route() { const r = (location.hash.replace('#/', '') || 'overview').split('?')[0]; return PAGES[r] ? r : 'overview'; }
+function render() {
+  const r = route();
+  document.querySelectorAll('#nav a').forEach(a => a.classList.toggle('on', a.dataset.r === r));
+  $('#main').innerHTML = PAGES[r]();
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', () => { closeOverlays(); render(); });
+
+/* ============================== Shared UI bits ============================== */
+
+function pageHead(crumb, title, lede, actionsHtml) {
+  return '<div class="page-head"><div class="headrow"><div>' +
+    '<div class="crumb">' + esc(crumb) + '</div>' +
+    '<h1 class="title">' + title + '</h1>' +
+    (lede ? '<div class="lede">' + lede + '</div>' : '') +
+    '</div>' + (actionsHtml || '') + '</div></div>';
+}
+function statusPill(p) {
+  return '<button class="st ' + p.status + '" data-action="cycle-status" data-id="' + p.id + '" title="Click to advance status"><span class="dot"></span>' + p.status + '</button>';
+}
+function formatPill(p) {
+  return '<span class="pill ' + p.format.toLowerCase() + '">' + esc(p.format) + '</span>' +
+    '<span class="pill neutral">' + esc(p.platform) + '</span>' +
+    (p.series ? '<span class="pill blue">' + esc(p.series) + '</span>' : '');
+}
+
+/* ============================== Overview ============================== */
+
+function weekRange(base) {
+  const d = new Date(base); const day = d.getDay(); const mon = new Date(d); mon.setDate(d.getDate() - ((day + 6) % 7));
+  const sun = new Date(mon); sun.setDate(mon.getDate() + 6);
+  const f = x => x.getFullYear() + '-' + String(x.getMonth()+1).padStart(2,'0') + '-' + String(x.getDate()).padStart(2,'0');
+  return [f(mon), f(sun)];
+}
+
+function renderOverview() {
+  const now = new Date();
+  const hour = now.getHours();
+  const greet = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+  const today = todayStr();
+  const [wStart, wEnd] = weekRange(now);
+  const week = sortPosts(state.posts.filter(p => p.date >= wStart && p.date <= wEnd));
+  const upcoming = sortPosts(state.posts.filter(p => p.date >= today && p.status !== 'posted'));
+  const next = upcoming[0];
+  const queued = state.posts.filter(p => p.status === 'scheduled' || p.status === 'ready').length;
+  const testing = state.hooks.filter(h => h.status === 'testing').length;
+  const posted = state.posts.filter(p => p.status === 'posted' && p.metrics);
+  const totReach = posted.reduce((s,p) => s + (p.metrics.reach||0), 0);
+  const totSends = posted.reduce((s,p) => s + (p.metrics.sends||0), 0);
+  const spr = pct(totSends, totReach);
+  const weekReels = week.filter(p => p.format === 'Reel').length;
+  const weekCars = week.filter(p => p.format === 'Carousel').length;
+
+  const seg = (n, target, cls) => {
+    let out = '';
+    for (let i = 0; i < target; i++) out += '<span class="seg' + (i < n ? ' f ' + cls : '') + '"></span>';
+    return out;
+  };
+
+  return pageHead('Overview · ' + fmtDow(today) + ', ' + fmtDate(today), greet + ', <em>Lina.</em>',
+      queued + ' posts queued · ' + testing + ' hooks in testing · next up: ' + (next ? esc(next.title) : 'nothing scheduled'),
+      '<a class="btn primary" href="#/calendar" data-action="new-post-link">+ New post</a>') +
+
+    '<div class="grid cols-4">' +
+      '<div class="card pad"><div class="klabel">Queued</div><div class="stat-n">' + queued + '</div><div class="stat-s">ready or scheduled</div></div>' +
+      '<div class="card pad"><div class="klabel">Hooks heating</div><div class="stat-n">' + testing + '</div><div class="stat-s">in Trial-Reel testing</div></div>' +
+      '<div class="card pad"><div class="klabel">Sends / reach</div><div class="stat-n">' + fmtPct(spr) + '</div><div class="stat-s">north-star metric · all posted</div></div>' +
+      '<div class="card pad"><div class="klabel">Published</div><div class="stat-n">' + posted.length + '</div><div class="stat-s">since soft launch Jul 15</div></div>' +
+    '</div>' +
+
+    '<div class="grid cols-2" style="margin-top:14px; align-items:start;">' +
+      '<div class="card pad">' +
+        '<div class="klabel" style="margin-bottom:10px;">This week’s plan · ' + fmtDate(wStart) + ' – ' + fmtDate(wEnd) + '</div>' +
+        (week.length ? week.map(p =>
+          '<div class="rowline">' +
+            '<div style="min-width:64px;" class="klabel">' + fmtDow(p.date).slice(0,3) + ' ' + fmtTime(p.time) + '</div>' +
+            '<div class="grow"><div class="t">' + esc(p.title) + '</div><div class="s">' + esc(p.hook) + '</div></div>' +
+            '<span class="pill ' + p.format.toLowerCase() + '">' + esc(p.format) + '</span>' +
+            '<button class="btn sm ghost" data-action="open-post" data-id="' + p.id + '">Open</button>' +
+          '</div>').join('') :
+          '<div class="empty">Nothing planned this week. <a href="#/calendar">Add a post →</a></div>') +
+        '<div style="margin-top:14px;">' +
+          '<div class="klabel" style="margin-bottom:6px;">Cadence · target 3–5 Reels</div><div class="weekbar">' + seg(weekReels, 5, '') + '</div>' +
+          '<div class="klabel" style="margin:10px 0 6px;">Cadence · target 2–3 carousels</div><div class="weekbar">' + seg(weekCars, 3, 'g') + '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div style="display:grid; gap:14px;">' +
+        '<div class="card pad">' +
+          '<div class="klabel" style="margin-bottom:8px;">North star</div>' +
+          '<div style="font-family:var(--serif); font-size:17px; line-height:1.45;">Design every post to be <em style="color:var(--accent)">sent to one specific person.</em></div>' +
+          '<div class="stat-s" style="margin-top:8px;">2026 ranking weights watch time, sends-per-reach, and saves over likes and follower count. One DM share outranks many likes — chase sends, not vanity.</div>' +
+        '</div>' +
+        '<div class="card pad">' +
+          '<div class="klabel" style="margin-bottom:8px;">Today’s inputs</div>' +
+          '<div class="rowline"><div class="grow"><div class="t">Scan the trend radar</div><div class="s">' + state.trends.length + ' live storylines, newsjack angles attached</div></div><a class="btn sm" href="#/trending">Open</a></div>' +
+          '<div class="rowline"><div class="grow"><div class="t">Daily Top 5 brief</div><div class="s">auto-curated by the technews pipeline</div></div><a class="btn sm" href="../" target="_blank" rel="noopener">Read</a></div>' +
+          '<div class="rowline"><div class="grow"><div class="t">Hook vault</div><div class="s">' + state.hooks.length + ' hooks · ' + state.hooks.filter(h=>h.status==='winner').length + ' proven winner</div></div><a class="btn sm" href="#/hooks">Open</a></div>' +
+        '</div>' +
+      '</div>' +
+    '</div>';
+}
+
+/* ============================== Calendar ============================== */
+
+let calY, calM;
+(function initCal() { const d = new Date(); calY = d.getFullYear(); calM = d.getMonth(); })();
+
+function renderCalendar() {
+  const first = new Date(calY, calM, 1);
+  const startOffset = first.getDay(); // Sunday-first, like the reference
+  const daysInMonth = new Date(calY, calM + 1, 0).getDate();
+  const monthPosts = state.posts.filter(p => { const d = parseDate(p.date); return d.getFullYear() === calY && d.getMonth() === calM; });
+  const platforms = [...new Set(monthPosts.map(p => p.platform))].length;
+  const today = todayStr();
+
+  let cells = '';
+  const totalCells = Math.ceil((startOffset + daysInMonth) / 7) * 7;
+  for (let i = 0; i < totalCells; i++) {
+    const dayNum = i - startOffset + 1;
+    if (dayNum < 1 || dayNum > daysInMonth) { cells += '<div class="cal-cell out"></div>'; continue; }
+    const ds = calY + '-' + String(calM+1).padStart(2,'0') + '-' + String(dayNum).padStart(2,'0');
+    const slots = sortPosts(monthPosts.filter(p => p.date === ds));
+    cells += '<div class="cal-cell' + (ds === today ? ' today' : '') + '">' +
+      '<span class="dnum">' + dayNum + '</span>' +
+      slots.map(p =>
+        '<div class="slot ' + p.format.toLowerCase() + '" data-action="open-post" data-id="' + p.id + '" title="' + esc(p.title) + '">' +
+          '<b>' + fmtTime(p.time) + ' ' + esc(p.format.toUpperCase()) + ' · ' + esc(p.platform) + '</b>' +
+          '<span class="hk">' + esc(p.hook) + '</span>' +
+        '</div>').join('') +
+      '</div>';
+  }
+
+  return pageHead('Content Calendar', 'Everything, <em>scheduled.</em>',
+      'Monthly view of the pipeline. Every slot carries the exact date and time, the platform, and the hook — click any slot for the full script and caption.',
+      '<button class="btn primary" data-action="new-post">+ New post</button>') +
+    '<div class="cal-toolbar">' +
+      '<div class="cal-nav">' +
+        '<button class="btn sm" data-action="cal-prev">←</button>' +
+        '<span class="cal-month">' + MONTHS[calM] + ' ' + calY + '</span>' +
+        '<button class="btn sm" data-action="cal-next">→</button>' +
+        '<button class="btn sm ghost" data-action="cal-today">Today</button>' +
+      '</div>' +
+      '<div class="cal-meta">' + monthPosts.length + ' items · ' + platforms + ' platform' + (platforms === 1 ? '' : 's') + ' · everything scheduled</div>' +
+    '</div>' +
+    '<div class="cal"><div class="cal-head">' + DOW.map(d => '<div>' + d + '</div>').join('') + '</div>' +
+    '<div class="cal-grid">' + cells + '</div></div>' +
+    '<div class="legend">' +
+      '<span><i style="background:var(--accent)"></i>Reel</span>' +
+      '<span><i style="background:var(--green)"></i>Carousel</span>' +
+      '<span><i style="background:var(--amber)"></i>Story</span>' +
+      '<span class="note">Best-time defaults: 7:30a weekday Reels, 8:00a carousels, 5:00p second slots.</span>' +
+    '</div>';
+}
+
+/* ============================== Side panel (post detail) ============================== */
+
+function openPost(id) {
+  const p = byId(id); if (!p) return;
+  const panel = $('#panel');
+  panel.innerHTML =
+    '<div class="panel-head">' +
+      '<button class="panel-x" data-action="close-overlays" aria-label="Close">✕</button>' +
+      '<div style="display:flex; gap:6px; flex-wrap:wrap; align-items:center;">' + formatPill(p) + '<span class="pill neutral">' + esc(p.pillar) + '</span></div>' +
+      '<h2>' + esc(p.title) + '</h2>' +
+      '<div class="when">' + fmtDow(p.date) + ', ' + fmtDate(p.date) + ' · ' + fmtTime(p.time) + ' · ' + statusPill(p) + '</div>' +
+    '</div>' +
+    '<div class="panel-body">' +
+      '<div class="fld"><div class="klabel"><span>Hook</span><button class="copybtn" data-action="copy-field" data-id="' + p.id + '" data-f="hook">Copy</button></div>' +
+        '<div class="hookbox">' + esc(p.hook) + '</div></div>' +
+      '<div class="fld"><div class="klabel"><span>Full script</span><button class="copybtn" data-action="copy-field" data-id="' + p.id + '" data-f="script">Copy</button></div>' +
+        '<div class="prose">' + esc(p.script) + '</div></div>' +
+      '<div class="fld"><div class="klabel"><span>Caption</span><button class="copybtn" data-action="copy-field" data-id="' + p.id + '" data-f="caption">Copy</button></div>' +
+        '<div class="prose">' + esc(p.caption) + '</div></div>' +
+      '<div class="fld"><div class="klabel"><span>Hashtags</span><button class="copybtn" data-action="copy-field" data-id="' + p.id + '" data-f="hashtags">Copy</button></div>' +
+        '<div class="tags">' + esc(p.hashtags) + '</div></div>' +
+      (p.metrics ? '<div class="fld"><div class="klabel"><span>Performance</span></div><div class="prose" style="font-family:var(--mono); font-size:12.5px;">reach ' + p.metrics.reach.toLocaleString('en-US') + ' · likes ' + p.metrics.likes + ' · sends ' + p.metrics.sends + ' (' + fmtPct(pct(p.metrics.sends, p.metrics.reach)) + ') · saves ' + p.metrics.saves + ' (' + fmtPct(pct(p.metrics.saves, p.metrics.reach)) + ')</div></div>' : '') +
+      '<div class="panel-actions">' +
+        '<button class="btn" data-action="edit-post" data-id="' + p.id + '">Edit post</button>' +
+        '<button class="btn" data-action="copy-all" data-id="' + p.id + '">Copy script + caption</button>' +
+        '<button class="btn ghost" data-action="delete-post" data-id="' + p.id + '">Delete</button>' +
+      '</div>' +
+    '</div>';
+  panel.classList.add('open'); $('#scrim').classList.add('open');
+}
+
+function closeOverlays() {
+  $('#panel').classList.remove('open'); $('#scrim').classList.remove('open'); $('#modal').classList.remove('open');
+}
+
+/* ============================== Post editor modal ============================== */
+
+function openEditor(id, prefill) {
+  const p = id ? byId(id) : Object.assign({
+    id: '', date: todayStr(), time: '07:30', platform: 'IG', format: 'Reel', series: '',
+    title: '', pillar: 'Explainer', status: 'draft', hook: '', script: '', caption: '', hashtags: '', metrics: null
+  }, prefill || {});
+  if (!p) return;
+  const sel = (opts, cur) => opts.map(o => '<option' + (o === cur ? ' selected' : '') + '>' + o + '</option>').join('');
+  $('#modalCard').innerHTML =
+    '<h2>' + (id ? 'Edit post' : 'New post') + '</h2>' +
+    '<form class="frm" id="postForm" data-id="' + esc(id || '') + '">' +
+      '<label><span class="klabel">Title</span><input name="title" required value="' + esc(p.title) + '" placeholder="Chip War Weekly #5 — …"></label>' +
+      '<div class="row3">' +
+        '<label><span class="klabel">Date</span><input name="date" type="date" required value="' + esc(p.date) + '"></label>' +
+        '<label><span class="klabel">Time</span><input name="time" type="time" required value="' + esc(p.time) + '"></label>' +
+        '<label><span class="klabel">Platform</span><select name="platform">' + sel(['IG','TikTok','YouTube','IG+TT'], p.platform) + '</select></label>' +
+      '</div>' +
+      '<div class="row3">' +
+        '<label><span class="klabel">Format</span><select name="format">' + sel(['Reel','Carousel','Story'], p.format) + '</select></label>' +
+        '<label><span class="klabel">Pillar</span><select name="pillar">' + sel(['Explainer','Newsjack','Thesis','Myth-bust','Behind the policy'], p.pillar) + '</select></label>' +
+        '<label><span class="klabel">Status</span><select name="status">' + sel(STATUSES, p.status) + '</select></label>' +
+      '</div>' +
+      '<label><span class="klabel">Series (optional)</span><input name="series" value="' + esc(p.series) + '" placeholder="Chip War Weekly"></label>' +
+      '<label><span class="klabel">Hook — first 3 seconds / slide 1</span><textarea name="hook" required>' + esc(p.hook) + '</textarea></label>' +
+      '<label><span class="klabel">Full script / slide outline</span><textarea name="script" class="tall">' + esc(p.script) + '</textarea></label>' +
+      '<label><span class="klabel">Caption</span><textarea name="caption">' + esc(p.caption) + '</textarea></label>' +
+      '<label><span class="klabel">Hashtags (3–5, highly relevant)</span><input name="hashtags" value="' + esc(p.hashtags) + '" placeholder="#techpolicy #chipwar"></label>' +
+      '<div class="frm-foot">' +
+        '<button type="button" class="btn" data-action="close-overlays">Cancel</button>' +
+        '<button type="submit" class="btn primary">' + (id ? 'Save changes' : 'Add to calendar') + '</button>' +
+      '</div>' +
+    '</form>';
+  $('#panel').classList.remove('open');
+  $('#modal').classList.add('open'); $('#scrim').classList.add('open');
+}
+
+function submitEditor(form) {
+  const fd = new FormData(form);
+  const id = form.dataset.id;
+  const vals = {};
+  ['title','date','time','platform','format','pillar','status','series','hook','script','caption','hashtags'].forEach(k => vals[k] = String(fd.get(k) || '').trim());
+  if (!vals.title || !vals.date) return;
+  if (id) {
+    const p = byId(id); if (!p) return;
+    Object.assign(p, vals);
+  } else {
+    vals.id = uid(); vals.metrics = null;
+    state.posts.push(vals);
+  }
+  save(); closeOverlays(); render();
+  toast(id ? 'Post updated' : 'Added to calendar');
+}
+
+/* ============================== Hook Vault ============================== */
+
+function renderHooks() {
+  const cats = [...new Set(state.hooks.map(h => h.category))];
+  const order = { winner: 0, testing: 1, untested: 2, retired: 3 };
+  return pageHead('Hook Vault', 'The first three seconds, <em>stockpiled.</em>',
+      'Viewers decide in a quarter second. Bank hooks here, run them through Trial Reels against non-followers, promote the winners. Click a status to advance it.',
+      '') +
+    '<div class="card pad">' +
+      '<form class="frm" id="hookForm" style="grid-template-columns: 1fr 170px auto; display:grid; gap:10px; align-items:end;">' +
+        '<label><span class="klabel">New hook</span><input name="text" required placeholder="The one number Brussels hopes you never compare…"></label>' +
+        '<label><span class="klabel">Category</span><select name="category">' +
+          ['Information gap','Numbers','Myth vs. Reality','Newsjack','Analogy','Absurdity','Series retention'].map(c => '<option>' + c + '</option>').join('') +
+        '</select></label>' +
+        '<button type="submit" class="btn primary">Add</button>' +
+      '</form>' +
+    '</div>' +
+    cats.map(cat => {
+      const hooks = state.hooks.filter(h => h.category === cat).sort((a,b) => order[a.status] - order[b.status]);
+      return '<div class="card pad" style="margin-top:14px;">' +
+        '<div class="klabel" style="margin-bottom:4px;">' + esc(cat) + ' · ' + hooks.length + '</div>' +
+        hooks.map(h =>
+          '<div class="hookline">' +
+            '<div class="txt">“' + esc(h.text) + '”' +
+              '<div class="meta">' +
+                '<button class="hstat ' + h.status + '" data-action="cycle-hook" data-id="' + h.id + '" title="Click to advance: untested → testing → winner → retired">' + h.status + '</button>' +
+                (h.notes ? '<span class="note">' + esc(h.notes) + '</span>' : '') +
+              '</div>' +
+            '</div>' +
+            '<button class="copybtn" data-action="copy-hook" data-id="' + h.id + '">Copy</button>' +
+            '<button class="copybtn" data-action="delete-hook" data-id="' + h.id + '" title="Remove hook">✕</button>' +
+          '</div>').join('') +
+        '</div>';
+    }).join('');
+}
+
+/* ============================== Scheduler ============================== */
+
+function renderScheduler() {
+  const today = todayStr();
+  const horizon = new Date(); horizon.setDate(horizon.getDate() + 14);
+  const hEnd = horizon.getFullYear() + '-' + String(horizon.getMonth()+1).padStart(2,'0') + '-' + String(horizon.getDate()).padStart(2,'0');
+  const upcoming = sortPosts(state.posts.filter(p => p.date >= today && p.date <= hEnd));
+  const backlog = sortPosts(state.posts.filter(p => p.date > hEnd && p.status !== 'posted'));
+  const days = [...new Set(upcoming.map(p => p.date))];
+
+  const row = p =>
+    '<div class="rowline">' +
+      '<div class="klabel" style="min-width:52px;">' + fmtTime(p.time) + '</div>' +
+      '<div class="grow"><div class="t">' + esc(p.title) + '</div><div class="s">' + esc(p.hook) + '</div></div>' +
+      '<span class="pill ' + p.format.toLowerCase() + '">' + esc(p.format) + '</span>' +
+      statusPill(p) +
+      '<button class="btn sm ghost" data-action="open-post" data-id="' + p.id + '">Open</button>' +
+    '</div>';
+
+  return pageHead('Scheduler', 'The next <em>fourteen days.</em>',
+      'The publish queue, day by day. Advance a post through draft → ready → scheduled → posted by clicking its status. The first 20 minutes after publishing decide the early signal — be online when it drops.',
+      '<button class="btn primary" data-action="new-post">+ New post</button>') +
+    '<div class="card" style="padding: 6px 20px 10px;">' +
+      (days.length ? days.map(d =>
+        '<div class="daygroup"><span class="klabel">' + fmtDow(d) + ' · ' + fmtDate(d) + (d === today ? ' · TODAY' : '') + '</span>' +
+        upcoming.filter(p => p.date === d).map(row).join('') + '</div>').join('') :
+        '<div class="empty"><div class="big">Queue is empty.</div>Add posts from the calendar or the trend radar.</div>') +
+    '</div>' +
+    (backlog.length ?
+      '<div class="card" style="padding: 6px 20px 10px; margin-top:14px;">' +
+        '<div class="daygroup"><span class="klabel">Beyond 14 days · ' + backlog.length + ' queued</span>' + backlog.map(row).join('') + '</div>' +
+      '</div>' : '');
+}
+
+/* ============================== Analytics ============================== */
+
+function renderAnalytics() {
+  const posted = sortPosts(state.posts.filter(p => p.status === 'posted'));
+  const withM = posted.filter(p => p.metrics);
+  const totReach = withM.reduce((s,p) => s + (p.metrics.reach||0), 0);
+  const totSends = withM.reduce((s,p) => s + (p.metrics.sends||0), 0);
+  const totSaves = withM.reduce((s,p) => s + (p.metrics.saves||0), 0);
+  const spr = pct(totSends, totReach), svr = pct(totSaves, totReach);
+
+  const points = withM.map(p => pct(p.metrics.sends, p.metrics.reach) || 0);
+  let spark = '';
+  if (points.length > 1) {
+    const w = 280, hgt = 54, max = Math.max(...points, 2.5);
+    const xy = points.map((v, i) => [(i / (points.length - 1)) * (w - 8) + 4, hgt - 6 - (v / max) * (hgt - 14)]);
+    const path = xy.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(' ');
+    spark = '<svg class="spark" width="' + w + '" height="' + hgt + '" viewBox="0 0 ' + w + ' ' + hgt + '" aria-label="Sends per reach trend">' +
+      '<path d="' + path + '" fill="none" stroke="var(--accent)" stroke-width="2.2" stroke-linecap="round"/>' +
+      xy.map(p => '<circle cx="' + p[0].toFixed(1) + '" cy="' + p[1].toFixed(1) + '" r="3" fill="var(--accent)"/>').join('') +
+      '</svg>';
+  }
+
+  return pageHead('Analytics', 'Chase sends, <em>not likes.</em>',
+      'Log reach, likes, sends, and saves per post straight from Instagram Insights — the studio computes the ratios that actually drive 2026 distribution. Directional benchmarks: sends/reach ≥ 1% is strong, saves/reach ≥ 2% is strong.',
+      '') +
+    '<div class="grid cols-3">' +
+      '<div class="card pad"><div class="klabel">Sends / reach</div><div class="stat-n">' + fmtPct(spr) + '</div><div class="stat-s">north star · all posted content</div></div>' +
+      '<div class="card pad"><div class="klabel">Saves / reach</div><div class="stat-n">' + fmtPct(svr) + '</div><div class="stat-s">authority signal</div></div>' +
+      '<div class="card pad"><div class="klabel">Trend</div>' + (spark || '<div class="stat-s" style="margin-top:12px;">Log two or more posts to see the sends-per-reach curve.</div>') + '<div class="stat-s">sends/reach per post, oldest → newest</div></div>' +
+    '</div>' +
+    '<div class="card" style="margin-top:14px; padding: 14px 16px;">' +
+      (posted.length ?
+        '<div class="tblwrap"><table class="tbl"><thead><tr>' +
+        '<th>Post</th><th>Date</th><th>Format</th><th>Reach</th><th>Likes</th><th>Sends</th><th>Saves</th><th>Sends/Reach</th><th>Saves/Reach</th>' +
+        '</tr></thead><tbody>' +
+        posted.map(p => {
+          const m = p.metrics || {};
+          const sp = pct(m.sends, m.reach), sv = pct(m.saves, m.reach);
+          const cell = (f, v) => '<td><input class="mx" data-action-input="metric" data-id="' + p.id + '" data-f="' + f + '" type="number" min="0" value="' + (v == null ? '' : v) + '" placeholder="–"></td>';
+          return '<tr>' +
+            '<td style="max-width:280px;"><div style="font-weight:650; line-height:1.3;">' + esc(p.title) + '</div></td>' +
+            '<td style="white-space:nowrap;" class="klabel">' + fmtDate(p.date) + '</td>' +
+            '<td><span class="pill ' + p.format.toLowerCase() + '">' + esc(p.format) + '</span></td>' +
+            cell('reach', m.reach) + cell('likes', m.likes) + cell('sends', m.sends) + cell('saves', m.saves) +
+            '<td><span class="rate ' + rateClass(sp, 1, 0.5) + '">' + fmtPct(sp) + '</span></td>' +
+            '<td><span class="rate ' + rateClass(sv, 2, 1) + '">' + fmtPct(sv) + '</span></td>' +
+          '</tr>';
+        }).join('') +
+        '</tbody></table></div>' +
+        '<div class="note" style="margin-top:10px;">Seeded rows carry sample values — replace them with your real Instagram Insights. Mark a post as “posted” in the scheduler to add it here.</div>' :
+        '<div class="empty"><div class="big">No published posts yet.</div>Once a post goes live, mark it “posted” and log its Insights here.</div>') +
+    '</div>';
+}
+
+/* ============================== Competitor Tracker ============================== */
+
+function renderCompetitors() {
+  const tiers = [...new Set(state.competitors.map(c => c.tier))];
+  return pageHead('Competitor Tracker', 'Know the map, <em>own the gap.</em>',
+      'The competitive field as of mid-2026: chip authorities are long-form, geopolitics accounts are generalists, institutions are faceless — and nobody does carousel-grade tech policy. Verify follower counts before citing them publicly.',
+      '') +
+    tiers.map(tier =>
+      '<div class="card pad" style="margin-bottom:14px;">' +
+        '<div class="klabel" style="margin-bottom:4px;">' + esc(tier) + '</div>' +
+        state.competitors.filter(c => c.tier === tier).map(c =>
+          '<div class="comp">' +
+            '<div class="mono-n">' + esc(c.followers) + '</div>' +
+            '<div style="flex:1; min-width:0;">' +
+              '<div class="nm">' + esc(c.name) + ' <span class="klabel" style="font-size:9.5px;">· ' + esc(c.platform) + ' · ' + esc(c.handle) + '</span></div>' +
+              '<div class="lane">' + esc(c.lane) + '</div>' +
+              '<div class="gap"><b>Your edge:</b> ' + esc(c.gap) + '</div>' +
+            '</div>' +
+          '</div>').join('') +
+      '</div>').join('') +
+    '<div class="note">Source: competitive scan, July 2026 playbook. Counts vary by source and date.</div>';
+}
+
+/* ============================== What's Trending ============================== */
+
+function renderTrending() {
+  const trends = state.trends.slice().sort((a,b) => b.heat - a.heat || (a.date < b.date ? 1 : -1));
+  return pageHead('What’s Trending', 'The story pipeline, <em>pre-sorted.</em>',
+      'Live storylines on the beat, each with a ready newsjack angle. The rapid-response rule: a Commission proposal, a BIS rule, or an earnings call becomes a carousel within 24–48 hours. “Draft it” drops a pre-filled post into your calendar.',
+      '<a class="btn" href="../" target="_blank" rel="noopener">Daily Top 5 →</a>') +
+    '<div class="grid" style="grid-template-columns: 1fr 1fr;">' +
+    trends.map(t =>
+      '<div class="card trend">' +
+        '<div class="d"><span class="heat" data-h="' + t.heat + '"><i></i><i></i><i></i></span>' +
+          '<span>' + esc(t.topic) + '</span><span>·</span><span>' + fmtDate(t.date) + '</span></div>' +
+        '<h3>' + esc(t.title) + '</h3>' +
+        '<p>' + esc(t.summary) + '</p>' +
+        '<div class="angle"><b>Angle</b>' + esc(t.angle) + '</div>' +
+        '<div class="foot"><span class="src">' + esc(t.source) + '</span>' +
+          '<button class="btn sm" data-action="draft-trend" data-id="' + t.id + '">Draft it →</button></div>' +
+      '</div>').join('') +
+    '</div>' +
+    '<style>@media (max-width: 860px){ #main .grid[style] { grid-template-columns: 1fr !important; } }</style>';
+}
+
+function draftFromTrend(id) {
+  const t = state.trends.find(x => x.id === id); if (!t) return;
+  const d = new Date(); d.setDate(d.getDate() + 1);
+  const ds = d.getFullYear() + '-' + String(d.getMonth()+1).padStart(2,'0') + '-' + String(d.getDate()).padStart(2,'0');
+  openEditor(null, {
+    date: ds, time: '08:00', format: 'Carousel', pillar: 'Newsjack', status: 'draft',
+    title: t.title, hook: '', script: 'Angle: ' + t.angle + '\n\nSummary: ' + t.summary + '\n\nSource: ' + t.source + '\n\nSlide 1 — HOOK:\nSlide 2 — What this covers:\nSlide 3 — …',
+    caption: 'Sources: ' + t.source + '.', hashtags: '#techpolicy'
+  });
+}
+
+/* ============================== Events ============================== */
+
+document.addEventListener('click', e => {
+  const el = e.target.closest('[data-action]');
+  if (!el) return;
+  const a = el.dataset.action, id = el.dataset.id;
+  if (a === 'close-overlays') closeOverlays();
+  else if (a === 'open-post') openPost(id);
+  else if (a === 'new-post') openEditor(null);
+  else if (a === 'new-post-link') { /* navigates to calendar */ setTimeout(() => openEditor(null), 60); }
+  else if (a === 'edit-post') openEditor(id);
+  else if (a === 'delete-post') {
+    const p = byId(id); if (!p) return;
+    if (confirm('Delete “' + p.title + '”?')) {
+      state.posts = state.posts.filter(x => x.id !== id);
+      save(); closeOverlays(); render(); toast('Post deleted');
+    }
+  }
+  else if (a === 'cycle-status') {
+    const p = byId(id); if (!p) return;
+    p.status = STATUSES[(STATUSES.indexOf(p.status) + 1) % STATUSES.length];
+    if (p.status === 'posted' && !p.metrics) p.metrics = { reach: null, likes: null, sends: null, saves: null };
+    save(); render();
+    if ($('#panel').classList.contains('open')) openPost(id);
+  }
+  else if (a === 'copy-field') { const p = byId(id); if (p) copyText(p[el.dataset.f] || '', el.dataset.f.charAt(0).toUpperCase() + el.dataset.f.slice(1)); }
+  else if (a === 'copy-all') { const p = byId(id); if (p) copyText(p.script + '\n\n---\n\n' + p.caption + '\n\n' + p.hashtags, 'Script + caption'); }
+  else if (a === 'cycle-hook') {
+    const h = state.hooks.find(x => x.id === id); if (!h) return;
+    h.status = HOOK_STATUSES[(HOOK_STATUSES.indexOf(h.status) + 1) % HOOK_STATUSES.length];
+    save(); render();
+  }
+  else if (a === 'copy-hook') { const h = state.hooks.find(x => x.id === id); if (h) copyText(h.text, 'Hook'); }
+  else if (a === 'delete-hook') {
+    const h = state.hooks.find(x => x.id === id); if (!h) return;
+    if (confirm('Remove this hook from the vault?')) { state.hooks = state.hooks.filter(x => x.id !== id); save(); render(); }
+  }
+  else if (a === 'draft-trend') draftFromTrend(id);
+  else if (a === 'cal-prev') { calM--; if (calM < 0) { calM = 11; calY--; } render(); }
+  else if (a === 'cal-next') { calM++; if (calM > 11) { calM = 0; calY++; } render(); }
+  else if (a === 'cal-today') { const d = new Date(); calY = d.getFullYear(); calM = d.getMonth(); render(); }
+  else if (a === 'reset-data') resetData();
+});
+
+document.addEventListener('submit', e => {
+  if (e.target.id === 'postForm') { e.preventDefault(); submitEditor(e.target); }
+  if (e.target.id === 'hookForm') {
+    e.preventDefault();
+    const fd = new FormData(e.target);
+    const text = String(fd.get('text') || '').trim();
+    if (!text) return;
+    state.hooks.push({ id: uid(), text, category: String(fd.get('category')), status: 'untested', notes: '' });
+    save(); render(); toast('Hook added to vault');
+  }
+});
+
+document.addEventListener('input', e => {
+  const el = e.target.closest('[data-action-input="metric"]');
+  if (!el) return;
+  const p = byId(el.dataset.id); if (!p) return;
+  if (!p.metrics) p.metrics = { reach: null, likes: null, sends: null, saves: null };
+  const v = el.value === '' ? null : Math.max(0, Number(el.value));
+  p.metrics[el.dataset.f] = v; save();
+  // Recompute the two rate cells + summary without a full re-render (keeps input focus)
+  const row = el.closest('tr');
+  if (row) {
+    const m = p.metrics;
+    const rates = row.querySelectorAll('.rate');
+    const sp = pct(m.sends, m.reach), sv = pct(m.saves, m.reach);
+    if (rates[0]) { rates[0].textContent = fmtPct(sp); rates[0].className = 'rate ' + rateClass(sp, 1, 0.5); }
+    if (rates[1]) { rates[1].textContent = fmtPct(sv); rates[1].className = 'rate ' + rateClass(sv, 2, 1); }
+  }
+});
+
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeOverlays(); });
+
+render();
+</script>
+</body>
+</html>
