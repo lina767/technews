@@ -2,7 +2,7 @@
 {
 "date": "2026-07-20",
 "label": "EU AI Act",
-"mentions": 5
+"mentions": 6
 },
 {
 "date": "2026-07-20",
@@ -46,7 +46,7 @@
 },
 {
 "date": "2026-07-20",
-"label": "AI Regulation",
+"label": "AI Systems",
 "mentions": 2
 },
 {
@@ -82,11 +82,6 @@
 {
 "date": "2026-07-20",
 "label": "Anthropic CEO",
-"mentions": 2
-},
-{
-"date": "2026-07-20",
-"label": "David Sacks",
 "mentions": 2
 }
 ]
