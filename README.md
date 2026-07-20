@@ -28,6 +28,14 @@ fetch → cluster (novelty) → score → thesis-match → edit → render/notif
 6. **Render / Notify** produce a self-contained HTML dashboard, a dated markdown
    archive, and an email digest.
 
+A parallel, independent pass — **Topic Discovery** (`topics.py`) — runs over the
+*full* cluster pool (not just the Top-5 candidates) to build `output/topics.html`:
+open-vocabulary topics (not the fixed keyword list above), split **Europe** vs.
+**worldwide** from article content, plus a **Hidden & emerging** section for themes
+trending above their own trailing average but not yet mainstream (needs ~1–2 weeks
+of daily runs to build a baseline — `output/topic_history.json` is the durable
+record, since it's what the daily workflow actually commits back to the repo).
+
 **No API key? It still runs.** Every Claude-backed agent has a deterministic
 heuristic fallback, so the whole pipeline works offline. Set `ANTHROPIC_API_KEY`
 to switch scoring/editing to Claude (Haiku for per-item scoring, Sonnet for the
@@ -39,8 +47,9 @@ editor) — the code path is identical.
 python3 -m venv .venv && source .venv/bin/activate
 pip install -e ".[dev]"
 
-technews run --once          # fetch, score, render → output/dashboard.html
+technews run --once          # fetch, score, render → output/dashboard.html + output/topics.html
 open output/dashboard.html   # (or xdg-open) view the Top 5
+open output/topics.html      # what's being discussed, Europe vs. worldwide + emerging themes
 
 technews show                # print the latest edition as markdown
 technews fetch               # just fetch and report per-source counts
@@ -63,7 +72,9 @@ technews run --once
 - **`theses.yaml`** — *your* arguments. Every item is matched against these; edit
   the claims and keywords to make the brief personal.
 - **`settings.yaml`** — score weights, `top_n`, `recency_days`, cost cap
-  (`max_items_per_day`), Claude model ids, and the Resend email from/to.
+  (`max_items_per_day`), Claude model ids, and the Resend email from/to. Topic
+  Discovery has its own cost guard (`topic_scan_limit`) and trend window
+  (`topic_history_days`).
 
 ## Email digest (Resend)
 

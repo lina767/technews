@@ -36,7 +36,7 @@ jobs:
         run: |
           git config user.name "technews-bot"
           git config user.email "bot@users.noreply.github.com"
-          git add output/archive output/index.html output/dashboard.html
+          git add output/archive output/index.html output/dashboard.html output/topics.html output/topic_history.json
           git commit -m "brief: $(date -u +%Y-%m-%d)" || echo "nothing to commit"
           git push || echo "nothing to push"
 

@@ -15,7 +15,7 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
-from .models import Edition, Item
+from .models import Edition, Item, Topic
 
 _SCHEMA = """
 CREATE TABLE IF NOT EXISTS items (
@@ -35,6 +35,14 @@ CREATE TABLE IF NOT EXISTS editions (
     generated_at TEXT NOT NULL,
     editor       TEXT,
     payload      TEXT NOT NULL
+);
+CREATE TABLE IF NOT EXISTS topic_history (
+    date            TEXT NOT NULL,
+    label           TEXT NOT NULL,
+    mentions        INTEGER NOT NULL,
+    europe_count    INTEGER NOT NULL,
+    worldwide_count INTEGER NOT NULL,
+    PRIMARY KEY (date, label)
 );
 """
 
@@ -109,3 +117,30 @@ class Store:
             "SELECT payload FROM editions WHERE date = ?", (date,)
         ).fetchone()
         return json.loads(row["payload"]) if row else None
+
+    def get_topic_history(self, before_date: str, days: int = 14) -> list[dict]:
+        """Prior days' topic snapshots, strictly before ``before_date``."""
+        rows = self.conn.execute(
+            """
+            SELECT date, label, mentions FROM topic_history
+            WHERE date < ?
+            ORDER BY date DESC
+            """,
+            (before_date,),
+        ).fetchall()
+        # SQLite has no easy "last N distinct dates" filter without a window
+        # function version check, so trim in Python — history is tiny.
+        distinct_dates = sorted({r["date"] for r in rows}, reverse=True)[:days]
+        keep = set(distinct_dates)
+        return [dict(r) for r in rows if r["date"] in keep]
+
+    def save_topic_snapshot(self, date: str, topics: list[Topic]) -> None:
+        self.conn.execute("DELETE FROM topic_history WHERE date = ?", (date,))
+        self.conn.executemany(
+            """
+            INSERT INTO topic_history (date, label, mentions, europe_count, worldwide_count)
+            VALUES (?, ?, ?, ?, ?)
+            """,
+            [(date, t.label, t.mentions, t.europe_count, t.worldwide_count) for t in topics],
+        )
+        self.conn.commit()

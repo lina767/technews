@@ -5,6 +5,8 @@ top_n: 5                    # size of the daily edition
 more_items: 20              # extra stories listed (collapsed) below the Top 5
 max_items_per_day: 120     # hard cap on clusters scored by Claude (cost guard)
 recency_days: 7            # ignore items older than this many days
+topic_scan_limit: 200       # clusters sent to Topic Discovery (cost guard, own pass)
+topic_history_days: 14      # trailing window for the emerging-topic baseline
 
 # Composite score = weighted sum of the three 1..5 dimensions (normalized 0..1).
 weights:
@@ -25,6 +27,7 @@ topics:
 models:
   scorer: claude-haiku-4-5    # per-item relevance / novelty / carousel + thesis
   editor: claude-sonnet-5     # final top-N selection + hooks
+  topics: claude-sonnet-5     # one batched call: region + open-vocabulary topic grouping
 
 # Email digest via Resend (used only when RESEND_API_KEY is set).
 email:

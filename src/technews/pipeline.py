@@ -17,9 +17,10 @@ from . import cluster as cluster_mod
 from . import editor as editor_mod
 from . import scoring as scoring_mod
 from . import thesis as thesis_mod
+from . import topics as topics_mod
 from .fetch import fetch_all, load_sources
 from .models import Candidate, Cluster, Edition, Item
-from .render import to_payload, write_outputs
+from .render import to_payload, write_outputs, write_topics_output
 from .store import Store
 from .thesis import load_theses
 
@@ -115,7 +116,16 @@ def run(
         paths = write_outputs(edition, output_dir)
         store.save_edition(edition, to_payload(edition))
 
+        history_file = Path(output_dir) / "topic_history.json"
+        topic_report = topics_mod.build_topic_report(
+            items, settings, store=store, history_file=history_file
+        )
+        topics_path = write_topics_output(topic_report, output_dir)
+
     log.info("wrote %s and %s", paths["dashboard"], paths["archive"])
+    log.info("wrote %s (%d topics, %d emerging, extractor=%s)",
+              topics_path, len(topic_report.current), len(topic_report.emerging),
+              topic_report.extractor)
 
     if send_email or email_dry_run:
         from .notify import send_digest

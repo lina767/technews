@@ -150,3 +150,42 @@ class Edition:
     more: list[Candidate] = field(default_factory=list)
     generated_at: datetime = field(default_factory=_now)
     editor: str = "heuristic"  # which editor produced the selection
+
+
+@dataclass
+class TopicMention:
+    title: str
+    url: str
+    source_name: str
+
+
+@dataclass
+class Topic:
+    """An open-vocabulary theme discovered across the full cluster pool.
+
+    Unlike the curated ``settings.topics`` keyword tags, labels here are not
+    fixed in advance — this is what lets a not-yet-mainstream story (e.g. a
+    datacenter-energy debate) surface on its own terms.
+    """
+
+    label: str
+    description: str = ""
+    europe_count: int = 0
+    worldwide_count: int = 0
+    examples: list[TopicMention] = field(default_factory=list)
+    trend: str = "established"  # "established" | "emerging" | "new"
+    baseline_avg: float | None = None  # trailing daily average; None = no history yet
+
+    @property
+    def mentions(self) -> int:
+        return self.europe_count + self.worldwide_count
+
+
+@dataclass
+class TopicReport:
+    date: str
+    current: list[Topic]   # all discovered topics, ranked by mentions
+    emerging: list[Topic]  # subset flagged "emerging" or "new"
+    has_baseline: bool = False  # False until at least one prior day's snapshot exists
+    generated_at: datetime = field(default_factory=_now)
+    extractor: str = "heuristic"  # which extractor produced this report

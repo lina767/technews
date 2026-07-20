@@ -10,7 +10,7 @@ from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
-from .models import Candidate, Edition, EditionItem
+from .models import Candidate, Edition, EditionItem, Topic, TopicReport
 
 _TEMPLATES_DIR = Path(__file__).resolve().parents[2] / "templates"
 
@@ -98,8 +98,48 @@ def edition_view(edition: Edition) -> dict:
     }
 
 
+def _topic_view(topic: Topic) -> dict:
+    return {
+        "label": topic.label,
+        "description": topic.description,
+        "mentions": topic.mentions,
+        "europe_count": topic.europe_count,
+        "worldwide_count": topic.worldwide_count,
+        "trend": topic.trend,
+        "baseline_avg": topic.baseline_avg,
+        "examples": [
+            {"title": m.title, "url": m.url, "source_name": m.source_name}
+            for m in topic.examples
+        ],
+    }
+
+
+def topic_report_view(report: TopicReport) -> dict:
+    europe = sorted(
+        (t for t in report.current if t.europe_count > 0),
+        key=lambda t: t.europe_count, reverse=True,
+    )
+    worldwide = sorted(
+        (t for t in report.current if t.worldwide_count > 0),
+        key=lambda t: t.worldwide_count, reverse=True,
+    )
+    return {
+        "date": report.date,
+        "generated_at": report.generated_at.strftime("%Y-%m-%d %H:%M UTC"),
+        "extractor": report.extractor,
+        "has_baseline": report.has_baseline,
+        "europe": [_topic_view(t) for t in europe],
+        "worldwide": [_topic_view(t) for t in worldwide],
+        "emerging": [_topic_view(t) for t in report.emerging],
+    }
+
+
 def render_dashboard(edition: Edition) -> str:
     return _env().get_template("dashboard.html.j2").render(**edition_view(edition))
+
+
+def render_topics(report: TopicReport) -> str:
+    return _env().get_template("topics.html.j2").render(**topic_report_view(report))
 
 
 def render_markdown(edition: Edition) -> str:
@@ -131,3 +171,11 @@ def write_outputs(edition: Edition, output_dir: str | Path) -> dict[str, Path]:
     dashboard.write_text(html, encoding="utf-8")
     archive.write_text(render_markdown(edition), encoding="utf-8")
     return {"index": index, "dashboard": dashboard, "archive": archive}
+
+
+def write_topics_output(report: TopicReport, output_dir: str | Path) -> Path:
+    out = Path(output_dir)
+    out.mkdir(parents=True, exist_ok=True)
+    path = out / "topics.html"
+    path.write_text(render_topics(report), encoding="utf-8")
+    return path

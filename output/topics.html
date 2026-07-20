@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tech Politics — Topic Radar · 2026-07-20</title>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --ink: #1a1a1a; --muted: #6b6b6b;
+    --line: #e6e6e2; --accent: #b4532a; --accent-soft: #f0e2da;
+    --good: #2f7d5b; --bad: #b23b3b; --neutral: #6b6b6b; --bar: #e6e6e2;
+    --emerging: #8a5cb8; --emerging-soft: #ece2f5;
+    --shadow: 0 1px 2px rgba(0,0,0,.05), 0 8px 24px rgba(0,0,0,.04);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14140f; --panel: #1d1d18; --ink: #ece9e2; --muted: #a09a8e;
+      --line: #2c2c25; --accent: #e0824f; --accent-soft: #322019;
+      --good: #6cc79a; --bad: #e07a7a; --neutral: #a09a8e; --bar: #2c2c25;
+      --emerging: #c9a3ec; --emerging-soft: #2a1f36;
+      --shadow: 0 1px 2px rgba(0,0,0,.3), 0 8px 24px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #14140f; --panel: #1d1d18; --ink: #ece9e2; --muted: #a09a8e;
+    --line: #2c2c25; --accent: #e0824f; --accent-soft: #322019;
+    --good: #6cc79a; --bad: #e07a7a; --neutral: #a09a8e; --bar: #2c2c25;
+    --emerging: #c9a3ec; --emerging-soft: #2a1f36;
+  }
+  :root[data-theme="light"] {
+    --bg: #f7f7f5; --panel: #ffffff; --ink: #1a1a1a; --muted: #6b6b6b;
+    --line: #e6e6e2; --accent: #b4532a; --accent-soft: #f0e2da;
+    --good: #2f7d5b; --bad: #b23b3b; --neutral: #6b6b6b; --bar: #e6e6e2;
+    --emerging: #8a5cb8; --emerging-soft: #ece2f5;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; background: var(--bg); color: var(--ink);
+    font: 16px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 40px 20px 72px; }
+  header { margin-bottom: 28px; }
+  .kicker { font-size: 13px; letter-spacing: .12em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+  h1 { font-size: 30px; line-height: 1.15; margin: 6px 0 4px; letter-spacing: -.01em; }
+  .sub { color: var(--muted); font-size: 14px; }
+  a { color: var(--accent); }
+  h2 { font-size: 20px; margin: 36px 0 4px; }
+  .section-note { color: var(--muted); font-size: 13px; margin-bottom: 16px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 680px) { .grid { grid-template-columns: 1fr; } }
+  .col-title { font-size: 15px; font-weight: 700; margin: 0 0 10px; display: flex; align-items: center; gap: 8px; }
+  .topic {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 12px;
+    padding: 14px 16px; margin: 0 0 10px; box-shadow: var(--shadow);
+  }
+  .topic-top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+  .topic-label { font-weight: 700; font-size: 15px; }
+  .topic-count { font-size: 12px; color: var(--muted); white-space: nowrap; }
+  .topic-desc { color: var(--muted); font-size: 13px; margin-top: 4px; }
+  .badge {
+    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .04em;
+    text-transform: uppercase; padding: 2px 7px; border-radius: 6px; margin-right: 6px;
+  }
+  .badge.new { background: var(--emerging-soft); color: var(--emerging); }
+  .badge.emerging { background: var(--emerging-soft); color: var(--emerging); }
+  .examples { margin: 8px 0 0; padding: 0; list-style: none; }
+  .examples li { font-size: 12px; margin: 3px 0; }
+  .examples a { color: var(--ink); text-decoration: none; }
+  .examples a:hover { color: var(--accent); }
+  .emerging-card {
+    background: var(--emerging-soft); border: 1px solid var(--emerging); border-radius: 12px;
+    padding: 16px 18px; margin: 0 0 12px;
+  }
+  .emerging-card .topic-label { color: var(--emerging); }
+  .baseline-note {
+    text-align: center; color: var(--muted); font-size: 13px; padding: 28px 16px;
+    border: 1px dashed var(--line); border-radius: 12px;
+  }
+  .empty { text-align: center; color: var(--muted); padding: 40px 0; }
+  footer { margin-top: 40px; text-align: center; color: var(--muted); font-size: 12px; }
+</style>
+<script>
+  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+</script>
+<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="kicker">Tech Politics Brief</div>
+    <h1>Topic Radar</h1>
+    <div class="sub">2026-07-20 · generated 2026-07-20 13:01 UTC · extractor: heuristic · <a href="index.html">← Daily Top 5</a></div>
+  </header>
+
+  <h2>🔍 Hidden &amp; emerging</h2>
+  <div class="baseline-note">
+    Building trend history — this needs a few days of runs before "emerging" is meaningful.
+    Check back after about a week.
+  </div>
+
+  <h2>📊 What's being discussed</h2>
+  <div class="section-note">Ranked by mention count today, split by where the coverage is coming from.</div>
+  <div class="grid">
+    <div>
+      <div class="col-title">🇪🇺 Europe</div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">EU AI Act</span>
+          <span class="topic-count">5</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Digital Sovereignty</span>
+          <span class="topic-count">3</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Digital Services Act</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Digital Watch Observatory</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">World Cup</span>
+          <span class="topic-count">1</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+    </div>
+    <div>
+      <div class="col-title">🌍 Worldwide</div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Threatened Wildlife</span>
+          <span class="topic-count">3</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">India Semiconductor Mission</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Advisory Committee</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Information Collection</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">We Need</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">AI Regulation</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Supply Chain</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Hybrid Bonding</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Tower Semiconductor</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Indian Express</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Crypto Briefing</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">Anthropic CEO</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">David Sacks</span>
+          <span class="topic-count">2</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+      <div class="topic">
+        <div class="topic-top">
+          <span class="topic-label">World Cup</span>
+          <span class="topic-count">1</span>
+        </div>
+<div class="topic-desc">Frequently mentioned across headlines.</div>      </div>
+    </div>
+  </div>
+
+  <footer>
+    Open-vocabulary topics discovered across the full cluster pool, not just the Top 5 · region assigned from article content.
+  </footer>
+</div>
+</body>
+</html>
