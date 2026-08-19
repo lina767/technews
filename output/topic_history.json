@@ -2618,5 +2618,55 @@
 "date": "2026-08-18",
 "label": "Economic Times",
 "mentions": 2
+},
+{
+"date": "2026-08-19",
+"label": "EU AI Act",
+"mentions": 12
+},
+{
+"date": "2026-08-19",
+"label": "AI Regulation",
+"mentions": 7
+},
+{
+"date": "2026-08-19",
+"label": "Agency Information Collection",
+"mentions": 4
+},
+{
+"date": "2026-08-19",
+"label": "Information Collection Activities",
+"mentions": 4
+},
+{
+"date": "2026-08-19",
+"label": "Comment Request",
+"mentions": 3
+},
+{
+"date": "2026-08-19",
+"label": "United States",
+"mentions": 3
+},
+{
+"date": "2026-08-19",
+"label": "Advisory Board",
+"mentions": 2
+},
+{
+"date": "2026-08-19",
+"label": "Data Center",
+"mentions": 2
+},
+{
+"date": "2026-08-19",
+"label": "Chip Industry",
+"mentions": 2
+},
+{
+"date": "2026-08-19",
+"label": "Tech Times",
+"mentions": 2
 }
 ]
