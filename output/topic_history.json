@@ -3368,5 +3368,70 @@
 "date": "2026-08-31",
 "label": "Georgia Tech",
 "mentions": 2
+},
+{
+"date": "2026-09-01",
+"label": "EU AI Act",
+"mentions": 9
+},
+{
+"date": "2026-09-01",
+"label": "United States",
+"mentions": 3
+},
+{
+"date": "2026-09-01",
+"label": "Big Tech",
+"mentions": 3
+},
+{
+"date": "2026-09-01",
+"label": "AI Regulation",
+"mentions": 3
+},
+{
+"date": "2026-09-01",
+"label": "Digital Sovereignty",
+"mentions": 3
+},
+{
+"date": "2026-09-01",
+"label": "Hugging Face",
+"mentions": 3
+},
+{
+"date": "2026-09-01",
+"label": "Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-09-01",
+"label": "International Traffic",
+"mentions": 2
+},
+{
+"date": "2026-09-01",
+"label": "Arms Regulations",
+"mentions": 2
+},
+{
+"date": "2026-09-01",
+"label": "Lake America",
+"mentions": 2
+},
+{
+"date": "2026-09-01",
+"label": "Social Media",
+"mentions": 2
+},
+{
+"date": "2026-09-01",
+"label": "LLM Inference",
+"mentions": 2
+},
+{
+"date": "2026-09-01",
+"label": "Bill Gates",
+"mentions": 2
 }
 ]
