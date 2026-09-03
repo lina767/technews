@@ -3473,5 +3473,50 @@
 "date": "2026-09-02",
 "label": "Meta Settlement",
 "mentions": 2
+},
+{
+"date": "2026-09-03",
+"label": "EU AI Act",
+"mentions": 6
+},
+{
+"date": "2026-09-03",
+"label": "Digital Sovereignty",
+"mentions": 4
+},
+{
+"date": "2026-09-03",
+"label": "AI Regulation",
+"mentions": 4
+},
+{
+"date": "2026-09-03",
+"label": "United States",
+"mentions": 3
+},
+{
+"date": "2026-09-03",
+"label": "Hugging Face",
+"mentions": 3
+},
+{
+"date": "2026-09-03",
+"label": "Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-09-03",
+"label": "Supply Chain",
+"mentions": 2
+},
+{
+"date": "2026-09-03",
+"label": "Data Centers",
+"mentions": 2
+},
+{
+"date": "2026-09-03",
+"label": "Big Tech",
+"mentions": 2
 }
 ]
