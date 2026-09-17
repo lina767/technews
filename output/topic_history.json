@@ -4483,5 +4483,90 @@
 "date": "2026-09-16",
 "label": "CBS News",
 "mentions": 2
+},
+{
+"date": "2026-09-17",
+"label": "AI Regulation",
+"mentions": 13
+},
+{
+"date": "2026-09-17",
+"label": "York Times",
+"mentions": 5
+},
+{
+"date": "2026-09-17",
+"label": "A.I Regulation",
+"mentions": 4
+},
+{
+"date": "2026-09-17",
+"label": "Order Renewing Temporary",
+"mentions": 3
+},
+{
+"date": "2026-09-17",
+"label": "Renewing Temporary Denial",
+"mentions": 3
+},
+{
+"date": "2026-09-17",
+"label": "EU AI Act",
+"mentions": 3
+},
+{
+"date": "2026-09-17",
+"label": "Export Privileges",
+"mentions": 3
+},
+{
+"date": "2026-09-17",
+"label": "Data Center",
+"mentions": 3
+},
+{
+"date": "2026-09-17",
+"label": "Fox Business",
+"mentions": 3
+},
+{
+"date": "2026-09-17",
+"label": "EU KIDS Act",
+"mentions": 2
+},
+{
+"date": "2026-09-17",
+"label": "Anthropic CEO Dario",
+"mentions": 2
+},
+{
+"date": "2026-09-17",
+"label": "CEO Dario Amodei",
+"mentions": 2
+},
+{
+"date": "2026-09-17",
+"label": "Countervailing Duty",
+"mentions": 2
+},
+{
+"date": "2026-09-17",
+"label": "Fossil Fuel-Fired",
+"mentions": 2
+},
+{
+"date": "2026-09-17",
+"label": "JD Vance",
+"mentions": 2
+},
+{
+"date": "2026-09-17",
+"label": "Bernie Sanders",
+"mentions": 2
+},
+{
+"date": "2026-09-17",
+"label": "Steve Bannon",
+"mentions": 2
 }
 ]
