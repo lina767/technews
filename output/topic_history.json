@@ -1,105 +1,5 @@
 [
 {
-"date": "2026-07-21",
-"label": "EU AI Act",
-"mentions": 7
-},
-{
-"date": "2026-07-21",
-"label": "Threatened Wildlife",
-"mentions": 6
-},
-{
-"date": "2026-07-21",
-"label": "United States",
-"mentions": 3
-},
-{
-"date": "2026-07-21",
-"label": "Digital Sovereignty",
-"mentions": 3
-},
-{
-"date": "2026-07-21",
-"label": "Digital Services Act",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "Distinct Population Segment",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "Plants Endangered Species",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "Endangered Species Status",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "India Semiconductor Mission",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "Advisory Committee",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "San Francisco",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "World Cup",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "We Need",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "AI Regulation",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "AI Agents",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "Data Sovereignty",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "AI Systems",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "Chip Industry",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "Tower Semiconductor",
-"mentions": 2
-},
-{
-"date": "2026-07-21",
-"label": "Indian Express",
-"mentions": 2
-},
-{
 "date": "2026-07-22",
 "label": "EU AI Act",
 "mentions": 10
@@ -4647,6 +4547,76 @@
 {
 "date": "2026-09-19",
 "label": "Free Press",
+"mentions": 2
+},
+{
+"date": "2026-09-20",
+"label": "AI Regulation",
+"mentions": 9
+},
+{
+"date": "2026-09-20",
+"label": "Order Renewing Temporary",
+"mentions": 3
+},
+{
+"date": "2026-09-20",
+"label": "Renewing Temporary Denial",
+"mentions": 3
+},
+{
+"date": "2026-09-20",
+"label": "EU AI Act",
+"mentions": 3
+},
+{
+"date": "2026-09-20",
+"label": "Export Privileges",
+"mentions": 3
+},
+{
+"date": "2026-09-20",
+"label": "York Times",
+"mentions": 3
+},
+{
+"date": "2026-09-20",
+"label": "EU KIDS Act",
+"mentions": 2
+},
+{
+"date": "2026-09-20",
+"label": "Countervailing Duty",
+"mentions": 2
+},
+{
+"date": "2026-09-20",
+"label": "Fossil Fuel-Fired",
+"mentions": 2
+},
+{
+"date": "2026-09-20",
+"label": "International Traffic",
+"mentions": 2
+},
+{
+"date": "2026-09-20",
+"label": "Arms Regulations",
+"mentions": 2
+},
+{
+"date": "2026-09-20",
+"label": "Dario Amodei",
+"mentions": 2
+},
+{
+"date": "2026-09-20",
+"label": "NBC News",
+"mentions": 2
+},
+{
+"date": "2026-09-20",
+"label": "Yahoo Finance",
 "mentions": 2
 }
 ]
