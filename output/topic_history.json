@@ -1,130 +1,5 @@
 [
 {
-"date": "2026-08-01",
-"label": "EU AI Act",
-"mentions": 36
-},
-{
-"date": "2026-08-01",
-"label": "AI Regulation",
-"mentions": 8
-},
-{
-"date": "2026-08-01",
-"label": "Agency Information Collection",
-"mentions": 3
-},
-{
-"date": "2026-08-01",
-"label": "Information Collection Activities",
-"mentions": 3
-},
-{
-"date": "2026-08-01",
-"label": "Official Statistics",
-"mentions": 3
-},
-{
-"date": "2026-08-01",
-"label": "Digital Omnibus",
-"mentions": 3
-},
-{
-"date": "2026-08-01",
-"label": "UAS Critical Components",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Global AI Governance",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "AI Act Transparency",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Digital Watch Observatory",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Forced Labor",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Environmental Assessment",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Seeking Comment",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Economic Estimates",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Digital Sector",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Social Media",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "AI Agents",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Open-Source AI",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Chip Industry",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Subsidy Review",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Transparency Code",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Transparency Obligations",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "European Commission",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Tech Buzz",
-"mentions": 2
-},
-{
-"date": "2026-08-01",
-"label": "Digital Sovereignty",
-"mentions": 2
-},
-{
 "date": "2026-08-02",
 "label": "EU AI Act",
 "mentions": 21
@@ -4292,6 +4167,86 @@
 {
 "date": "2026-09-30",
 "label": "Anthropic CEO",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "AI Regulation",
+"mentions": 8
+},
+{
+"date": "2026-10-01",
+"label": "Fox Business",
+"mentions": 4
+},
+{
+"date": "2026-10-01",
+"label": "EU AI Act",
+"mentions": 3
+},
+{
+"date": "2026-10-01",
+"label": "Information Collection",
+"mentions": 3
+},
+{
+"date": "2026-10-01",
+"label": "Guidance Public Engagement",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "Public Engagement Survey",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "International Traffic",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "Arms Regulations",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "Sanctions Regulations",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "Super Intelligence",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "Santa Fe",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "Edge AI",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "AI Data",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "Supply Chain",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-10-01",
+"label": "White House",
 "mentions": 2
 }
 ]
