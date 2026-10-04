@@ -1,120 +1,5 @@
 [
 {
-"date": "2026-08-04",
-"label": "EU AI Act",
-"mentions": 32
-},
-{
-"date": "2026-08-04",
-"label": "AI Act Transparency",
-"mentions": 4
-},
-{
-"date": "2026-08-04",
-"label": "AI Regulation",
-"mentions": 4
-},
-{
-"date": "2026-08-04",
-"label": "Agency Information Collection",
-"mentions": 3
-},
-{
-"date": "2026-08-04",
-"label": "Information Collection Activities",
-"mentions": 3
-},
-{
-"date": "2026-08-04",
-"label": "Act Transparency Rules",
-"mentions": 3
-},
-{
-"date": "2026-08-04",
-"label": "AI Act Enforcement",
-"mentions": 3
-},
-{
-"date": "2026-08-04",
-"label": "Official Statistics",
-"mentions": 3
-},
-{
-"date": "2026-08-04",
-"label": "Tech Times",
-"mentions": 3
-},
-{
-"date": "2026-08-04",
-"label": "UAS Critical Components",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "Military AI Agents",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "Environmental Assessment",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "Seeking Comment",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "Economic Estimates",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "Digital Sector",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "Social Media",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "UK Tech",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "AI Governance",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "Global AI",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "Chip Industry",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "Anthropic OpenAI",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "AI News",
-"mentions": 2
-},
-{
-"date": "2026-08-04",
-"label": "European Commission",
-"mentions": 2
-},
-{
 "date": "2026-08-05",
 "label": "EU AI Act",
 "mentions": 36
@@ -4221,6 +4106,86 @@
 },
 {
 "date": "2026-10-03",
+"label": "Dario Amodei",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "AI Regulation",
+"mentions": 11
+},
+{
+"date": "2026-10-04",
+"label": "Fox Business",
+"mentions": 3
+},
+{
+"date": "2026-10-04",
+"label": "Foreign-Trade Zone FTZ",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "Guidance Public Engagement",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "Public Engagement Survey",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "Production Activity",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "Inc Semiconductor",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "International Traffic",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "Arms Regulations",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "Edge AI",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "Wes Moore",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "San Francisco",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
+"label": "White House",
+"mentions": 2
+},
+{
+"date": "2026-10-04",
 "label": "Dario Amodei",
 "mentions": 2
 }
