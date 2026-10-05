@@ -1,110 +1,5 @@
 [
 {
-"date": "2026-08-05",
-"label": "EU AI Act",
-"mentions": 36
-},
-{
-"date": "2026-08-05",
-"label": "AI Regulation",
-"mentions": 6
-},
-{
-"date": "2026-08-05",
-"label": "AI Act Transparency",
-"mentions": 4
-},
-{
-"date": "2026-08-05",
-"label": "Act Transparency Rules",
-"mentions": 3
-},
-{
-"date": "2026-08-05",
-"label": "AI Act Enforcement",
-"mentions": 3
-},
-{
-"date": "2026-08-05",
-"label": "Hazardous Materials",
-"mentions": 3
-},
-{
-"date": "2026-08-05",
-"label": "Tech Times",
-"mentions": 3
-},
-{
-"date": "2026-08-05",
-"label": "Agency Information Collection",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "Information Collection Activities",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "Rules Take Effect",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "Medicare Program",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "Social Media",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "UK Tech",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "Tech Policy",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "CAF Bank",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "Trump FCC",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "Digital Omnibus",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "JD Supra",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "Anthropic OpenAI",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "AI News",
-"mentions": 2
-},
-{
-"date": "2026-08-05",
-"label": "UC Today",
-"mentions": 2
-},
-{
 "date": "2026-08-06",
 "label": "EU AI Act",
 "mentions": 43
@@ -4187,6 +4082,96 @@
 {
 "date": "2026-10-04",
 "label": "Dario Amodei",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "AI Regulation",
+"mentions": 12
+},
+{
+"date": "2026-10-05",
+"label": "Agentic AI",
+"mentions": 3
+},
+{
+"date": "2026-10-05",
+"label": "Digital Sovereignty",
+"mentions": 3
+},
+{
+"date": "2026-10-05",
+"label": "Foreign-Trade Zone FTZ",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Guidance Public Engagement",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Public Engagement Survey",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "EU AI Act",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Production Activity",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Inc Semiconductor",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "International Traffic",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Arms Regulations",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Senate Hearing",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Edge AI",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Sam Altman",
+"mentions": 2
+},
+{
+"date": "2026-10-05",
+"label": "Wes Moore",
 "mentions": 2
 }
 ]
