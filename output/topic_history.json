@@ -1,115 +1,5 @@
 [
 {
-"date": "2026-08-07",
-"label": "EU AI Act",
-"mentions": 36
-},
-{
-"date": "2026-08-07",
-"label": "AI Regulation",
-"mentions": 6
-},
-{
-"date": "2026-08-07",
-"label": "AI Act Transparency",
-"mentions": 5
-},
-{
-"date": "2026-08-07",
-"label": "Act Transparency Rules",
-"mentions": 3
-},
-{
-"date": "2026-08-07",
-"label": "Hazardous Materials",
-"mentions": 3
-},
-{
-"date": "2026-08-07",
-"label": "Foreign-Trade Zone FTZ",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "Proposed Production Activity",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "AI Act Enforcement",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "Rules Take Effect",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "United States",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "Medicare Program",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "China Initiation",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "Trump FCC",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "HR Executive",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "JD Supra",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "Anthropic OpenAI",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "Asia Pacific",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "AI News",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "Startup Fortune",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "Takes Effect",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "UC Today",
-"mentions": 2
-},
-{
-"date": "2026-08-07",
-"label": "Tech Times",
-"mentions": 2
-},
-{
 "date": "2026-08-08",
 "label": "EU AI Act",
 "mentions": 32
@@ -4147,6 +4037,91 @@
 {
 "date": "2026-10-06",
 "label": "Sam Altman",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "AI Regulation",
+"mentions": 7
+},
+{
+"date": "2026-10-07",
+"label": "EU AI Act",
+"mentions": 5
+},
+{
+"date": "2026-10-07",
+"label": "Digital Sovereignty",
+"mentions": 4
+},
+{
+"date": "2026-10-07",
+"label": "Foreign-Trade Zone FTZ",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "Guidance Public Engagement",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "Public Engagement Survey",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "European AI",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "Production Activity",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "Inc Semiconductor",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "North Carolina",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "International Traffic",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "Arms Regulations",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "Senate Hearing",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "Sam Altman",
+"mentions": 2
+},
+{
+"date": "2026-10-07",
+"label": "Wes Moore",
 "mentions": 2
 }
 ]
