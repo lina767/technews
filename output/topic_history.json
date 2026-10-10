@@ -1,110 +1,5 @@
 [
 {
-"date": "2026-08-10",
-"label": "EU AI Act",
-"mentions": 28
-},
-{
-"date": "2026-08-10",
-"label": "AI Act Transparency",
-"mentions": 4
-},
-{
-"date": "2026-08-10",
-"label": "Digital Sovereignty",
-"mentions": 4
-},
-{
-"date": "2026-08-10",
-"label": "Act Transparency Rules",
-"mentions": 3
-},
-{
-"date": "2026-08-10",
-"label": "AI Act Enforcement",
-"mentions": 3
-},
-{
-"date": "2026-08-10",
-"label": "Hazardous Materials",
-"mentions": 3
-},
-{
-"date": "2026-08-10",
-"label": "Anthropic OpenAI",
-"mentions": 3
-},
-{
-"date": "2026-08-10",
-"label": "AI Regulation",
-"mentions": 3
-},
-{
-"date": "2026-08-10",
-"label": "Foreign-Trade Zone FTZ",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "Proposed Production Activity",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "Rules Take Effect",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "Supply Chain",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "United States",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "Countervailing Duty",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "China Initiation",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "Data Center",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "Chip Industry",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "Trump FCC",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "AI Governance",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "UC Today",
-"mentions": 2
-},
-{
-"date": "2026-08-10",
-"label": "Takes Effect",
-"mentions": 2
-},
-{
 "date": "2026-08-11",
 "label": "EU AI Act",
 "mentions": 20
@@ -4092,6 +3987,101 @@
 {
 "date": "2026-10-09",
 "label": "Indian Express",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "EU AI Act",
+"mentions": 7
+},
+{
+"date": "2026-10-10",
+"label": "AI Regulation",
+"mentions": 6
+},
+{
+"date": "2026-10-10",
+"label": "Agency Information Collection",
+"mentions": 3
+},
+{
+"date": "2026-10-10",
+"label": "Information Collection Activities",
+"mentions": 3
+},
+{
+"date": "2026-10-10",
+"label": "Advanced Packaging",
+"mentions": 3
+},
+{
+"date": "2026-10-10",
+"label": "Modern Ghana",
+"mentions": 3
+},
+{
+"date": "2026-10-10",
+"label": "Digital Watch Observatory",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "Sen Adam Schiff",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "Union Minister Ashwini",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "Minister Ashwini Vaishnaw",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "European AI",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "Chrysanthemum White",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "Process Control",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "Data Centers",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "Physical AI",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "A.I Regulation",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "Digital Sovereignty",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "Sam Altman",
+"mentions": 2
+},
+{
+"date": "2026-10-10",
+"label": "York City",
 "mentions": 2
 }
 ]
