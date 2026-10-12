@@ -1,75 +1,5 @@
 [
 {
-"date": "2026-08-12",
-"label": "EU AI Act",
-"mentions": 21
-},
-{
-"date": "2026-08-12",
-"label": "United States",
-"mentions": 3
-},
-{
-"date": "2026-08-12",
-"label": "Digital Sovereignty",
-"mentions": 3
-},
-{
-"date": "2026-08-12",
-"label": "Foreign-Trade Zone FTZ",
-"mentions": 2
-},
-{
-"date": "2026-08-12",
-"label": "Proposed Production Activity",
-"mentions": 2
-},
-{
-"date": "2026-08-12",
-"label": "Under EU AI",
-"mentions": 2
-},
-{
-"date": "2026-08-12",
-"label": "Supply Chain",
-"mentions": 2
-},
-{
-"date": "2026-08-12",
-"label": "Advisory Committee",
-"mentions": 2
-},
-{
-"date": "2026-08-12",
-"label": "Controlled Substances",
-"mentions": 2
-},
-{
-"date": "2026-08-12",
-"label": "Countervailing Duty",
-"mentions": 2
-},
-{
-"date": "2026-08-12",
-"label": "China Initiation",
-"mentions": 2
-},
-{
-"date": "2026-08-12",
-"label": "DEF CON",
-"mentions": 2
-},
-{
-"date": "2026-08-12",
-"label": "AI Regulation",
-"mentions": 2
-},
-{
-"date": "2026-08-12",
-"label": "AI Infrastructure",
-"mentions": 2
-},
-{
 "date": "2026-08-13",
 "label": "EU AI Act",
 "mentions": 21
@@ -4077,6 +4007,66 @@
 {
 "date": "2026-10-11",
 "label": "Sam Altman",
+"mentions": 2
+},
+{
+"date": "2026-10-12",
+"label": "EU AI Act",
+"mentions": 5
+},
+{
+"date": "2026-10-12",
+"label": "AI Regulation",
+"mentions": 5
+},
+{
+"date": "2026-10-12",
+"label": "Digital Sovereignty",
+"mentions": 4
+},
+{
+"date": "2026-10-12",
+"label": "Advanced Packaging",
+"mentions": 3
+},
+{
+"date": "2026-10-12",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-10-12",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-10-12",
+"label": "Digital Watch Observatory",
+"mentions": 2
+},
+{
+"date": "2026-10-12",
+"label": "Chrysanthemum White",
+"mentions": 2
+},
+{
+"date": "2026-10-12",
+"label": "Process Control",
+"mentions": 2
+},
+{
+"date": "2026-10-12",
+"label": "Physical AI",
+"mentions": 2
+},
+{
+"date": "2026-10-12",
+"label": "Brad Smith",
+"mentions": 2
+},
+{
+"date": "2026-10-12",
+"label": "A.I Regulation",
 "mentions": 2
 }
 ]
