@@ -1,65 +1,5 @@
 [
 {
-"date": "2026-08-17",
-"label": "EU AI Act",
-"mentions": 15
-},
-{
-"date": "2026-08-17",
-"label": "AI Regulation",
-"mentions": 7
-},
-{
-"date": "2026-08-17",
-"label": "United States",
-"mentions": 4
-},
-{
-"date": "2026-08-17",
-"label": "Agency Information Collection",
-"mentions": 3
-},
-{
-"date": "2026-08-17",
-"label": "Information Collection Activities",
-"mentions": 3
-},
-{
-"date": "2026-08-17",
-"label": "Anthropic CEO Dario",
-"mentions": 3
-},
-{
-"date": "2026-08-17",
-"label": "CEO Dario Amodei",
-"mentions": 3
-},
-{
-"date": "2026-08-17",
-"label": "Adjusting Imports",
-"mentions": 2
-},
-{
-"date": "2026-08-17",
-"label": "Comment Request",
-"mentions": 2
-},
-{
-"date": "2026-08-17",
-"label": "Controlled Substances",
-"mentions": 2
-},
-{
-"date": "2026-08-17",
-"label": "Digital Sovereignty",
-"mentions": 2
-},
-{
-"date": "2026-08-17",
-"label": "Health AI",
-"mentions": 2
-},
-{
 "date": "2026-08-18",
 "label": "EU AI Act",
 "mentions": 17
@@ -4067,6 +4007,46 @@
 {
 "date": "2026-10-16",
 "label": "AI Governance",
+"mentions": 2
+},
+{
+"date": "2026-10-17",
+"label": "EU AI Act",
+"mentions": 7
+},
+{
+"date": "2026-10-17",
+"label": "AI Regulation",
+"mentions": 6
+},
+{
+"date": "2026-10-17",
+"label": "Digital Sovereignty",
+"mentions": 4
+},
+{
+"date": "2026-10-17",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-10-17",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-10-17",
+"label": "AI Act Deadlines",
+"mentions": 2
+},
+{
+"date": "2026-10-17",
+"label": "Morocco World News",
+"mentions": 2
+},
+{
+"date": "2026-10-17",
+"label": "Components Thereof",
 "mentions": 2
 }
 ]
