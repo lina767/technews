@@ -1,55 +1,5 @@
 [
 {
-"date": "2026-08-19",
-"label": "EU AI Act",
-"mentions": 12
-},
-{
-"date": "2026-08-19",
-"label": "AI Regulation",
-"mentions": 7
-},
-{
-"date": "2026-08-19",
-"label": "Agency Information Collection",
-"mentions": 4
-},
-{
-"date": "2026-08-19",
-"label": "Information Collection Activities",
-"mentions": 4
-},
-{
-"date": "2026-08-19",
-"label": "Comment Request",
-"mentions": 3
-},
-{
-"date": "2026-08-19",
-"label": "United States",
-"mentions": 3
-},
-{
-"date": "2026-08-19",
-"label": "Advisory Board",
-"mentions": 2
-},
-{
-"date": "2026-08-19",
-"label": "Data Center",
-"mentions": 2
-},
-{
-"date": "2026-08-19",
-"label": "Chip Industry",
-"mentions": 2
-},
-{
-"date": "2026-08-19",
-"label": "Tech Times",
-"mentions": 2
-},
-{
 "date": "2026-08-20",
 "label": "EU AI Act",
 "mentions": 11
@@ -4027,6 +3977,56 @@
 {
 "date": "2026-10-18",
 "label": "Digital Sovereignty",
+"mentions": 2
+},
+{
+"date": "2026-10-19",
+"label": "EU AI Act",
+"mentions": 5
+},
+{
+"date": "2026-10-19",
+"label": "AI Regulation",
+"mentions": 5
+},
+{
+"date": "2026-10-19",
+"label": "Digital Sovereignty",
+"mentions": 4
+},
+{
+"date": "2026-10-19",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-10-19",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-10-19",
+"label": "AI Act Deadlines",
+"mentions": 2
+},
+{
+"date": "2026-10-19",
+"label": "Components Thereof",
+"mentions": 2
+},
+{
+"date": "2026-10-19",
+"label": "Tamil Nadu",
+"mentions": 2
+},
+{
+"date": "2026-10-19",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-10-19",
+"label": "Brad Smith",
 "mentions": 2
 }
 ]
