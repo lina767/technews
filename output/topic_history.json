@@ -1,70 +1,5 @@
 [
 {
-"date": "2026-08-23",
-"label": "EU AI Act",
-"mentions": 15
-},
-{
-"date": "2026-08-23",
-"label": "AI Regulation",
-"mentions": 5
-},
-{
-"date": "2026-08-23",
-"label": "Digital Sovereignty",
-"mentions": 4
-},
-{
-"date": "2026-08-23",
-"label": "Agency Information Collection",
-"mentions": 3
-},
-{
-"date": "2026-08-23",
-"label": "Information Collection Activities",
-"mentions": 3
-},
-{
-"date": "2026-08-23",
-"label": "AI Act Enforcement",
-"mentions": 2
-},
-{
-"date": "2026-08-23",
-"label": "AI Act Compliance",
-"mentions": 2
-},
-{
-"date": "2026-08-23",
-"label": "Advisory Board",
-"mentions": 2
-},
-{
-"date": "2026-08-23",
-"label": "Comment Request",
-"mentions": 2
-},
-{
-"date": "2026-08-23",
-"label": "Entity List",
-"mentions": 2
-},
-{
-"date": "2026-08-23",
-"label": "Data Center",
-"mentions": 2
-},
-{
-"date": "2026-08-23",
-"label": "Global AI",
-"mentions": 2
-},
-{
-"date": "2026-08-23",
-"label": "Express Computer",
-"mentions": 2
-},
-{
 "date": "2026-08-24",
 "label": "EU AI Act",
 "mentions": 14
@@ -3962,6 +3897,86 @@
 {
 "date": "2026-10-22",
 "label": "Tamil Nadu",
+"mentions": 2
+},
+{
+"date": "2026-10-23",
+"label": "EU AI Act",
+"mentions": 8
+},
+{
+"date": "2026-10-23",
+"label": "AI Regulation",
+"mentions": 7
+},
+{
+"date": "2026-10-23",
+"label": "Agency Information Collection",
+"mentions": 3
+},
+{
+"date": "2026-10-23",
+"label": "Information Collection Activities",
+"mentions": 3
+},
+{
+"date": "2026-10-23",
+"label": "Digital Sovereignty",
+"mentions": 3
+},
+{
+"date": "2026-10-23",
+"label": "Collection Activities Proposed",
+"mentions": 2
+},
+{
+"date": "2026-10-23",
+"label": "Activities Proposed Collection",
+"mentions": 2
+},
+{
+"date": "2026-10-23",
+"label": "Proposed Collection Comment",
+"mentions": 2
+},
+{
+"date": "2026-10-23",
+"label": "Collection Comment Request",
+"mentions": 2
+},
+{
+"date": "2026-10-23",
+"label": "Hogan Lovells Cadwalader",
+"mentions": 2
+},
+{
+"date": "2026-10-23",
+"label": "Data Centers",
+"mentions": 2
+},
+{
+"date": "2026-10-23",
+"label": "Next Generation",
+"mentions": 2
+},
+{
+"date": "2026-10-23",
+"label": "Physical AI",
+"mentions": 2
+},
+{
+"date": "2026-10-23",
+"label": "Edge AI",
+"mentions": 2
+},
+{
+"date": "2026-10-23",
+"label": "Machine Gods",
+"mentions": 2
+},
+{
+"date": "2026-10-23",
+"label": "Big Tech",
 "mentions": 2
 }
 ]
