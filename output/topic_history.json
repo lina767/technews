@@ -1,40 +1,5 @@
 [
 {
-"date": "2026-08-25",
-"label": "EU AI Act",
-"mentions": 12
-},
-{
-"date": "2026-08-25",
-"label": "Digital Sovereignty",
-"mentions": 5
-},
-{
-"date": "2026-08-25",
-"label": "AI Regulation",
-"mentions": 4
-},
-{
-"date": "2026-08-25",
-"label": "AI Act Enforcement",
-"mentions": 2
-},
-{
-"date": "2026-08-25",
-"label": "Entity List",
-"mentions": 2
-},
-{
-"date": "2026-08-25",
-"label": "Tech Policy",
-"mentions": 2
-},
-{
-"date": "2026-08-25",
-"label": "Data Center",
-"mentions": 2
-},
-{
 "date": "2026-08-26",
 "label": "EU AI Act",
 "mentions": 8
@@ -3967,6 +3932,91 @@
 {
 "date": "2026-10-24",
 "label": "Edge AI",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "EU AI Act",
+"mentions": 9
+},
+{
+"date": "2026-10-25",
+"label": "AI Regulation",
+"mentions": 7
+},
+{
+"date": "2026-10-25",
+"label": "Agency Information Collection",
+"mentions": 3
+},
+{
+"date": "2026-10-25",
+"label": "Information Collection Activities",
+"mentions": 3
+},
+{
+"date": "2026-10-25",
+"label": "Collection Activities Proposed",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Activities Proposed Collection",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Proposed Collection Comment",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Collection Comment Request",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Hogan Lovells Cadwalader",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Project Gigabit",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Data Centers",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Next Generation",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Physical AI",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Edge AI",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Digital Sovereignty",
+"mentions": 2
+},
+{
+"date": "2026-10-25",
+"label": "Machine Gods",
 "mentions": 2
 }
 ]
