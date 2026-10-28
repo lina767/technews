@@ -1,85 +1,5 @@
 [
 {
-"date": "2026-08-28",
-"label": "EU AI Act",
-"mentions": 11
-},
-{
-"date": "2026-08-28",
-"label": "AI Regulation",
-"mentions": 5
-},
-{
-"date": "2026-08-28",
-"label": "Digital Sovereignty",
-"mentions": 5
-},
-{
-"date": "2026-08-28",
-"label": "Tech Policy Press",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "European Business Magazine",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "Information Collection",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "International Traffic",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "Arms Regulations",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "United States",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "Project Gigabit",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "Social Media",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "AI Systems",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "Agentic AI",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "AI Design",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "Big Tech",
-"mentions": 2
-},
-{
-"date": "2026-08-28",
-"label": "Hugging Face",
-"mentions": 2
-},
-{
 "date": "2026-08-29",
 "label": "EU AI Act",
 "mentions": 7
@@ -4107,6 +4027,91 @@
 {
 "date": "2026-10-27",
 "label": "News Ghana",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "AI Regulation",
+"mentions": 12
+},
+{
+"date": "2026-10-28",
+"label": "Digital Sovereignty",
+"mentions": 8
+},
+{
+"date": "2026-10-28",
+"label": "EU AI Act",
+"mentions": 5
+},
+{
+"date": "2026-10-28",
+"label": "Agency Information Collection",
+"mentions": 4
+},
+{
+"date": "2026-10-28",
+"label": "Information Collection Activities",
+"mentions": 4
+},
+{
+"date": "2026-10-28",
+"label": "Collection Activities Proposed",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "Activities Proposed Collection",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "Proposed Collection Comment",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "Collection Comment Request",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "Antidumping Duty",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "Countervailing Duty",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "Project Gigabit",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "AI Era",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "Could Help",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "Ashwini Vaishnaw",
+"mentions": 2
+},
+{
+"date": "2026-10-28",
+"label": "Data Security",
 "mentions": 2
 }
 ]
