@@ -1,75 +1,5 @@
 [
 {
-"date": "2026-08-29",
-"label": "EU AI Act",
-"mentions": 7
-},
-{
-"date": "2026-08-29",
-"label": "Digital Sovereignty",
-"mentions": 3
-},
-{
-"date": "2026-08-29",
-"label": "AI Regulation",
-"mentions": 3
-},
-{
-"date": "2026-08-29",
-"label": "Tech Policy Press",
-"mentions": 2
-},
-{
-"date": "2026-08-29",
-"label": "Digital Watch Observatory",
-"mentions": 2
-},
-{
-"date": "2026-08-29",
-"label": "European Business Magazine",
-"mentions": 2
-},
-{
-"date": "2026-08-29",
-"label": "Information Collection",
-"mentions": 2
-},
-{
-"date": "2026-08-29",
-"label": "International Traffic",
-"mentions": 2
-},
-{
-"date": "2026-08-29",
-"label": "Arms Regulations",
-"mentions": 2
-},
-{
-"date": "2026-08-29",
-"label": "United States",
-"mentions": 2
-},
-{
-"date": "2026-08-29",
-"label": "Project Gigabit",
-"mentions": 2
-},
-{
-"date": "2026-08-29",
-"label": "Social Media",
-"mentions": 2
-},
-{
-"date": "2026-08-29",
-"label": "AI Systems",
-"mentions": 2
-},
-{
-"date": "2026-08-29",
-"label": "Agentic AI",
-"mentions": 2
-},
-{
 "date": "2026-08-30",
 "label": "EU AI Act",
 "mentions": 7
@@ -4111,6 +4041,76 @@
 },
 {
 "date": "2026-10-28",
+"label": "Data Security",
+"mentions": 2
+},
+{
+"date": "2026-10-29",
+"label": "AI Regulation",
+"mentions": 8
+},
+{
+"date": "2026-10-29",
+"label": "Digital Sovereignty",
+"mentions": 7
+},
+{
+"date": "2026-10-29",
+"label": "EU AI Act",
+"mentions": 5
+},
+{
+"date": "2026-10-29",
+"label": "Agency Information Collection",
+"mentions": 3
+},
+{
+"date": "2026-10-29",
+"label": "Information Collection Activities",
+"mentions": 3
+},
+{
+"date": "2026-10-29",
+"label": "Comment Request",
+"mentions": 2
+},
+{
+"date": "2026-10-29",
+"label": "Antidumping Duty",
+"mentions": 2
+},
+{
+"date": "2026-10-29",
+"label": "Countervailing Duty",
+"mentions": 2
+},
+{
+"date": "2026-10-29",
+"label": "Project Gigabit",
+"mentions": 2
+},
+{
+"date": "2026-10-29",
+"label": "Semiconductor Manufacturing",
+"mentions": 2
+},
+{
+"date": "2026-10-29",
+"label": "SK Hynix",
+"mentions": 2
+},
+{
+"date": "2026-10-29",
+"label": "Could Help",
+"mentions": 2
+},
+{
+"date": "2026-10-29",
+"label": "TechAfrica News",
+"mentions": 2
+},
+{
+"date": "2026-10-29",
 "label": "Data Security",
 "mentions": 2
 }
