@@ -1,65 +1,5 @@
 [
 {
-"date": "2026-08-31",
-"label": "EU AI Act",
-"mentions": 10
-},
-{
-"date": "2026-08-31",
-"label": "AI Regulation",
-"mentions": 4
-},
-{
-"date": "2026-08-31",
-"label": "Big Tech",
-"mentions": 3
-},
-{
-"date": "2026-08-31",
-"label": "Digital Sovereignty",
-"mentions": 3
-},
-{
-"date": "2026-08-31",
-"label": "Tech Policy Press",
-"mentions": 2
-},
-{
-"date": "2026-08-31",
-"label": "Information Collection",
-"mentions": 2
-},
-{
-"date": "2026-08-31",
-"label": "International Traffic",
-"mentions": 2
-},
-{
-"date": "2026-08-31",
-"label": "Arms Regulations",
-"mentions": 2
-},
-{
-"date": "2026-08-31",
-"label": "United States",
-"mentions": 2
-},
-{
-"date": "2026-08-31",
-"label": "Social Media",
-"mentions": 2
-},
-{
-"date": "2026-08-31",
-"label": "AI Systems",
-"mentions": 2
-},
-{
-"date": "2026-08-31",
-"label": "Georgia Tech",
-"mentions": 2
-},
-{
 "date": "2026-09-01",
 "label": "EU AI Act",
 "mentions": 9
@@ -4097,6 +4037,61 @@
 {
 "date": "2026-10-30",
 "label": "TechAfrica News",
+"mentions": 2
+},
+{
+"date": "2026-10-31",
+"label": "EU AI Act",
+"mentions": 6
+},
+{
+"date": "2026-10-31",
+"label": "AI Regulation",
+"mentions": 5
+},
+{
+"date": "2026-10-31",
+"label": "Digital Sovereignty",
+"mentions": 4
+},
+{
+"date": "2026-10-31",
+"label": "Antidumping Duty",
+"mentions": 2
+},
+{
+"date": "2026-10-31",
+"label": "Countervailing Duty",
+"mentions": 2
+},
+{
+"date": "2026-10-31",
+"label": "Cyber Resilience",
+"mentions": 2
+},
+{
+"date": "2026-10-31",
+"label": "Data Center",
+"mentions": 2
+},
+{
+"date": "2026-10-31",
+"label": "AI Data",
+"mentions": 2
+},
+{
+"date": "2026-10-31",
+"label": "Agentic AI",
+"mentions": 2
+},
+{
+"date": "2026-10-31",
+"label": "TechAfrica News",
+"mentions": 2
+},
+{
+"date": "2026-10-31",
+"label": "NITDA CBN",
 "mentions": 2
 }
 ]
