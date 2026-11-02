@@ -1,45 +1,5 @@
 [
 {
-"date": "2026-09-02",
-"label": "EU AI Act",
-"mentions": 8
-},
-{
-"date": "2026-09-02",
-"label": "Digital Sovereignty",
-"mentions": 4
-},
-{
-"date": "2026-09-02",
-"label": "United States",
-"mentions": 3
-},
-{
-"date": "2026-09-02",
-"label": "AI Regulation",
-"mentions": 3
-},
-{
-"date": "2026-09-02",
-"label": "Hugging Face",
-"mentions": 3
-},
-{
-"date": "2026-09-02",
-"label": "Information Collection",
-"mentions": 2
-},
-{
-"date": "2026-09-02",
-"label": "Lake America",
-"mentions": 2
-},
-{
-"date": "2026-09-02",
-"label": "Meta Settlement",
-"mentions": 2
-},
-{
 "date": "2026-09-03",
 "label": "EU AI Act",
 "mentions": 6
@@ -4082,6 +4042,91 @@
 {
 "date": "2026-11-01",
 "label": "TechAfrica News",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "EU AI Act",
+"mentions": 7
+},
+{
+"date": "2026-11-02",
+"label": "AI Regulation",
+"mentions": 5
+},
+{
+"date": "2026-11-02",
+"label": "Digital Sovereignty",
+"mentions": 3
+},
+{
+"date": "2026-11-02",
+"label": "Traders Union",
+"mentions": 3
+},
+{
+"date": "2026-11-02",
+"label": "U.S Midterm Elections",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "Cyber Resilience",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "Data Center",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "Social Media",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "Can See",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "Shift Left",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "Agentic AI",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "AI Will",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "Goldman Sachs",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "BigGo Finance",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "CTV News",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "TechAfrica News",
+"mentions": 2
+},
+{
+"date": "2026-11-02",
+"label": "NITDA CBN",
 "mentions": 2
 }
 ]
