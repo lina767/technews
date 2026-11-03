@@ -1,50 +1,5 @@
 [
 {
-"date": "2026-09-03",
-"label": "EU AI Act",
-"mentions": 6
-},
-{
-"date": "2026-09-03",
-"label": "Digital Sovereignty",
-"mentions": 4
-},
-{
-"date": "2026-09-03",
-"label": "AI Regulation",
-"mentions": 4
-},
-{
-"date": "2026-09-03",
-"label": "United States",
-"mentions": 3
-},
-{
-"date": "2026-09-03",
-"label": "Hugging Face",
-"mentions": 3
-},
-{
-"date": "2026-09-03",
-"label": "Information Collection",
-"mentions": 2
-},
-{
-"date": "2026-09-03",
-"label": "Supply Chain",
-"mentions": 2
-},
-{
-"date": "2026-09-03",
-"label": "Data Centers",
-"mentions": 2
-},
-{
-"date": "2026-09-03",
-"label": "Big Tech",
-"mentions": 2
-},
-{
 "date": "2026-09-04",
 "label": "AI Regulation",
 "mentions": 10
@@ -4126,6 +4081,61 @@
 },
 {
 "date": "2026-11-02",
+"label": "NITDA CBN",
+"mentions": 2
+},
+{
+"date": "2026-11-03",
+"label": "AI Regulation",
+"mentions": 8
+},
+{
+"date": "2026-11-03",
+"label": "EU AI Act",
+"mentions": 6
+},
+{
+"date": "2026-11-03",
+"label": "Digital Sovereignty",
+"mentions": 3
+},
+{
+"date": "2026-11-03",
+"label": "U.S Midterm Elections",
+"mentions": 2
+},
+{
+"date": "2026-11-03",
+"label": "Cyber Resilience",
+"mentions": 2
+},
+{
+"date": "2026-11-03",
+"label": "Chip Industry",
+"mentions": 2
+},
+{
+"date": "2026-11-03",
+"label": "BigGo Finance",
+"mentions": 2
+},
+{
+"date": "2026-11-03",
+"label": "Goldman Sachs",
+"mentions": 2
+},
+{
+"date": "2026-11-03",
+"label": "CTV News",
+"mentions": 2
+},
+{
+"date": "2026-11-03",
+"label": "TechAfrica News",
+"mentions": 2
+},
+{
+"date": "2026-11-03",
 "label": "NITDA CBN",
 "mentions": 2
 }
