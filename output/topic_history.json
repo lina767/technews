@@ -1,85 +1,5 @@
 [
 {
-"date": "2026-09-04",
-"label": "AI Regulation",
-"mentions": 10
-},
-{
-"date": "2026-09-04",
-"label": "Digital Sovereignty",
-"mentions": 7
-},
-{
-"date": "2026-09-04",
-"label": "Hugging Face",
-"mentions": 6
-},
-{
-"date": "2026-09-04",
-"label": "EU AI Act",
-"mentions": 5
-},
-{
-"date": "2026-09-04",
-"label": "United States",
-"mentions": 3
-},
-{
-"date": "2026-09-04",
-"label": "G20 Members",
-"mentions": 3
-},
-{
-"date": "2026-09-04",
-"label": "Information Collection",
-"mentions": 2
-},
-{
-"date": "2026-09-04",
-"label": "Supply Chain",
-"mentions": 2
-},
-{
-"date": "2026-09-04",
-"label": "Countervailing Duty",
-"mentions": 2
-},
-{
-"date": "2026-09-04",
-"label": "Duty Administrative",
-"mentions": 2
-},
-{
-"date": "2026-09-04",
-"label": "Physical AI",
-"mentions": 2
-},
-{
-"date": "2026-09-04",
-"label": "Data Centers",
-"mentions": 2
-},
-{
-"date": "2026-09-04",
-"label": "UK AI",
-"mentions": 2
-},
-{
-"date": "2026-09-04",
-"label": "Light-Touch Approach",
-"mentions": 2
-},
-{
-"date": "2026-09-04",
-"label": "Big Tech",
-"mentions": 2
-},
-{
-"date": "2026-09-04",
-"label": "AI Rules",
-"mentions": 2
-},
-{
 "date": "2026-09-05",
 "label": "AI Regulation",
 "mentions": 12
@@ -4137,6 +4057,61 @@
 {
 "date": "2026-11-03",
 "label": "NITDA CBN",
+"mentions": 2
+},
+{
+"date": "2026-11-04",
+"label": "EU AI Act",
+"mentions": 5
+},
+{
+"date": "2026-11-04",
+"label": "BigGo Finance",
+"mentions": 5
+},
+{
+"date": "2026-11-04",
+"label": "AI Regulation Fears",
+"mentions": 4
+},
+{
+"date": "2026-11-04",
+"label": "U.S Midterm Elections",
+"mentions": 3
+},
+{
+"date": "2026-11-04",
+"label": "AI Regulation Concerns",
+"mentions": 2
+},
+{
+"date": "2026-11-04",
+"label": "Cyber Resilience",
+"mentions": 2
+},
+{
+"date": "2026-11-04",
+"label": "AI Governance",
+"mentions": 2
+},
+{
+"date": "2026-11-04",
+"label": "North Korean",
+"mentions": 2
+},
+{
+"date": "2026-11-04",
+"label": "Democratic Sweep",
+"mentions": 2
+},
+{
+"date": "2026-11-04",
+"label": "Goldman Sachs",
+"mentions": 2
+},
+{
+"date": "2026-11-04",
+"label": "CTV News",
 "mentions": 2
 }
 ]
