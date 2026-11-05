@@ -1,85 +1,5 @@
 [
 {
-"date": "2026-09-05",
-"label": "AI Regulation",
-"mentions": 12
-},
-{
-"date": "2026-09-05",
-"label": "Hugging Face",
-"mentions": 7
-},
-{
-"date": "2026-09-05",
-"label": "Digital Sovereignty",
-"mentions": 5
-},
-{
-"date": "2026-09-05",
-"label": "EU AI Act",
-"mentions": 4
-},
-{
-"date": "2026-09-05",
-"label": "G20 Members",
-"mentions": 3
-},
-{
-"date": "2026-09-05",
-"label": "Information Collection",
-"mentions": 2
-},
-{
-"date": "2026-09-05",
-"label": "Supply Chain",
-"mentions": 2
-},
-{
-"date": "2026-09-05",
-"label": "United States",
-"mentions": 2
-},
-{
-"date": "2026-09-05",
-"label": "Countervailing Duty",
-"mentions": 2
-},
-{
-"date": "2026-09-05",
-"label": "Duty Administrative",
-"mentions": 2
-},
-{
-"date": "2026-09-05",
-"label": "Physical AI",
-"mentions": 2
-},
-{
-"date": "2026-09-05",
-"label": "Data Centers",
-"mentions": 2
-},
-{
-"date": "2026-09-05",
-"label": "Light-Touch Approach",
-"mentions": 2
-},
-{
-"date": "2026-09-05",
-"label": "Big Tech",
-"mentions": 2
-},
-{
-"date": "2026-09-05",
-"label": "AI Rules",
-"mentions": 2
-},
-{
-"date": "2026-09-05",
-"label": "Economic Times",
-"mentions": 2
-},
-{
 "date": "2026-09-06",
 "label": "AI Regulation",
 "mentions": 12
@@ -4112,6 +4032,106 @@
 {
 "date": "2026-11-04",
 "label": "CTV News",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "AI Regulation Fears",
+"mentions": 9
+},
+{
+"date": "2026-11-05",
+"label": "BigGo Finance",
+"mentions": 8
+},
+{
+"date": "2026-11-05",
+"label": "EU AI Act",
+"mentions": 5
+},
+{
+"date": "2026-11-05",
+"label": "AI Regulation Concerns",
+"mentions": 3
+},
+{
+"date": "2026-11-05",
+"label": "U.S Midterm Elections",
+"mentions": 3
+},
+{
+"date": "2026-11-05",
+"label": "Elon Musk",
+"mentions": 3
+},
+{
+"date": "2026-11-05",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "Collection Activities Submission",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "Raise AI Regulation",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "Taiwan Stock Market",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "Artificial Intelligence",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "Data Centers",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "AI Governance",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "Physical AI",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "Blue Wave",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "Democratic Party",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "BusinessToday Malaysia",
+"mentions": 2
+},
+{
+"date": "2026-11-05",
+"label": "Digital Sovereignty",
 "mentions": 2
 }
 ]
