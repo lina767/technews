@@ -1,65 +1,5 @@
 [
 {
-"date": "2026-09-07",
-"label": "AI Regulation",
-"mentions": 11
-},
-{
-"date": "2026-09-07",
-"label": "Hugging Face",
-"mentions": 8
-},
-{
-"date": "2026-09-07",
-"label": "EU AI Act",
-"mentions": 3
-},
-{
-"date": "2026-09-07",
-"label": "Countervailing Duty",
-"mentions": 2
-},
-{
-"date": "2026-09-07",
-"label": "Duty Administrative",
-"mentions": 2
-},
-{
-"date": "2026-09-07",
-"label": "Eyes AI",
-"mentions": 2
-},
-{
-"date": "2026-09-07",
-"label": "Physical AI",
-"mentions": 2
-},
-{
-"date": "2026-09-07",
-"label": "Data Centers",
-"mentions": 2
-},
-{
-"date": "2026-09-07",
-"label": "G20 Members",
-"mentions": 2
-},
-{
-"date": "2026-09-07",
-"label": "Light-Touch Approach",
-"mentions": 2
-},
-{
-"date": "2026-09-07",
-"label": "Tech Xplore",
-"mentions": 2
-},
-{
-"date": "2026-09-07",
-"label": "Digital Sovereignty",
-"mentions": 2
-},
-{
 "date": "2026-09-08",
 "label": "AI Regulation",
 "mentions": 13
@@ -4172,6 +4112,96 @@
 {
 "date": "2026-11-06",
 "label": "Stocks Plunge",
+"mentions": 2
+},
+{
+"date": "2026-11-07",
+"label": "AI Regulation Fears",
+"mentions": 7
+},
+{
+"date": "2026-11-07",
+"label": "EU AI Act",
+"mentions": 5
+},
+{
+"date": "2026-11-07",
+"label": "BigGo Finance",
+"mentions": 5
+},
+{
+"date": "2026-11-07",
+"label": "Big Tech",
+"mentions": 4
+},
+{
+"date": "2026-11-07",
+"label": "Data Centers",
+"mentions": 3
+},
+{
+"date": "2026-11-07",
+"label": "Elon Musk",
+"mentions": 3
+},
+{
+"date": "2026-11-07",
+"label": "Chip Industry",
+"mentions": 3
+},
+{
+"date": "2026-11-07",
+"label": "Chip Stocks",
+"mentions": 3
+},
+{
+"date": "2026-11-07",
+"label": "Sparks AI Regulation",
+"mentions": 2
+},
+{
+"date": "2026-11-07",
+"label": "Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-11-07",
+"label": "AI Governance",
+"mentions": 2
+},
+{
+"date": "2026-11-07",
+"label": "Comes Next",
+"mentions": 2
+},
+{
+"date": "2026-11-07",
+"label": "Fox Business",
+"mentions": 2
+},
+{
+"date": "2026-11-07",
+"label": "Yahoo Finance",
+"mentions": 2
+},
+{
+"date": "2026-11-07",
+"label": "Blue Wave",
+"mentions": 2
+},
+{
+"date": "2026-11-07",
+"label": "Democratic Sweep",
+"mentions": 2
+},
+{
+"date": "2026-11-07",
+"label": "Democratic Party",
+"mentions": 2
+},
+{
+"date": "2026-11-07",
+"label": "Semiconductor Index",
 "mentions": 2
 }
 ]
