@@ -1,60 +1,5 @@
 [
 {
-"date": "2026-09-09",
-"label": "AI Regulation",
-"mentions": 10
-},
-{
-"date": "2026-09-09",
-"label": "EU AI Act",
-"mentions": 4
-},
-{
-"date": "2026-09-09",
-"label": "United States",
-"mentions": 3
-},
-{
-"date": "2026-09-09",
-"label": "This Labor Day",
-"mentions": 2
-},
-{
-"date": "2026-09-09",
-"label": "AI Digital Sovereignty",
-"mentions": 2
-},
-{
-"date": "2026-09-09",
-"label": "Discrimination Against",
-"mentions": 2
-},
-{
-"date": "2026-09-09",
-"label": "School Districts",
-"mentions": 2
-},
-{
-"date": "2026-09-09",
-"label": "Chip Industry",
-"mentions": 2
-},
-{
-"date": "2026-09-09",
-"label": "Hugging Face",
-"mentions": 2
-},
-{
-"date": "2026-09-09",
-"label": "Supreme Court",
-"mentions": 2
-},
-{
-"date": "2026-09-09",
-"label": "G20 Members",
-"mentions": 2
-},
-{
 "date": "2026-09-10",
 "label": "AI Regulation",
 "mentions": 11
@@ -4247,6 +4192,116 @@
 {
 "date": "2026-11-08",
 "label": "Democratic Sweep",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "AI Regulation Fears",
+"mentions": 5
+},
+{
+"date": "2026-11-09",
+"label": "Elon Musk",
+"mentions": 4
+},
+{
+"date": "2026-11-09",
+"label": "BigGo Finance",
+"mentions": 4
+},
+{
+"date": "2026-11-09",
+"label": "Big Tech",
+"mentions": 3
+},
+{
+"date": "2026-11-09",
+"label": "Chip Industry",
+"mentions": 3
+},
+{
+"date": "2026-11-09",
+"label": "Yahoo Finance",
+"mentions": 3
+},
+{
+"date": "2026-11-09",
+"label": "Quality Reporting Program",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "Collection Activities Submission",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "AI Data Centers",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "US Tech Policy",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "Nvidia CEO Jensen",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "CEO Jensen Huang",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "EU AI Act",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "Prospective Payment",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "AI Governance",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "White House",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "Physical AI",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "FinTech Global",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "Fox Business",
+"mentions": 2
+},
+{
+"date": "2026-11-09",
+"label": "Chip Stocks",
 "mentions": 2
 }
 ]
