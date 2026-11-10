@@ -1,60 +1,5 @@
 [
 {
-"date": "2026-09-10",
-"label": "AI Regulation",
-"mentions": 11
-},
-{
-"date": "2026-09-10",
-"label": "EU AI Act",
-"mentions": 6
-},
-{
-"date": "2026-09-10",
-"label": "United States",
-"mentions": 3
-},
-{
-"date": "2026-09-10",
-"label": "This Labor Day",
-"mentions": 2
-},
-{
-"date": "2026-09-10",
-"label": "AI Digital Sovereignty",
-"mentions": 2
-},
-{
-"date": "2026-09-10",
-"label": "Duty Administrative",
-"mentions": 2
-},
-{
-"date": "2026-09-10",
-"label": "Discrimination Against",
-"mentions": 2
-},
-{
-"date": "2026-09-10",
-"label": "AI Era",
-"mentions": 2
-},
-{
-"date": "2026-09-10",
-"label": "Chinese AI",
-"mentions": 2
-},
-{
-"date": "2026-09-10",
-"label": "Hugging Face",
-"mentions": 2
-},
-{
-"date": "2026-09-10",
-"label": "Supreme Court",
-"mentions": 2
-},
-{
 "date": "2026-09-11",
 "label": "EU AI Act",
 "mentions": 8
@@ -4302,6 +4247,106 @@
 {
 "date": "2026-11-09",
 "label": "Chip Stocks",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "EU AI Act",
+"mentions": 5
+},
+{
+"date": "2026-11-10",
+"label": "AI Regulation Fears",
+"mentions": 4
+},
+{
+"date": "2026-11-10",
+"label": "Elon Musk",
+"mentions": 4
+},
+{
+"date": "2026-11-10",
+"label": "Big Tech",
+"mentions": 3
+},
+{
+"date": "2026-11-10",
+"label": "BigGo Finance",
+"mentions": 3
+},
+{
+"date": "2026-11-10",
+"label": "Certain Chemical Substances",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "Quality Reporting Program",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "Collection Activities Submission",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "AI Data Centers",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "Nvidia CEO Jensen",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "CEO Jensen Huang",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "AI Regulation Push",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "Prospective Payment",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "Aggregate Production",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "AI Era",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "Comes Next",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "FinTech Global",
+"mentions": 2
+},
+{
+"date": "2026-11-10",
+"label": "Fox Business",
 "mentions": 2
 }
 ]
