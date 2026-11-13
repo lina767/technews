@@ -1,85 +1,5 @@
 [
 {
-"date": "2026-09-13",
-"label": "EU AI Act",
-"mentions": 7
-},
-{
-"date": "2026-09-13",
-"label": "United States",
-"mentions": 3
-},
-{
-"date": "2026-09-13",
-"label": "AI Act Article",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "AI Regulation Bills",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "Demand AI Regulation",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "Discrimination Against",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "Labor Day",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "Risk Management",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "Data Centers",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "Should Learn",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "About AI",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "Newsom Signs",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "Security Boulevard",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "Robots Marched",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "Modern Ghana",
-"mentions": 2
-},
-{
-"date": "2026-09-13",
-"label": "Yahoo News",
-"mentions": 2
-},
-{
 "date": "2026-09-14",
 "label": "United States",
 "mentions": 3
@@ -4432,6 +4352,121 @@
 {
 "date": "2026-11-12",
 "label": "Tech Stocks",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "Jensen Huang",
+"mentions": 6
+},
+{
+"date": "2026-11-13",
+"label": "Automotive Tech Forum",
+"mentions": 4
+},
+{
+"date": "2026-11-13",
+"label": "Digital Sovereignty Index",
+"mentions": 4
+},
+{
+"date": "2026-11-13",
+"label": "EU AI Act",
+"mentions": 3
+},
+{
+"date": "2026-11-13",
+"label": "IBM Digital Sovereignty",
+"mentions": 3
+},
+{
+"date": "2026-11-13",
+"label": "Data Center",
+"mentions": 3
+},
+{
+"date": "2026-11-13",
+"label": "BigGo Finance",
+"mentions": 3
+},
+{
+"date": "2026-11-13",
+"label": "Certain Pesticide Registrations",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "Sovereignty Index UK",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "AI Regulation Concerns",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "AI Regulation Fears",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "Controlled Substances",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "Aggregate Production",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "United States",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "Center Stage",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "Digital Fairness",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "AI Inference",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "Security Boulevard",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "FinTech Global",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "Tech Stocks",
+"mentions": 2
+},
+{
+"date": "2026-11-13",
+"label": "Silicon Valley",
 "mentions": 2
 }
 ]
