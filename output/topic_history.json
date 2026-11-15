@@ -1,95 +1,5 @@
 [
 {
-"date": "2026-09-15",
-"label": "JD Vance",
-"mentions": 4
-},
-{
-"date": "2026-09-15",
-"label": "EU AI Act",
-"mentions": 3
-},
-{
-"date": "2026-09-15",
-"label": "United States",
-"mentions": 3
-},
-{
-"date": "2026-09-15",
-"label": "Digital Sovereignty",
-"mentions": 3
-},
-{
-"date": "2026-09-15",
-"label": "Donald Trump",
-"mentions": 3
-},
-{
-"date": "2026-09-15",
-"label": "CBS News",
-"mentions": 3
-},
-{
-"date": "2026-09-15",
-"label": "AI Regulation Calls",
-"mentions": 2
-},
-{
-"date": "2026-09-15",
-"label": "Antidumping Duty",
-"mentions": 2
-},
-{
-"date": "2026-09-15",
-"label": "Discrimination Against",
-"mentions": 2
-},
-{
-"date": "2026-09-15",
-"label": "Social Media",
-"mentions": 2
-},
-{
-"date": "2026-09-15",
-"label": "Data Centers",
-"mentions": 2
-},
-{
-"date": "2026-09-15",
-"label": "Trump Rejects",
-"mentions": 2
-},
-{
-"date": "2026-09-15",
-"label": "Fox Business",
-"mentions": 2
-},
-{
-"date": "2026-09-15",
-"label": "A.I Regulation",
-"mentions": 2
-},
-{
-"date": "2026-09-15",
-"label": "York Times",
-"mentions": 2
-},
-{
-"date": "2026-09-15",
-"label": "Washington Examiner",
-"mentions": 2
-},
-{
-"date": "2026-09-15",
-"label": "Latest News",
-"mentions": 2
-},
-{
-"date": "2026-09-15",
-"label": "Feels Like",
-"mentions": 2
-},
-{
 "date": "2026-09-16",
 "label": "AI Regulation",
 "mentions": 17
@@ -4501,6 +4411,121 @@
 },
 {
 "date": "2026-11-14",
+"label": "Silicon Valley",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "AI Regulation",
+"mentions": 14
+},
+{
+"date": "2026-11-15",
+"label": "Jensen Huang",
+"mentions": 6
+},
+{
+"date": "2026-11-15",
+"label": "Digital Sovereignty Index",
+"mentions": 4
+},
+{
+"date": "2026-11-15",
+"label": "EU AI Act",
+"mentions": 3
+},
+{
+"date": "2026-11-15",
+"label": "IBM Digital Sovereignty",
+"mentions": 3
+},
+{
+"date": "2026-11-15",
+"label": "Data Center",
+"mentions": 3
+},
+{
+"date": "2026-11-15",
+"label": "Certain Pesticide Registrations",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "Take Center Stage",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "AI Act Article",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "Sovereignty Index UK",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "Controlled Substances",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "Aggregate Production",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "Digital Fairness",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "AI Inference",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "Physical AI",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "Data Centers",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "Tech Leaders",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "Chinese AI",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "CHIPS Act",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
+"label": "BigGo Finance",
+"mentions": 2
+},
+{
+"date": "2026-11-15",
 "label": "Silicon Valley",
 "mentions": 2
 }
