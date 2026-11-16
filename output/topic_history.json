@@ -1,85 +1,5 @@
 [
 {
-"date": "2026-09-16",
-"label": "AI Regulation",
-"mentions": 17
-},
-{
-"date": "2026-09-16",
-"label": "EU AI Act",
-"mentions": 4
-},
-{
-"date": "2026-09-16",
-"label": "Data Centers",
-"mentions": 4
-},
-{
-"date": "2026-09-16",
-"label": "A.I Regulation",
-"mentions": 4
-},
-{
-"date": "2026-09-16",
-"label": "York Times",
-"mentions": 4
-},
-{
-"date": "2026-09-16",
-"label": "Fox News",
-"mentions": 4
-},
-{
-"date": "2026-09-16",
-"label": "Fox Business",
-"mentions": 3
-},
-{
-"date": "2026-09-16",
-"label": "Antidumping Duty",
-"mentions": 2
-},
-{
-"date": "2026-09-16",
-"label": "Countervailing Duty",
-"mentions": 2
-},
-{
-"date": "2026-09-16",
-"label": "JD Vance",
-"mentions": 2
-},
-{
-"date": "2026-09-16",
-"label": "Washington Examiner",
-"mentions": 2
-},
-{
-"date": "2026-09-16",
-"label": "Digital Sovereignty",
-"mentions": 2
-},
-{
-"date": "2026-09-16",
-"label": "Any AI",
-"mentions": 2
-},
-{
-"date": "2026-09-16",
-"label": "Seeking Alpha",
-"mentions": 2
-},
-{
-"date": "2026-09-16",
-"label": "White House",
-"mentions": 2
-},
-{
-"date": "2026-09-16",
-"label": "CBS News",
-"mentions": 2
-},
-{
 "date": "2026-09-17",
 "label": "AI Regulation",
 "mentions": 13
@@ -4526,6 +4446,101 @@
 },
 {
 "date": "2026-11-15",
+"label": "Silicon Valley",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "AI Regulation",
+"mentions": 10
+},
+{
+"date": "2026-11-16",
+"label": "Jensen Huang",
+"mentions": 8
+},
+{
+"date": "2026-11-16",
+"label": "Digital Sovereignty Index",
+"mentions": 4
+},
+{
+"date": "2026-11-16",
+"label": "Data Center",
+"mentions": 4
+},
+{
+"date": "2026-11-16",
+"label": "EU AI Act",
+"mentions": 3
+},
+{
+"date": "2026-11-16",
+"label": "IBM Digital Sovereignty",
+"mentions": 3
+},
+{
+"date": "2026-11-16",
+"label": "Certain Pesticide Registrations",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "Take Center Stage",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "AI Act Article",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "Sovereignty Index UK",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "Controlled Substances",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "Aggregate Production",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "Social Media",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "Digital Fairness",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "AI Inference",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "Data Centers",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
+"label": "CHIPS Act",
+"mentions": 2
+},
+{
+"date": "2026-11-16",
 "label": "Silicon Valley",
 "mentions": 2
 }
