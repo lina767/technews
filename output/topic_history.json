@@ -1,85 +1,5 @@
 [
 {
-"date": "2026-09-19",
-"label": "AI Regulation",
-"mentions": 13
-},
-{
-"date": "2026-09-19",
-"label": "York Times",
-"mentions": 4
-},
-{
-"date": "2026-09-19",
-"label": "Order Renewing Temporary",
-"mentions": 3
-},
-{
-"date": "2026-09-19",
-"label": "Renewing Temporary Denial",
-"mentions": 3
-},
-{
-"date": "2026-09-19",
-"label": "EU AI Act",
-"mentions": 3
-},
-{
-"date": "2026-09-19",
-"label": "Export Privileges",
-"mentions": 3
-},
-{
-"date": "2026-09-19",
-"label": "EU KIDS Act",
-"mentions": 2
-},
-{
-"date": "2026-09-19",
-"label": "Countervailing Duty",
-"mentions": 2
-},
-{
-"date": "2026-09-19",
-"label": "Fossil Fuel-Fired",
-"mentions": 2
-},
-{
-"date": "2026-09-19",
-"label": "International Traffic",
-"mentions": 2
-},
-{
-"date": "2026-09-19",
-"label": "Arms Regulations",
-"mentions": 2
-},
-{
-"date": "2026-09-19",
-"label": "Dario Amodei",
-"mentions": 2
-},
-{
-"date": "2026-09-19",
-"label": "Data Center",
-"mentions": 2
-},
-{
-"date": "2026-09-19",
-"label": "Fox Business",
-"mentions": 2
-},
-{
-"date": "2026-09-19",
-"label": "A.I Regulation",
-"mentions": 2
-},
-{
-"date": "2026-09-19",
-"label": "Free Press",
-"mentions": 2
-},
-{
 "date": "2026-09-20",
 "label": "AI Regulation",
 "mentions": 9
@@ -4506,6 +4426,106 @@
 },
 {
 "date": "2026-11-18",
+"label": "Tech Leaders",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "Digital Sovereignty",
+"mentions": 8
+},
+{
+"date": "2026-11-19",
+"label": "Jensen Huang",
+"mentions": 4
+},
+{
+"date": "2026-11-19",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "Collection Activities Submission",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "Duty Administrative Review",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "Global AI Regulation",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "EU AI Act",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "Super Intelligence",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "Social Media",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "AI Agents",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "Data Center",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "Semiconductor Manufacturing",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "Can AI",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "GTA VI",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "CHIPS Act",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "Andhra Pradesh",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "AZ Family",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
+"label": "President Trump",
+"mentions": 2
+},
+{
+"date": "2026-11-19",
 "label": "Tech Leaders",
 "mentions": 2
 }
