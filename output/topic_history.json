@@ -1,55 +1,5 @@
 [
 {
-"date": "2026-09-23",
-"label": "AI Regulation",
-"mentions": 12
-},
-{
-"date": "2026-09-23",
-"label": "EU AI Act",
-"mentions": 4
-},
-{
-"date": "2026-09-23",
-"label": "EU KIDS Act",
-"mentions": 2
-},
-{
-"date": "2026-09-23",
-"label": "United States",
-"mentions": 2
-},
-{
-"date": "2026-09-23",
-"label": "Fossil Fuel-Fired",
-"mentions": 2
-},
-{
-"date": "2026-09-23",
-"label": "Social Media",
-"mentions": 2
-},
-{
-"date": "2026-09-23",
-"label": "AI Race",
-"mentions": 2
-},
-{
-"date": "2026-09-23",
-"label": "Xi Jinping",
-"mentions": 2
-},
-{
-"date": "2026-09-23",
-"label": "Muse AI",
-"mentions": 2
-},
-{
-"date": "2026-09-23",
-"label": "NBC News",
-"mentions": 2
-},
-{
 "date": "2026-09-24",
 "label": "AI Regulation",
 "mentions": 12
@@ -4606,6 +4556,101 @@
 },
 {
 "date": "2026-11-22",
+"label": "Tumbler Ridge",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "EU AI Act",
+"mentions": 5
+},
+{
+"date": "2026-11-23",
+"label": "Information Collection Activities",
+"mentions": 3
+},
+{
+"date": "2026-11-23",
+"label": "Collection Activities Submission",
+"mentions": 3
+},
+{
+"date": "2026-11-23",
+"label": "Proposed Rule Change",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Palo Alto Networks",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Digital Sovereignty Index",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Global AI Regulation",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Digital Infrastructure",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Protection Act",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Self-Regulatory Organizations",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Super Intelligence",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Anthropic IPO",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Act Compliance",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Visa Mastercard",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Trump FCC",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "Andhra Pradesh",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
+"label": "President Trump",
+"mentions": 2
+},
+{
+"date": "2026-11-23",
 "label": "Tumbler Ridge",
 "mentions": 2
 }
