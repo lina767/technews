@@ -1,50 +1,5 @@
 [
 {
-"date": "2026-09-24",
-"label": "AI Regulation",
-"mentions": 12
-},
-{
-"date": "2026-09-24",
-"label": "EU AI Act",
-"mentions": 5
-},
-{
-"date": "2026-09-24",
-"label": "Xi Jinping",
-"mentions": 3
-},
-{
-"date": "2026-09-24",
-"label": "Under Proclamation",
-"mentions": 2
-},
-{
-"date": "2026-09-24",
-"label": "United States",
-"mentions": 2
-},
-{
-"date": "2026-09-24",
-"label": "AI Race",
-"mentions": 2
-},
-{
-"date": "2026-09-24",
-"label": "SEMICON India",
-"mentions": 2
-},
-{
-"date": "2026-09-24",
-"label": "Al Jazeera",
-"mentions": 2
-},
-{
-"date": "2026-09-24",
-"label": "NBC News",
-"mentions": 2
-},
-{
 "date": "2026-09-25",
 "label": "AI Regulation",
 "mentions": 15
@@ -4651,6 +4606,101 @@
 },
 {
 "date": "2026-11-23",
+"label": "Tumbler Ridge",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "EU AI Act",
+"mentions": 7
+},
+{
+"date": "2026-11-24",
+"label": "Information Collection Activities",
+"mentions": 3
+},
+{
+"date": "2026-11-24",
+"label": "Collection Activities Submission",
+"mentions": 3
+},
+{
+"date": "2026-11-24",
+"label": "Jensen Huang",
+"mentions": 3
+},
+{
+"date": "2026-11-24",
+"label": "Andhra Pradesh",
+"mentions": 3
+},
+{
+"date": "2026-11-24",
+"label": "Proposed Rule Change",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "Delivery Protection Act",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "Global AI Regulation",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "Digital Sovereignty Index",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "Control IBM Study",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "Digital Infrastructure",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "Self-Regulatory Organizations",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "Super Intelligence",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "Act Compliance",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "Trump FCC",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
+"label": "President Trump",
+"mentions": 2
+},
+{
+"date": "2026-11-24",
 "label": "Tumbler Ridge",
 "mentions": 2
 }
