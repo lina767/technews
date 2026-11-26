@@ -1,60 +1,5 @@
 [
 {
-"date": "2026-09-26",
-"label": "AI Regulation",
-"mentions": 16
-},
-{
-"date": "2026-09-26",
-"label": "EU AI Act",
-"mentions": 9
-},
-{
-"date": "2026-09-26",
-"label": "Xi Jinping",
-"mentions": 3
-},
-{
-"date": "2026-09-26",
-"label": "Uncle Sam",
-"mentions": 3
-},
-{
-"date": "2026-09-26",
-"label": "Under Proclamation",
-"mentions": 2
-},
-{
-"date": "2026-09-26",
-"label": "Information Collection",
-"mentions": 2
-},
-{
-"date": "2026-09-26",
-"label": "Digital Sovereignty",
-"mentions": 2
-},
-{
-"date": "2026-09-26",
-"label": "SEMICON India",
-"mentions": 2
-},
-{
-"date": "2026-09-26",
-"label": "JD Supra",
-"mentions": 2
-},
-{
-"date": "2026-09-26",
-"label": "NBC News",
-"mentions": 2
-},
-{
-"date": "2026-09-26",
-"label": "More AI",
-"mentions": 2
-},
-{
 "date": "2026-09-27",
 "label": "AI Regulation",
 "mentions": 17
@@ -4731,6 +4676,96 @@
 },
 {
 "date": "2026-11-25",
+"label": "Financial Services",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "Digital Sovereignty",
+"mentions": 13
+},
+{
+"date": "2026-11-26",
+"label": "AI Regulation",
+"mentions": 6
+},
+{
+"date": "2026-11-26",
+"label": "EU AI Act",
+"mentions": 4
+},
+{
+"date": "2026-11-26",
+"label": "Proposed Rule Change",
+"mentions": 3
+},
+{
+"date": "2026-11-26",
+"label": "Self-Regulatory Organizations MEMX",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "Organizations MEMX LLC",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "MEMX LLC Notice",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "Delivery Protection Act",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "Tech Review Africa",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "Digital Infrastructure",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "Immediate Effectiveness",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "Big Tech",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "Child Safety",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "Elon Musk",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "Il Sole",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
+"label": "FF News",
+"mentions": 2
+},
+{
+"date": "2026-11-26",
 "label": "Financial Services",
 "mentions": 2
 }
