@@ -1,55 +1,5 @@
 [
 {
-"date": "2026-09-27",
-"label": "AI Regulation",
-"mentions": 17
-},
-{
-"date": "2026-09-27",
-"label": "EU AI Act",
-"mentions": 8
-},
-{
-"date": "2026-09-27",
-"label": "Xi Jinping",
-"mentions": 3
-},
-{
-"date": "2026-09-27",
-"label": "Uncle Sam",
-"mentions": 3
-},
-{
-"date": "2026-09-27",
-"label": "Under Proclamation",
-"mentions": 2
-},
-{
-"date": "2026-09-27",
-"label": "Information Collection",
-"mentions": 2
-},
-{
-"date": "2026-09-27",
-"label": "Digital Sovereignty",
-"mentions": 2
-},
-{
-"date": "2026-09-27",
-"label": "SEMICON India",
-"mentions": 2
-},
-{
-"date": "2026-09-27",
-"label": "JD Supra",
-"mentions": 2
-},
-{
-"date": "2026-09-27",
-"label": "More AI",
-"mentions": 2
-},
-{
 "date": "2026-09-28",
 "label": "AI Regulation",
 "mentions": 18
@@ -4767,6 +4717,66 @@
 {
 "date": "2026-11-26",
 "label": "Financial Services",
+"mentions": 2
+},
+{
+"date": "2026-11-27",
+"label": "AI Regulation",
+"mentions": 6
+},
+{
+"date": "2026-11-27",
+"label": "FF News",
+"mentions": 3
+},
+{
+"date": "2026-11-27",
+"label": "Proposed Rule Change",
+"mentions": 2
+},
+{
+"date": "2026-11-27",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-11-27",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-11-27",
+"label": "Digital Sovereignty Solution",
+"mentions": 2
+},
+{
+"date": "2026-11-27",
+"label": "EU AI Act",
+"mentions": 2
+},
+{
+"date": "2026-11-27",
+"label": "Tech Review Africa",
+"mentions": 2
+},
+{
+"date": "2026-11-27",
+"label": "European Parliament",
+"mentions": 2
+},
+{
+"date": "2026-11-27",
+"label": "Self-Regulatory Organizations",
+"mentions": 2
+},
+{
+"date": "2026-11-27",
+"label": "LLC Notice",
+"mentions": 2
+},
+{
+"date": "2026-11-27",
+"label": "Protection Act",
 "mentions": 2
 }
 ]
