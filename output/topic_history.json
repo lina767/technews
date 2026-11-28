@@ -1,55 +1,5 @@
 [
 {
-"date": "2026-09-28",
-"label": "AI Regulation",
-"mentions": 18
-},
-{
-"date": "2026-09-28",
-"label": "EU AI Act",
-"mentions": 6
-},
-{
-"date": "2026-09-28",
-"label": "Digital Sovereignty",
-"mentions": 3
-},
-{
-"date": "2026-09-28",
-"label": "Xi Jinping",
-"mentions": 3
-},
-{
-"date": "2026-09-28",
-"label": "Anthropic CEO",
-"mentions": 3
-},
-{
-"date": "2026-09-28",
-"label": "Under Proclamation",
-"mentions": 2
-},
-{
-"date": "2026-09-28",
-"label": "Information Collection",
-"mentions": 2
-},
-{
-"date": "2026-09-28",
-"label": "Uncle Sam",
-"mentions": 2
-},
-{
-"date": "2026-09-28",
-"label": "JD Supra",
-"mentions": 2
-},
-{
-"date": "2026-09-28",
-"label": "CBS News",
-"mentions": 2
-},
-{
 "date": "2026-09-29",
 "label": "EU AI Act",
 "mentions": 7
@@ -4777,6 +4727,71 @@
 {
 "date": "2026-11-27",
 "label": "Protection Act",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "AI Regulation",
+"mentions": 8
+},
+{
+"date": "2026-11-28",
+"label": "Proposed Rule Change",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "Agency Information Collection",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "Information Collection Activities",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "EU AI Act",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "Digital Sovereignty Solution",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "Tech Review Africa",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "European Parliament",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "Self-Regulatory Organizations",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "LLC Notice",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "Protection Act",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "FF News",
+"mentions": 2
+},
+{
+"date": "2026-11-28",
+"label": "Il Sole",
 "mentions": 2
 }
 ]
